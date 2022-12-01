@@ -50,8 +50,8 @@ void display() { // ja draw korbo .. ei function er moddhe korbo
     // building - 1... //701
    glBegin(GL_QUADS);
       glColor3f(1.0f, 0.0f, 0.0f);
-      glVertex2f(-0.9f, 0.25f);
-      glVertex2f(-0.8f, 0.25f);
+      glVertex2f(-0.9f, 0.24f);
+      glVertex2f(-0.8f, 0.24f);
 
       glVertex2f(-0.8f, 0.4f);
       glVertex2f(-0.9f, 0.4f);
@@ -60,18 +60,78 @@ void display() { // ja draw korbo .. ei function er moddhe korbo
     // building - 2... //702
    glBegin(GL_QUADS);
       glColor3f(0.2f, 0.2f, 0.4f);
-      glVertex2f(-0.760f, 0.55f);
-      glVertex2f(-0.63f, 0.55f);
+      glVertex2f(-0.760f, 0.54f);
+      glVertex2f(-0.63f, 0.54f);
 
       glVertex2f(-0.63f, 0.620f);
       glVertex2f(-0.760f, 0.620f);
       ////
       glColor3f(1.0f, 0.2f, 0.4f);
-      glVertex2f(-0.8f, 0.25f);
-      glVertex2f(-0.6f, 0.25f);
+      glVertex2f(-0.8f, 0.24f);
+      glVertex2f(-0.6f, 0.24f);
 
       glVertex2f(-0.6f, 0.55f);
       glVertex2f(-0.8f, 0.55f);
+
+   glEnd();
+
+   // building - 3... //703
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.2f, 0.4f);
+
+      glVertex2f(-0.6f, 0.24f);
+      glVertex2f(-0.4f, 0.24f);
+
+      glVertex2f(-0.4f, 0.480f);
+      glVertex2f(-0.6f, 0.480f);
+
+   glEnd();
+
+   // building - 4... //704
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.2f, 0.4f);
+
+      glVertex2f(-0.4f, 0.24f);
+      glVertex2f(-0.2f, 0.24f);
+
+      glVertex2f(-0.2f, 0.6f);
+      glVertex2f(-0.4f, 0.6f);
+
+   glEnd();
+
+   // building - 5... //705
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.2f, 0.4f);
+
+      glVertex2f(-0.2f, 0.24f);
+      glVertex2f(0.0f, 0.24f);
+
+      glVertex2f(0.0f, 0.55f);
+      glVertex2f(-0.2f, 0.55f);
+
+   glEnd();
+
+   // building - 6... //706
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.2f, 0.4f);
+
+      glVertex2f(0.0f, 0.24f);
+      glVertex2f(0.12f, 0.24f);
+
+      glVertex2f(0.12f, 0.72f);
+      glVertex2f(0.0f, 0.72f);
+
+   glEnd();
+
+   // building - 6... //706
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.2f, 0.4f);
+
+      glVertex2f(0.0f, 0.24f);
+      glVertex2f(0.12f, 0.24f);
+
+      glVertex2f(0.12f, 0.72f);
+      glVertex2f(0.0f, 0.72f);
 
    glEnd();
 
