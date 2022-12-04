@@ -195,7 +195,7 @@ void display() { // ja draw korbo .. ei function er moddhe korbo
       glVertex2f(-0.4f, 0.6f);
 
       // window left up
-      glColor3f(0.0f, 0.8f, 0.4f);
+      glColor3f(0.6f, 1.0f, 0.6f);
 
       glVertex2f(-0.36f, 0.46f);
       glVertex2f(-0.32f, 0.46f);
@@ -204,7 +204,7 @@ void display() { // ja draw korbo .. ei function er moddhe korbo
       glVertex2f(-0.36f, 0.5f);
 
       // window right up
-      glColor3f(0.0f, 0.8f, 0.4f);
+      glColor3f(0.6f, 1.0f, 0.6f);
 
       glVertex2f(-0.28f, 0.46f);
       glVertex2f(-0.24f, 0.46f);
@@ -375,7 +375,7 @@ void display() { // ja draw korbo .. ei function er moddhe korbo
       glVertex2f(0.34f, 0.24f); //2
       glVertex2f(0.12f, 0.68f); //4
 
-glColor3f(1.0f, 1.0f, 0.6f);
+    glColor3f(1.0f, 1.0f, 0.6f);
       glVertex2f(0.34f, 0.24f); //2
       glVertex2f(0.34f, 0.68f); //3
       glVertex2f(0.12f, 0.68f); //4
@@ -413,16 +413,6 @@ glColor3f(1.0f, 1.0f, 0.6f);
       glVertex2f(0.16f, 0.42f);
 
    glEnd();
-    //glBegin(GL_LINES);
-    //  glColor3f(0.2f, 0.2f, 0.2f);
-
-
-     // glVertex2f(0.34f, 0.24f);
-
-
-     // glVertex2f(0.12f, 0.68f);
-
-  // glEnd();
 
 
 // building - 8... //708
@@ -435,9 +425,45 @@ glColor3f(1.0f, 1.0f, 0.6f);
       glVertex2f(0.52f, 0.6f);
       glVertex2f(0.34f, 0.6f);
 
+      // varanda -1
+      glColor3f(0.5f, 0.5f, 0.2f);
+
+      glVertex2f(0.44f, 0.5f);
+      glVertex2f(0.56f, 0.5f);
+
+      glVertex2f(0.52f, 0.54f);
+      glVertex2f(0.4f, 0.54f);
+
    glEnd();
 
 
+   // Tree 8... //708
+   glBegin(GL_TRIANGLES);
+      glColor3f(1.0f, 0.3f, 0.6f);
+
+      glVertex2f(0.72f, 0.24f); //1
+      glVertex2f(0.73f, 0.24f); //2
+      glVertex2f(0.73f, 0.6f); //3
+      ///////////////////////////
+      glVertex2f(0.73f, 0.6f); //left leaf
+      glVertex2f(0.8f, 0.56f);
+      glVertex2f(0.8f, 0.64f);
+      ///
+      glVertex2f(0.73f, 0.6f); //left up leaf
+      glVertex2f(0.78f, 0.66f);
+      glVertex2f(0.74f, 0.68f);
+
+      ///
+      glVertex2f(0.73f, 0.6f); //left up leaf
+      glVertex2f(0.73f, 0.69f);
+      glVertex2f(0.68f, 0.68f);
+
+      ///
+      glVertex2f(0.73f, 0.6f); //left up leaf
+      glVertex2f(0.68f, 0.66f);
+      glVertex2f(0.64f, 0.56f);
+
+    glEnd();
 
 
 
