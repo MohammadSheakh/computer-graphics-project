@@ -46,15 +46,34 @@ void display() { // ja draw korbo .. ei function er moddhe korbo
    glEnd();
 
 
+   ///mountain start//////////////Mohammad Sheakh///////////////////////////
+    // left mountain
+    glBegin(GL_TRIANGLES);
+    glColor3f(1.0f, 0.3f, 0.6f);
+        glVertex2f(-1.0, 0.24);
+        glVertex2f(0.3, 0.24);
+        glVertex2f(-0.44, 0.8);
+    glEnd();
+
+    // right mountain //
+    glBegin(GL_TRIANGLES);
+    glColor3f(1.0f, 0.3f, 0.6f);
+        glVertex2f(-0.5, 0.24);
+        glVertex2f(0.24, 0.8);
+        glVertex2f(1.0, 0.24);
+    glEnd();
+    ///mountain end////////////////MOhammad Sheakh////////////////////////
+
+
     /// Building section start by mohammad bin ab. jalil sheakh - 700
     // building - 1... //701
    glBegin(GL_QUADS);
       glColor3f(1.0f, 0.0f, 0.0f);
-      glVertex2f(-0.9f, 0.24f);
+      glVertex2f(-1.0f, 0.24f);
       glVertex2f(-0.8f, 0.24f);
 
       glVertex2f(-0.8f, 0.4f);
-      glVertex2f(-0.9f, 0.4f);
+      glVertex2f(-1.0f, 0.4f);
    glEnd();
 
     // building - 2... //702
@@ -369,13 +388,15 @@ void display() { // ja draw korbo .. ei function er moddhe korbo
 
    // building - 7... //707
    glBegin(GL_TRIANGLES);
-      glColor3f(1.0f, 0.3f, 0.6f);
 
+
+
+glColor3f(0.2f, 0.3f, 0.6f);
       glVertex2f(0.12f, 0.24f); //1
       glVertex2f(0.34f, 0.24f); //2
       glVertex2f(0.12f, 0.68f); //4
+ glColor3f(1.0f, 1.0f, 0.6f);
 
-    glColor3f(1.0f, 1.0f, 0.6f);
       glVertex2f(0.34f, 0.24f); //2
       glVertex2f(0.34f, 0.68f); //3
       glVertex2f(0.12f, 0.68f); //4
@@ -436,10 +457,13 @@ void display() { // ja draw korbo .. ei function er moddhe korbo
 
    glEnd();
 
+   /// Building section end by mohammad bin ab. jalil sheakh - 700
 
+
+    /// Tree section start by mohammad bin ab. jalil sheakh - 700
    // Tree 8... //708
    glBegin(GL_TRIANGLES);
-      glColor3f(1.0f, 0.3f, 0.6f);
+       glColor3f(1.0f, 1.0f, 0.6f);
 
       glVertex2f(0.72f, 0.24f); //1
       glVertex2f(0.73f, 0.24f); //2
@@ -464,6 +488,8 @@ void display() { // ja draw korbo .. ei function er moddhe korbo
       glVertex2f(0.64f, 0.56f);
 
     glEnd();
+
+    /// Tree section end by mohammad bin ab. jalil sheakh - 700
 
 
 
