@@ -44,7 +44,10 @@ void display() { // ja draw korbo .. ei function er moddhe korbo
       glVertex2f( 0.0f,  -1.0f);
       glVertex2f( 0.0f,  1.0f);
    glEnd();
+   /// plane start /////////  ///////////////////////
 
+
+    /// Plane End ////////////////////////////////////
 
    ///mountain start//////////////Mohammad Sheakh///////////////////////////
     // left mountain
@@ -461,7 +464,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
 
     /// Tree section start by mohammad bin ab. jalil sheakh - 700
-   // Tree 8... //708
+   // Tree 9... //709
    glBegin(GL_TRIANGLES);
        glColor3f(1.0f, 1.0f, 0.6f);
 
@@ -489,7 +492,341 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     glEnd();
 
-    /// Tree section end by mohammad bin ab. jalil sheakh - 700
+    /// for river // 710
+
+    glBegin(GL_QUADS);
+      glColor3f(0.0f, 1.0f, 1.0f);
+      glVertex2f(-1.0f, -0.7f);
+      glVertex2f(1.0f, -0.7f);
+
+      glVertex2f(1.0f, -0.2f);
+      glVertex2f(-1.0f, -0.2f);
+   glEnd();
+
+
+
+    ///------------------------------------------------------------------------------------ Tree section end by mohammad bin ab. jalil sheakh - 700
+///-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+///-------------------------------------------------------------Dosina Boat Start---------------///
+///---------Boat Start---------///
+///---------DOSINA DOLON DOLA---------///
+
+
+            /// Boat section start by DOSINA DOLON DOLA - 500 ///
+
+///----------------------------------------------------------------------------///
+
+
+    ///-------- Quad Blocks Section --------///
+
+
+    /// Block - 1 ... //501
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 1.0f, 0.0f);
+      glVertex2f(0.36f, -0.57f);
+      glVertex2f(0.77f, -0.57f);
+
+      glVertex2f(0.77f, -0.55f);
+      glVertex2f(0.36f, -0.55f);
+   glEnd();
+    //... Block - 1 ...//End--------------
+
+
+    /// Block - 2 ... //502
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.0f, 0.0f);
+      glVertex2f(0.36f, -0.55f);
+      glVertex2f(0.77f, -0.55f);
+
+      glVertex2f(0.77f, -0.53f);
+      glVertex2f(0.36f, -0.53f);
+   glEnd();
+    //... Block - 2 ...//End--------------
+
+
+    /// Block - 3 //503
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.0f, 0.0f);
+      glVertex2f(0.45f, -0.53f);
+      glVertex2f(0.72f, -0.53f);
+
+      glVertex2f(0.72f, -0.45f);
+      glVertex2f(0.45f, -0.45f);
+   glEnd();
+    //... Block - 3 ...//End--------------
+
+
+    /// Block - 4 ... //504
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.0f, 0.0f);
+      glVertex2f(0.51f, -0.53f);
+      glVertex2f(0.54f, -0.53f);
+
+      glVertex2f(0.54f, -0.47f);
+      glVertex2f(0.51f, -0.47f);
+   glEnd();
+    //... Block - 4 ...//End--------------
+
+
+   /// Block - 5 ... //505
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.0f, 0.0f);
+      glVertex2f(0.58f, -0.53f);
+      glVertex2f(0.77f, -0.53f);
+
+      glVertex2f(0.82f, -0.49f);
+      glVertex2f(0.63f, -0.49f);
+   glEnd();
+    //... Block - 5 ...//End--------------
+
+
+    /// Block - 6 ... //506
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.0f, 0.0f);
+      glVertex2f(0.43f, -0.45f);
+      glVertex2f(0.74f, -0.45f);
+
+      glVertex2f(0.74f, -0.43f);
+      glVertex2f(0.43f, -0.43f);
+   glEnd();
+    //... Block - 6 ...//End--------------
+
+
+    /// Block - 7 ... //507
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.0f, 0.0f);
+      glVertex2f(0.52f, -0.43f);
+      glVertex2f(0.56f, -0.43f);
+
+      glVertex2f(0.56f, -0.38f);
+      glVertex2f(0.52f, -0.38f);
+   glEnd();
+   //... Block - 7 ...//End--------------
+
+
+    /// Block - 8 ... //508
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.0f, 0.0f);
+      glVertex2f(0.56f, -0.43f);
+      glVertex2f(0.71f, -0.43f);
+
+      glVertex2f(0.71f, -0.36f);
+      glVertex2f(0.56f, -0.36f);
+   glEnd();
+    //... Block - 8 ...//End--------------
+
+
+    /// Block - 9 ... //509
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.0f, 0.0f);
+      glVertex2f(0.64f, -0.43f);
+      glVertex2f(0.67f, -0.43f);
+
+      glVertex2f(0.67f, -0.37f);
+      glVertex2f(0.64f, -0.37f);
+   glEnd();
+    //... Block - 9 ...//End--------------
+
+
+    /// Block - 10 ... //510
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.0f, 0.0f);
+      glVertex2f(0.65f, -0.40f);
+      glVertex2f(0.66f, -0.40f);
+
+      glVertex2f(0.66f, -0.38f);
+      glVertex2f(0.65f, -0.38f);
+   glEnd();
+    //... Block - 10 ...//End--------------
+
+
+    /// Block - 11 ... //511
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.0f, 0.0f);
+      glVertex2f(0.59f, -0.40f);
+      glVertex2f(0.63f, -0.40f);
+
+      glVertex2f(0.63f, -0.37f);
+      glVertex2f(0.59f, -0.37f);
+   glEnd();
+    //... Block - 11 ...//End--------------
+
+
+    /// Block - 12 ... //512
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.0f, 0.0f);
+      glVertex2f(0.68f, -0.40f);
+      glVertex2f(0.70f, -0.40f);
+
+      glVertex2f(0.70f, -0.37f);
+      glVertex2f(0.68f, -0.37f);
+   glEnd();
+    //... Block - 12 ...//End--------------
+
+
+    /// Block - 13 ... //513
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.0f, 0.0f);
+      glVertex2f(0.55f, -0.36f);
+      glVertex2f(0.72f, -0.36f);
+
+      glVertex2f(0.72f, -0.35f);
+      glVertex2f(0.55f, -0.35f);
+   glEnd();
+    //... Block - 13 ...//End--------------
+
+
+    /// Block - 14 ... //514
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.0f, 0.0f);
+      glVertex2f(0.55f, -0.35f);
+      glVertex2f(0.73f, -0.35f);
+
+      glVertex2f(0.74f, -0.34f);
+      glVertex2f(0.55f, -0.34f);
+   glEnd();
+    //... Block - 14 ...//End--------------
+
+
+    /// Block - 15 ... //515
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.0f, 0.0f);
+      glVertex2f(0.50f, -0.38f);
+      glVertex2f(0.58f, -0.38f);
+
+      glVertex2f(0.58f, -0.37f);
+      glVertex2f(0.50f, -0.37f);
+   glEnd();
+    //... Block - 15 ...//End--------------
+
+
+    /// Block - 16 ... //516
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.0f, 0.0f);
+      glVertex2f(0.38f, -0.53f);
+      glVertex2f(0.41f, -0.53f);
+
+      glVertex2f(0.41f, -0.52f);
+      glVertex2f(0.38f, -0.52f);
+   glEnd();
+    //... Block - 16 ...//End--------------
+
+
+    /// Block - 17 ... //517
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.0f, 0.0f);
+      glVertex2f(0.41f, -0.53f);
+      glVertex2f(0.43f, -0.53f);
+
+      glVertex2f(0.43f, -0.52f);
+      glVertex2f(0.41f, -0.52f);
+   glEnd();
+    //... Block - 17 ...//End--------------
+
+
+    /// Block - 18 ... //518
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.0f, 0.0f);
+      glVertex2f(0.43f, -0.53f);
+      glVertex2f(0.45f, -0.53f);
+
+      glVertex2f(0.45f, -0.52f);
+      glVertex2f(0.43f, -0.52f);
+   glEnd();
+    //... Block - 18 ...//End--------------
+
+
+    /// Block - 19 ... //519
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.0f, 0.0f);
+      glVertex2f(0.38f, -0.52f);
+      glVertex2f(0.41f, -0.52f);
+
+      glVertex2f(0.41f, -0.51f);
+      glVertex2f(0.38f, -0.51f);
+   glEnd();
+    //... Block - 19 ...//End--------------
+
+
+    /// Block - 20 ... //520
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.0f, 0.0f);
+      glVertex2f(0.43f, -0.52f);
+      glVertex2f(0.45f, -0.52f);
+
+      glVertex2f(0.45f, -0.51f);
+      glVertex2f(0.43f, -0.51f);
+   glEnd();
+    //... Block - 20 ...//End--------------
+
+
+    /// Block - 21 ... //521
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.0f, 0.0f);
+      glVertex2f(0.36f, -0.42f);
+      glVertex2f(0.38f, -0.42f);
+
+      glVertex2f(0.38f, -0.4f);
+      glVertex2f(0.36f, -0.4f);
+   glEnd();
+    //... Block - 21 ...//End--------------
+
+
+    /// Block - 22 ... //522
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.0f, 0.0f);
+      glVertex2f(0.34f, -0.43f);
+      glVertex2f(0.36f, -0.43f);
+
+      glVertex2f(0.36f, -0.41f);
+      glVertex2f(0.34f, -0.41f);
+   glEnd();
+    //... Block - 22 ...//End--------------
+
+
+    /// Block - 23 ... //523
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.0f, 0.0f);
+      glVertex2f(0.67f, -0.32f);
+      glVertex2f(0.69f, -0.32f);
+
+      glVertex2f(0.69f, -0.31f);
+      glVertex2f(0.67f, -0.31f);
+   glEnd();
+    //... Block - 23 ...//End--------------
+
+
+    /// Block - 24 ... //524
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 0.0f, 0.0f);
+      glVertex2f(0.70f, -0.33f);
+      glVertex2f(0.71f, -0.33f);
+
+      glVertex2f(0.71f, -0.32f);
+      glVertex2f(0.70f, -0.32f);
+   glEnd();
+    //... Block - 24 ...//End--------------
+
+
+///----------------------------------------------------------------------------///
+
+
+    ///-------- Lines Section --------///
+
+/*
+    glBegin(GL_LINE);
+        glColor3f(1.0f, 0.0f, 0.0f);
+        glVertex2f(0.36f, -0.57f);
+*/
+
+///----------------------------------------------------------------------------///
+
+
+    ///-------- Circles Section --------///
+
+    ///-------------------------------------------------------------Dosina Boat Done---------------///
 
 
 
@@ -515,3 +852,8 @@ int main(int argc, char** argv) { // program ekhan thekei start hoy
    glutMainLoop();
    return 0;
 }
+
+
+
+
+
