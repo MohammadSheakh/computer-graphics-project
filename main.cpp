@@ -510,6 +510,9 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
 
 ///-------------------------------------------------------------Dosina Boat Start---------------///
+///---------Boat Start---------
+
+
 ///---------Boat Start---------///
 ///---------DOSINA DOLON DOLA---------///
 
@@ -524,7 +527,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     /// Block - 1 ... //501
    glBegin(GL_QUADS);
-      glColor3f(1.0f, 1.0f, 0.0f);
+      glColor3ub(78, 75, 75);
       glVertex2f(0.36f, -0.57f);
       glVertex2f(0.77f, -0.57f);
 
@@ -536,7 +539,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     /// Block - 2 ... //502
    glBegin(GL_QUADS);
-      glColor3f(1.0f, 0.0f, 0.0f);
+      glColor3ub(138, 3, 42);
       glVertex2f(0.36f, -0.55f);
       glVertex2f(0.77f, -0.55f);
 
@@ -548,7 +551,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     /// Block - 3 //503
    glBegin(GL_QUADS);
-      glColor3f(1.0f, 0.0f, 0.0f);
+      glColor3ub(250, 250, 150);
       glVertex2f(0.45f, -0.53f);
       glVertex2f(0.72f, -0.53f);
 
@@ -558,9 +561,21 @@ glColor3f(0.2f, 0.3f, 0.6f);
     //... Block - 3 ...//End--------------
 
 
+/// Block - 3* //503
+   glBegin(GL_QUADS);
+      glColor3ub(200, 40, 90);
+      glVertex2f(0.45f, -0.5f);
+      glVertex2f(0.72f, -0.5f);
+
+      glVertex2f(0.72f, -0.49f);
+      glVertex2f(0.45f, -0.4f);
+   glEnd();
+    //... Block - 3* ...//End--------------
+
+
     /// Block - 4 ... //504
    glBegin(GL_QUADS);
-      glColor3f(1.0f, 0.0f, 0.0f);
+      glColor3ub(1.0f, 0.0f, 0.0f);
       glVertex2f(0.51f, -0.53f);
       glVertex2f(0.54f, -0.53f);
 
@@ -572,7 +587,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
    /// Block - 5 ... //505
    glBegin(GL_QUADS);
-      glColor3f(1.0f, 0.0f, 0.0f);
+      glColor3ub(138, 3, 42);
       glVertex2f(0.58f, -0.53f);
       glVertex2f(0.77f, -0.53f);
 
@@ -584,7 +599,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     /// Block - 6 ... //506
    glBegin(GL_QUADS);
-      glColor3f(1.0f, 0.0f, 0.0f);
+      glColor3ub(181, 57, 57);
       glVertex2f(0.43f, -0.45f);
       glVertex2f(0.74f, -0.45f);
 
@@ -596,7 +611,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     /// Block - 7 ... //507
    glBegin(GL_QUADS);
-      glColor3f(1.0f, 0.0f, 0.0f);
+      glColor3ub(250, 250, 150);
       glVertex2f(0.52f, -0.43f);
       glVertex2f(0.56f, -0.43f);
 
@@ -608,7 +623,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     /// Block - 8 ... //508
    glBegin(GL_QUADS);
-      glColor3f(1.0f, 0.0f, 0.0f);
+      glColor3ub(250, 250, 150);
       glVertex2f(0.56f, -0.43f);
       glVertex2f(0.71f, -0.43f);
 
@@ -620,7 +635,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     /// Block - 9 ... //509
    glBegin(GL_QUADS);
-      glColor3f(1.0f, 0.0f, 0.0f);
+      glColor3ub(150, 250, 250);
       glVertex2f(0.64f, -0.43f);
       glVertex2f(0.67f, -0.43f);
 
@@ -632,7 +647,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     /// Block - 10 ... //510
    glBegin(GL_QUADS);
-      glColor3f(1.0f, 0.0f, 0.0f);
+      glColor3ub(200, 40, 90);
       glVertex2f(0.65f, -0.40f);
       glVertex2f(0.66f, -0.40f);
 
@@ -644,7 +659,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     /// Block - 11 ... //511
    glBegin(GL_QUADS);
-      glColor3f(1.0f, 0.0f, 0.0f);
+      glColor3ub(200, 40, 90);
       glVertex2f(0.59f, -0.40f);
       glVertex2f(0.63f, -0.40f);
 
@@ -656,7 +671,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     /// Block - 12 ... //512
    glBegin(GL_QUADS);
-      glColor3f(1.0f, 0.0f, 0.0f);
+      glColor3ub(200, 40, 90);
       glVertex2f(0.68f, -0.40f);
       glVertex2f(0.70f, -0.40f);
 
@@ -668,7 +683,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     /// Block - 13 ... //513
    glBegin(GL_QUADS);
-      glColor3f(1.0f, 0.0f, 0.0f);
+      glColor3ub(181, 57, 57);
       glVertex2f(0.55f, -0.36f);
       glVertex2f(0.72f, -0.36f);
 
@@ -680,7 +695,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     /// Block - 14 ... //514
    glBegin(GL_QUADS);
-      glColor3f(1.0f, 0.0f, 0.0f);
+      glColor3ub(138, 3, 42);
       glVertex2f(0.55f, -0.35f);
       glVertex2f(0.73f, -0.35f);
 
@@ -692,7 +707,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     /// Block - 15 ... //515
    glBegin(GL_QUADS);
-      glColor3f(1.0f, 0.0f, 0.0f);
+      glColor3ub(181, 57, 57);
       glVertex2f(0.50f, -0.38f);
       glVertex2f(0.58f, -0.38f);
 
@@ -704,7 +719,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     /// Block - 16 ... //516
    glBegin(GL_QUADS);
-      glColor3f(1.0f, 0.0f, 0.0f);
+      glColor3ub(60, 160, 160);
       glVertex2f(0.38f, -0.53f);
       glVertex2f(0.41f, -0.53f);
 
@@ -716,7 +731,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     /// Block - 17 ... //517
    glBegin(GL_QUADS);
-      glColor3f(1.0f, 0.0f, 0.0f);
+      glColor3ub(60, 160, 160);
       glVertex2f(0.41f, -0.53f);
       glVertex2f(0.43f, -0.53f);
 
@@ -728,7 +743,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     /// Block - 18 ... //518
    glBegin(GL_QUADS);
-      glColor3f(1.0f, 0.0f, 0.0f);
+      glColor3ub(60, 160, 160);
       glVertex2f(0.43f, -0.53f);
       glVertex2f(0.45f, -0.53f);
 
@@ -740,7 +755,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     /// Block - 19 ... //519
    glBegin(GL_QUADS);
-      glColor3f(1.0f, 0.0f, 0.0f);
+      glColor3ub(150, 250, 250);
       glVertex2f(0.38f, -0.52f);
       glVertex2f(0.41f, -0.52f);
 
@@ -752,7 +767,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     /// Block - 20 ... //520
    glBegin(GL_QUADS);
-      glColor3f(1.0f, 0.0f, 0.0f);
+      glColor3ub(150, 250, 250);
       glVertex2f(0.43f, -0.52f);
       glVertex2f(0.45f, -0.52f);
 
@@ -764,7 +779,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     /// Block - 21 ... //521
    glBegin(GL_QUADS);
-      glColor3f(1.0f, 0.0f, 0.0f);
+      glColor3ub(60, 70, 180);
       glVertex2f(0.36f, -0.42f);
       glVertex2f(0.38f, -0.42f);
 
@@ -776,7 +791,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     /// Block - 22 ... //522
    glBegin(GL_QUADS);
-      glColor3f(1.0f, 0.0f, 0.0f);
+      glColor3ub(60, 70, 180);
       glVertex2f(0.34f, -0.43f);
       glVertex2f(0.36f, -0.43f);
 
@@ -788,7 +803,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     /// Block - 23 ... //523
    glBegin(GL_QUADS);
-      glColor3f(1.0f, 0.0f, 0.0f);
+      glColor3ub(250, 250, 150);
       glVertex2f(0.67f, -0.32f);
       glVertex2f(0.69f, -0.32f);
 
@@ -800,7 +815,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     /// Block - 24 ... //524
    glBegin(GL_QUADS);
-      glColor3f(1.0f, 0.0f, 0.0f);
+      glColor3ub(250, 250, 150);
       glVertex2f(0.70f, -0.33f);
       glVertex2f(0.71f, -0.33f);
 
@@ -817,7 +832,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
 /*
     glBegin(GL_LINE);
-        glColor3f(1.0f, 0.0f, 0.0f);
+        glColor3ub(1.0f, 0.0f, 0.0f);
         glVertex2f(0.36f, -0.57f);
 */
 
@@ -825,6 +840,11 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
 
     ///-------- Circles Section --------///
+
+/// RGB color Codes for Circles 
+/// glColor3ub(200, 40, 90);
+
+/// 200, 40, 90
 
     ///-------------------------------------------------------------Dosina Boat Done---------------///
 
