@@ -4,28 +4,57 @@
 #include <GL/glut.h>
 
 
-GLfloat position = 0.0f;
-GLfloat speed = 0.1f;
+GLfloat airPlanePosition = 0.0f;
+GLfloat airPlaneSpeed = 0.012f;
 
-void update(int value) { // timer .. er kaj timer ba thread
+void airPlaneUpdate(int value) { // timer .. er kaj timer ba thread
     // ekta particular time por por function call hobe .. update nam er function call hobe ..
 
     // timer use kore move korte parbo .. jekono object .. ba translation korte parbo ..
 
-    if(position > 1.0)
-        position = -1.2f;
+    if(airPlanePosition < -1.8)//
+        airPlanePosition = 1.05f;
 
-    position += speed;
+    airPlanePosition -= airPlaneSpeed;
 
 	glutPostRedisplay();
 
 
-	glutTimerFunc(100, update, 0);
+	glutTimerFunc(100, airPlaneUpdate, 0);
 }
 void init() { // initialization hoy
    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // bg color set
 }
+void handleMouse(int button, int state, int x, int y) {
+	if (button == GLUT_LEFT_BUTTON)
+	{
+		if (state == GLUT_DOWN)
+		{
+			airPlaneSpeed += 0.1f;
+			printf("clicked at (%d, %d)\n", x, y);
+		}
+	}
 
+	glutPostRedisplay();
+}
+
+void handleKeypress(unsigned char key, int x, int y) {
+
+	switch (key) {
+
+case 'a':
+    airPlaneSpeed = 0.0f;
+    break;
+case 'w':
+    airPlaneSpeed += 0.1f;
+    break;
+
+
+glutPostRedisplay();
+
+
+	}
+}
 
 
 
@@ -44,10 +73,73 @@ void display() { // ja draw korbo .. ei function er moddhe korbo
       glVertex2f( 0.0f,  -1.0f);
       glVertex2f( 0.0f,  1.0f);
    glEnd();
-   /// plane start /////////  ///////////////////////
+   /// plane start /////////////////////////////////////////////////////////////// Md.Jahid Hassan-200/////////////////////////////////////////////
 
 
-    /// Plane End ////////////////////////////////////
+   ///Plane Main Body upper-201
+   glPushMatrix();
+   glTranslatef(airPlanePosition,0.0f, 0.0f);
+   glBegin(GL_POLYGON);
+      glColor3f(1.0f, 0.2f, 0.3f);
+      glVertex2f(0.555, 0.865);
+      glVertex2f(0.885, 0.865);
+      glVertex2f(0.905, 0.885);
+      glVertex2f(0.86, 0.91);
+      glVertex2f(0.62,0.91);
+   glEnd();
+   ///
+   ///**Plane Main Body lower-202**//
+   glBegin(GL_QUADS);
+      glColor3f(0, 191, 255);
+      glVertex2f(0.615, 0.825);
+      glVertex2f(0.855 ,0.825);
+      glVertex2f(0.885, 0.865);
+      glVertex2f( 0.555, 0.865);
+   glEnd();
+    ///
+    ///**Plane Diver Window-203**///
+    glBegin(GL_QUADS);
+      glColor3f(240, 255, 255);
+      glVertex2f(0.585, 0.875);
+      glVertex2f(0.63 ,0.875);
+      glVertex2f(0.63, 0.90);
+      glVertex2f( 0.62, 0.90);
+   glEnd();
+   ///
+   ///**Plane body line-204
+   ///
+
+   ///
+   ///**Plane Tail-205**///
+    glBegin(GL_QUADS);
+      glColor3f(34,139,34);
+      glVertex2f(0.78, 0.91);
+      glVertex2f(0.861 ,0.91);
+      glVertex2f(0.885, 0.95);
+      glVertex2f(0.835, 0.95);
+   glEnd();
+   ///
+   ///**Plane 1st wing -206**///
+   glBegin(GL_QUADS);
+      glColor3f(0.79f,0.79f,0.79f);
+      glVertex2f(0.68, 0.81);
+      glVertex2f(0.755 ,0.81);
+      glVertex2f(0.70, 0.865);
+      glVertex2f(0.625, 0.865);
+   glEnd();
+   ///
+   ///
+   ///**Plane 2nd wing -207**///
+   glBegin(GL_QUADS);
+      glColor3f(0.79f,0.79f,0.79f);
+      glVertex2f(0.87, 0.825);
+      glVertex2f(0.92 ,0.823);
+      glVertex2f(0.88, 0.865);
+      glVertex2f(0.83, 0.865);
+   glEnd();
+   glPopMatrix();
+   ///
+    /// Plane End //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
    ///mountain start//////////////Mohammad Sheakh///////////////////////////
     // left mountain
@@ -509,18 +601,8 @@ glColor3f(0.2f, 0.3f, 0.6f);
 ///-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-///-------------------------------------------------------------Dosina Boat Start---------------///
-///---------Boat Start---------
-
-
-///---------Boat Start---------///
-///---------DOSINA DOLON DOLA---------///
-
-
-            /// Boat section start by DOSINA DOLON DOLA - 500 ///
-
-///----------------------------------------------------------------------------///
-
+///--------------------------------------------------------------------- /// Boat section start by DOSINA DOLON DOLA - 500 ///
+                                                                     
 
     ///-------- Quad Blocks Section --------///
 
@@ -841,14 +923,11 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     ///-------- Circles Section --------///
 
-/// RGB color Codes for Circles 
+/// RGB color Codes for Circles
 /// glColor3ub(200, 40, 90);
 
 /// 200, 40, 90
-
-    ///-------------------------------------------------------------Dosina Boat Done---------------///
-
-
+///--------------------------------------------------------------------- /// Boat section Done by DOSINA DOLON DOLA - 500 ///
 
 
 
@@ -867,8 +946,9 @@ int main(int argc, char** argv) { // program ekhan thekei start hoy
    glutCreateWindow("Basic Animation");
    glutDisplayFunc(display);
    init();
-
-   glutTimerFunc(1000, update, 0); // update nam er function 1000 ml sec por por call hobe ..
+   glutKeyboardFunc(handleKeypress);
+   glutMouseFunc(handleMouse);
+   glutTimerFunc(1000, airPlaneUpdate, 0); // update nam er function 1000 ml sec por por call hobe ..
    glutMainLoop();
    return 0;
 }
