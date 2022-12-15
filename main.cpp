@@ -34,6 +34,14 @@ void handleMouse(int button, int state, int x, int y) {
 			printf("clicked at (%d, %d)\n", x, y);
 		}
 	}
+	if(button == GLUT_RIGHT_BUTTON)
+    {
+        if(state ==GLUT_DOWN)
+        {
+            airPlaneSpeed -= 0.1f;
+			printf("clicked at (%d, %d)\n", x, y);
+        }
+    }
 
 	glutPostRedisplay();
 }
@@ -602,7 +610,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
 
 ///--------------------------------------------------------------------- /// Boat section start by DOSINA DOLON DOLA - 500 ///
-                                                                     
+
 
     ///-------- Quad Blocks Section --------///
 
@@ -952,8 +960,3 @@ int main(int argc, char** argv) { // program ekhan thekei start hoy
    glutMainLoop();
    return 0;
 }
-
-
-
-
-
