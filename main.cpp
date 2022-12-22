@@ -588,8 +588,8 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     glBegin(GL_QUADS);
       glColor3f(0.0f, 1.0f, 1.0f);
-      glVertex2f(-1.0f, -0.7f);
-      glVertex2f(1.0f, -0.7f);
+      glVertex2f(-1.0f, -0.66f);
+      glVertex2f(1.0f, -0.66f);
 
       glVertex2f(1.0f, -0.2f);
       glVertex2f(-1.0f, -0.2f);
@@ -1000,6 +1000,221 @@ glColor3f(0.2f, 0.3f, 0.6f);
 ///----------------------------------------------------------------------------///
 
 
+/// ----------------------- Train Section Started by Mohammad Bin Ab. Jalil Sheakh
+
+    // lower rail line
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(-1.0f, -0.96f);
+      glVertex2f(1.0f, -0.96f);
+
+      glVertex2f(1.0f, -0.93f);
+      glVertex2f(-1.0f, -0.93f);
+
+    glEnd();
+
+    // upper rail line
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(-1.0f, -0.87f);
+      glVertex2f(1.0f, -0.87f);
+
+      glVertex2f(1.0f, -0.85f); // upper line ......... er upor tree hobe
+      glVertex2f(-1.0f, -0.85f);
+
+    glEnd();
+
+
+    ///------------ rail line design left 1
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(-0.92f, -0.98f);
+      glVertex2f(-0.88f, -0.98f);
+
+      glVertex2f(-0.88f, -0.82f); // upper line ......... er upor tree hobe
+      glVertex2f(-0.92f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design left 2
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(-0.82f, -0.98f);
+      glVertex2f(-0.79f, -0.98f);
+
+      glVertex2f(-0.79f, -0.82f);
+      glVertex2f(-0.82f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design left 3
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(-0.72f, -0.98f);
+      glVertex2f(-0.69f, -0.98f);
+
+      glVertex2f(-0.69f, -0.82f);
+      glVertex2f(-0.72f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design left 4
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(-0.62f, -0.98f);
+      glVertex2f(-0.59f, -0.98f);
+
+      glVertex2f(-0.59f, -0.82f);
+      glVertex2f(-0.62f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design left 5
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(-0.52f, -0.98f);
+      glVertex2f(-0.49f, -0.98f);
+
+      glVertex2f(-0.49f, -0.82f);
+      glVertex2f(-0.52f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design left 5
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(-0.42f, -0.98f);
+      glVertex2f(-0.39f, -0.98f);
+
+      glVertex2f(-0.39f, -0.82f);
+      glVertex2f(-0.42f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design left 6
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(-0.32f, -0.98f);
+      glVertex2f(-0.29f, -0.98f);
+
+      glVertex2f(-0.29f, -0.82f);
+      glVertex2f(-0.32f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design left 6
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(-0.22f, -0.98f);
+      glVertex2f(-0.19f, -0.98f);
+
+      glVertex2f(-0.19f, -0.82f);
+      glVertex2f(-0.22f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design left 7
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(-0.12f, -0.98f);
+      glVertex2f(-0.09f, -0.98f);
+
+      glVertex2f(-0.09f, -0.82f);
+      glVertex2f(-0.12f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design middle 8
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(-0.02f, -0.98f);
+      glVertex2f(0.0f, -0.98f);
+
+      glVertex2f(0.0f, -0.82f);
+      glVertex2f(-0.02f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design right 9
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(0.12f, -0.98f);
+      glVertex2f(0.09f, -0.98f);
+
+      glVertex2f(0.09f, -0.82f);
+      glVertex2f(0.12f, -0.82f);
+    glEnd();
+
+
+    ///------------ rail line design right 10
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(0.22f, -0.98f);
+      glVertex2f(0.19f, -0.98f);
+
+      glVertex2f(0.19f, -0.82f);
+      glVertex2f(0.22f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design right 11
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(0.32f, -0.98f);
+      glVertex2f(0.29f, -0.98f);
+
+      glVertex2f(0.29f, -0.82f);
+      glVertex2f(0.32f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design right 12
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(0.42f, -0.98f);
+      glVertex2f(0.39f, -0.98f);
+
+      glVertex2f(0.39f, -0.82f);
+      glVertex2f(0.42f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design right 13
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(0.52f, -0.98f);
+      glVertex2f(0.49f, -0.98f);
+
+      glVertex2f(0.49f, -0.82f);
+      glVertex2f(0.52f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design right 14
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(0.62f, -0.98f);
+      glVertex2f(0.59f, -0.98f);
+
+      glVertex2f(0.59f, -0.82f);
+      glVertex2f(0.62f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design right 15
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(0.72f, -0.98f);
+      glVertex2f(0.69f, -0.98f);
+
+      glVertex2f(0.69f, -0.82f);
+      glVertex2f(0.72f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design right 16
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(0.82f, -0.98f);
+      glVertex2f(0.79f, -0.98f);
+
+      glVertex2f(0.79f, -0.82f);
+      glVertex2f(0.82f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design right 17
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(0.92f, -0.98f);
+      glVertex2f(0.89f, -0.98f);
+
+      glVertex2f(0.89f, -0.82f);
+      glVertex2f(0.92f, -0.82f);
+    glEnd();
 
 
    glFlush();
