@@ -34,14 +34,6 @@ void handleMouse(int button, int state, int x, int y) {
 			printf("clicked at (%d, %d)\n", x, y);
 		}
 	}
-	if(button == GLUT_RIGHT_BUTTON)
-    {
-        if(state ==GLUT_DOWN)
-        {
-            airPlaneSpeed -= 0.1f;
-			printf("clicked at (%d, %d)\n", x, y);
-        }
-    }
 
 	glutPostRedisplay();
 }
@@ -609,7 +601,14 @@ glColor3f(0.2f, 0.3f, 0.6f);
 ///-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-///--------------------------------------------------------------------- /// Boat section start by DOSINA DOLON DOLA - 500 ///
+// Dosina Dolon
+///---------Boat Start---------///
+///---------DOSINA DOLON DOLA---------///
+
+
+            /// Boat section start by DOSINA DOLON DOLA - 500 ///
+
+///----------------------------------------------------------------------------///
 
 
     ///-------- Quad Blocks Section --------///
@@ -658,14 +657,14 @@ glColor3f(0.2f, 0.3f, 0.6f);
       glVertex2f(0.72f, -0.5f);
 
       glVertex2f(0.72f, -0.49f);
-      glVertex2f(0.45f, -0.4f);
+      glVertex2f(0.45f, -0.49f);
    glEnd();
     //... Block - 3* ...//End--------------
 
 
     /// Block - 4 ... //504
    glBegin(GL_QUADS);
-      glColor3ub(1.0f, 0.0f, 0.0f);
+      glColor3ub(60, 70, 180);
       glVertex2f(0.51f, -0.53f);
       glVertex2f(0.54f, -0.53f);
 
@@ -725,7 +724,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     /// Block - 9 ... //509
    glBegin(GL_QUADS);
-      glColor3ub(150, 250, 250);
+      glColor3ub(60, 70, 180);
       glVertex2f(0.64f, -0.43f);
       glVertex2f(0.67f, -0.43f);
 
@@ -845,7 +844,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     /// Block - 19 ... //519
    glBegin(GL_QUADS);
-      glColor3ub(150, 250, 250);
+      glColor3ub(60, 160, 160);
       glVertex2f(0.38f, -0.52f);
       glVertex2f(0.41f, -0.52f);
 
@@ -857,7 +856,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     /// Block - 20 ... //520
    glBegin(GL_QUADS);
-      glColor3ub(150, 250, 250);
+      glColor3ub(60, 160, 160);
       glVertex2f(0.43f, -0.52f);
       glVertex2f(0.45f, -0.52f);
 
@@ -867,7 +866,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
     //... Block - 20 ...//End--------------
 
 
-    /// Block - 21 ... //521
+    /// Block - 21 ... //521 //Flag - 1
    glBegin(GL_QUADS);
       glColor3ub(60, 70, 180);
       glVertex2f(0.36f, -0.42f);
@@ -879,7 +878,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
     //... Block - 21 ...//End--------------
 
 
-    /// Block - 22 ... //522
+    /// Block - 22 ... //522 //Flag - 2
    glBegin(GL_QUADS);
       glColor3ub(60, 70, 180);
       glVertex2f(0.34f, -0.43f);
@@ -891,9 +890,9 @@ glColor3f(0.2f, 0.3f, 0.6f);
     //... Block - 22 ...//End--------------
 
 
-    /// Block - 23 ... //523
+    /// Block - 23 ... //523 //Light - Back
    glBegin(GL_QUADS);
-      glColor3ub(250, 250, 150);
+      glColor3ub(255, 90, 50);
       glVertex2f(0.67f, -0.32f);
       glVertex2f(0.69f, -0.32f);
 
@@ -903,9 +902,9 @@ glColor3f(0.2f, 0.3f, 0.6f);
     //... Block - 23 ...//End--------------
 
 
-    /// Block - 24 ... //524
+    /// Block - 24 ... //524 //Light - Front
    glBegin(GL_QUADS);
-      glColor3ub(250, 250, 150);
+      glColor3ub(255, 90, 50);
       glVertex2f(0.70f, -0.33f);
       glVertex2f(0.71f, -0.33f);
 
@@ -915,6 +914,44 @@ glColor3f(0.2f, 0.3f, 0.6f);
     //... Block - 24 ...//End--------------
 
 
+///-----------------Stand Blocks-----------------///
+
+    /// Block - 25 ... //525 //Flag Stand
+   glBegin(GL_QUADS);
+      glColor3ub(78, 75, 75);
+      glVertex2f(0.38f, -0.53f);
+      glVertex2f(0.39f, -0.53f);
+
+      glVertex2f(0.39f, -0.38f);
+      glVertex2f(0.38f, -0.38f);
+   glEnd();
+    //... Block - 25 ...//End--------------
+
+
+    /// Block - 26 ... //526 //Light Stand - Back
+   glBegin(GL_QUADS);
+      glColor3ub(78, 75, 75);
+      glVertex2f(0.66f, -0.34f);
+      glVertex2f(0.67f, -0.34f);
+
+      glVertex2f(0.68f, -0.32f);
+      glVertex2f(0.67f, -0.32f);
+   glEnd();
+    //... Block - 26 ...//End--------------
+
+
+    /// Block - 27 ... //527 //Light Stand - Front
+   glBegin(GL_QUADS);
+      glColor3ub(78, 75, 75);
+      glVertex2f(0.70f, -0.34f);
+      glVertex2f(0.70f, -0.34f);
+
+      glVertex2f(0.70f, -0.33f);
+      glVertex2f(0.70f, -0.33f);
+   glEnd();
+    //... Block - 26 ...//End--------------
+
+
 ///----------------------------------------------------------------------------///
 
 
@@ -922,9 +959,28 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
 /*
     glBegin(GL_LINE);
-        glColor3ub(1.0f, 0.0f, 0.0f);
-        glVertex2f(0.36f, -0.57f);
+        glColor3ub(0, 0, 0);		//...Black Color
+        glVertex2i(0.36f, -0.57f);
 */
+
+
+/// ... Sample Code ... ///
+
+/*
+	void myDisplay(void)
+	{
+	glClear (GL_COLOR_BUFFER_BIT);
+	glColor3ub (128, 128, 128);
+	glPointSize(5.0);
+	glBegin(GL_POINTS);
+	glVertex2i(100, 50);
+	glVertex2i(110, 130);
+	glVertex2i(250, 130);
+	glEnd();
+	glFlush ();
+	}
+*/
+
 
 ///----------------------------------------------------------------------------///
 
@@ -932,11 +988,16 @@ glColor3f(0.2f, 0.3f, 0.6f);
     ///-------- Circles Section --------///
 
 /// RGB color Codes for Circles
-/// glColor3ub(200, 40, 90);
+/// glColor3ub(255, 90, 50);		//...Orange Color
 
-/// 200, 40, 90
-///--------------------------------------------------------------------- /// Boat section Done by DOSINA DOLON DOLA - 500 ///
 
+
+
+
+
+            /// Boat section END by DOSINA DOLON DOLA - 500 ///
+
+///----------------------------------------------------------------------------///
 
 
 
@@ -960,3 +1021,7 @@ int main(int argc, char** argv) { // program ekhan thekei start hoy
    glutMainLoop();
    return 0;
 }
+
+
+
+

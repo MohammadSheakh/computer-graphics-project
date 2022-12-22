@@ -219,3 +219,8 @@
 	<stddef.h>
 	<GL/gl.h>
 
+1671688065 source:c:\mohammad sheakh\aiub\8\graphics\next level train\computer-graphics-project\main.cpp
+	<cstdio>
+	<GL/gl.h>
+	<GL/glut.h>
+
