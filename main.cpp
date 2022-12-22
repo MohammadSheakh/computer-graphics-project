@@ -3,6 +3,9 @@
 #include <GL/gl.h>
 #include <GL/glut.h>
 
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
 
 GLfloat airPlanePosition = 0.0f;
 GLfloat airPlaneSpeed = 0.012f;
@@ -588,8 +591,8 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     glBegin(GL_QUADS);
       glColor3f(0.0f, 1.0f, 1.0f);
-      glVertex2f(-1.0f, -0.7f);
-      glVertex2f(1.0f, -0.7f);
+      glVertex2f(-1.0f, -0.66f);
+      glVertex2f(1.0f, -0.66f);
 
       glVertex2f(1.0f, -0.2f);
       glVertex2f(-1.0f, -0.2f);
@@ -1000,6 +1003,629 @@ glColor3f(0.2f, 0.3f, 0.6f);
 ///----------------------------------------------------------------------------///
 
 
+/// ----------------------- Train Section Started by Mohammad Bin Ab. Jalil Sheakh
+
+
+
+
+
+
+/// ----------- Tree Section of train Start By Mohammad...
+float x,y,i; /// ////////////////////////////////////////// For Tree circle variable
+   /// left tree ----------1
+   glPushMatrix();
+   glTranslatef(-0.97f,-0.80f,0.0f);
+glBegin(GL_TRIANGLE_FAN);
+
+glColor3ub(0,230,0);
+for(i=0;i<=2*3.14;i+=0.0001)
+{
+x=0.036*sin(i);
+y=0.036*cos(i);
+glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+
+/// left tree ----------2
+   glPushMatrix();
+   glTranslatef(-0.94f,-0.8f,0.0f);
+glBegin(GL_TRIANGLE_FAN);
+
+glColor3ub(0,230,0);
+for(i=0;i<=2*3.14;i+=0.0001)
+{
+x=0.046*sin(i);
+y=0.046*cos(i);
+glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+
+/// left tree ----------3
+   glPushMatrix();
+   glTranslatef(-0.88f,-0.79f,0.0f);
+glBegin(GL_TRIANGLE_FAN);
+
+glColor3ub(0,230,0);
+for(i=0;i<=2*3.14;i+=0.0001)
+{
+x=0.021*sin(i);
+y=0.021*cos(i);
+glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+
+/// left tree ----------4
+   glPushMatrix();
+   glTranslatef(-0.81f,-0.80f,0.0f);
+glBegin(GL_TRIANGLE_FAN);
+
+glColor3ub(0,230,0);
+for(i=0;i<=2*3.14;i+=0.0001)
+{
+x=0.0223*sin(i);
+y=0.0223*cos(i);
+glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+
+/// left tree ----------5
+   glPushMatrix();
+   glTranslatef(-0.75f,-0.81f,0.0f);
+glBegin(GL_TRIANGLE_FAN);
+
+glColor3ub(0,230,0);
+for(i=0;i<=2*3.14;i+=0.0001)
+{
+x=0.041*sin(i);
+y=0.041*cos(i);
+glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+
+
+/// left tree ----------6
+   glPushMatrix();
+   glTranslatef(-0.67f,-0.801f,0.0f);
+glBegin(GL_TRIANGLE_FAN);
+
+glColor3ub(0,230,0);
+for(i=0;i<=2*3.14;i+=0.0001)
+{
+x=0.066*sin(i);
+y=0.066*cos(i);
+glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+
+
+/// left tree ----------7
+   glPushMatrix();
+   glTranslatef(-0.57f,-0.867f,0.0f);
+glBegin(GL_TRIANGLE_FAN);
+
+glColor3ub(0,230,0);
+for(i=0;i<=2*3.14;i+=0.0001)
+{
+x=0.0102*sin(i);
+y=0.0102*cos(i);
+glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+
+
+/// left tree ----------8
+   glPushMatrix();
+   glTranslatef(-0.44f,-0.835f,0.0f);
+glBegin(GL_TRIANGLE_FAN);
+
+glColor3ub(0,230,0);
+for(i=0;i<=2*3.14;i+=0.0001)
+{
+x=0.091*sin(i);
+y=0.091*cos(i);
+glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+
+
+/// left tree ----------9
+   glPushMatrix();
+   glTranslatef(-0.34f,-0.8099f,0.0f);
+glBegin(GL_TRIANGLE_FAN);
+
+glColor3ub(0,230,0);
+for(i=0;i<=2*3.14;i+=0.0001)
+{
+x=0.049*sin(i);
+y=0.049*cos(i);
+glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+
+/// left tree ----------10
+   glPushMatrix();
+   glTranslatef(-0.27f,-0.81f,0.0f);
+glBegin(GL_TRIANGLE_FAN);
+
+glColor3ub(0,230,0);
+for(i=0;i<=2*3.14;i+=0.0001)
+{
+x=0.044*sin(i);
+y=0.044*cos(i);
+glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+
+
+/// left tree ----------11
+   glPushMatrix();
+   glTranslatef(-0.199f,-0.830f,0.0f);
+glBegin(GL_TRIANGLE_FAN);
+
+glColor3ub(0,230,0);
+for(i=0;i<=2*3.14;i+=0.0001)
+{
+x=0.0464*sin(i);
+y=0.0464*cos(i);
+glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+
+/// left tree ----------12
+   glPushMatrix();
+   glTranslatef(-0.199f,-0.830f,0.0f);
+glBegin(GL_TRIANGLE_FAN);
+
+glColor3ub(0,230,0);
+for(i=0;i<=2*3.14;i+=0.0001)
+{
+x=0.0464*sin(i);
+y=0.0464*cos(i);
+glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+
+/// left tree ----------13
+   glPushMatrix();
+   glTranslatef(-0.112f,-0.815f,0.0f);
+glBegin(GL_TRIANGLE_FAN);
+
+glColor3ub(0,230,0);
+for(i=0;i<=2*3.14;i+=0.0001)
+{
+x=0.0685*sin(i);
+y=0.0685*cos(i);
+glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+
+
+/// left tree ----------14
+   glPushMatrix();
+   glTranslatef(-0.0355f,-0.824f,0.0f);
+glBegin(GL_TRIANGLE_FAN);
+
+glColor3ub(0,230,0);
+for(i=0;i<=2*3.14;i+=0.0001)
+{
+x=0.0486*sin(i);
+y=0.0486*cos(i);
+glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+
+/// left tree ----------15
+   glPushMatrix();
+   glTranslatef(0.0532f,-0.8111f,0.0f);
+glBegin(GL_TRIANGLE_FAN);
+
+glColor3ub(0,230,0);
+for(i=0;i<=2*3.14;i+=0.0001)
+{
+x=0.05507*sin(i);
+y=0.05507*cos(i);
+glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+
+/// left tree ----------16
+   glPushMatrix();
+   glTranslatef(0.135f,-0.8231f,0.0f);
+glBegin(GL_TRIANGLE_FAN);
+
+glColor3ub(0,230,0);
+for(i=0;i<=2*3.14;i+=0.0001)
+{
+x=0.0378*sin(i);
+y=0.0378*cos(i);
+glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+
+/// left tree ----------17
+   glPushMatrix();
+   glTranslatef(0.214f,-0.8088f,0.0f);
+glBegin(GL_TRIANGLE_FAN);
+
+glColor3ub(0,230,0);
+for(i=0;i<=2*3.14;i+=0.0001)
+{
+x=0.0587*sin(i);
+y=0.0587*cos(i);
+glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+
+/// left tree ----------18
+   glPushMatrix();
+   glTranslatef(0.29582f,-0.8111f,0.0f);
+glBegin(GL_TRIANGLE_FAN);
+
+glColor3ub(0,230,0);
+for(i=0;i<=2*3.14;i+=0.0001)
+{
+x=0.0583*sin(i);
+y=0.0583*cos(i);
+glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+
+/// left tree ----------19
+   glPushMatrix();
+   glTranslatef(0.3893f,-0.82144f,0.0f);
+glBegin(GL_TRIANGLE_FAN);
+
+glColor3ub(0,230,0);
+for(i=0;i<=2*3.14;i+=0.0001)
+{
+x=0.085*sin(i);
+y=0.0855*cos(i);
+glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+
+/// left tree ----------20
+   glPushMatrix();
+   glTranslatef(0.46505f,-0.80907f,0.0f);
+glBegin(GL_TRIANGLE_FAN);
+
+glColor3ub(0,230,0);
+for(i=0;i<=2*3.14;i+=0.0001)
+{
+x=0.0416*sin(i);
+y=0.0416*cos(i);
+glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+
+/// left tree ----------21
+   glPushMatrix();
+   glTranslatef(0.5469f,-0.8507f,0.0f);
+glBegin(GL_TRIANGLE_FAN);
+
+glColor3ub(0,230,0);
+for(i=0;i<=2*3.14;i+=0.0001)
+{
+x=0.071720*sin(i);
+y=0.071720*cos(i);
+glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+
+/// left tree ----------22
+   glPushMatrix();
+   glTranslatef(0.6572f,-0.811182f,0.0f);
+glBegin(GL_TRIANGLE_FAN);
+
+glColor3ub(0,230,0);
+for(i=0;i<=2*3.14;i+=0.0001)
+{
+x=0.08085*sin(i);
+y=0.08085*cos(i);
+glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+
+
+/// left tree ----------23
+   glPushMatrix();
+   glTranslatef(0.769f,-0.810624f,0.0f);
+glBegin(GL_TRIANGLE_FAN);
+
+glColor3ub(0,230,0);
+for(i=0;i<=2*3.14;i+=0.0001)
+{
+x=0.0504*sin(i);
+y=0.0504*cos(i);
+glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+
+/// left tree ----------24
+   glPushMatrix();
+   glTranslatef(0.854f,-0.8111f,0.0f);
+glBegin(GL_TRIANGLE_FAN);
+
+glColor3ub(0,230,0);
+for(i=0;i<=2*3.14;i+=0.0001)
+{
+x=0.07750*sin(i);
+y=0.07750*cos(i);
+glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+
+/// left tree ----------25
+   glPushMatrix();
+   glTranslatef(0.968f,-0.819f,0.0f);
+glBegin(GL_TRIANGLE_FAN);
+
+glColor3ub(0,230,0);
+for(i=0;i<=2*3.14;i+=0.0001)
+{
+x=0.05023*sin(i);
+y=0.05023*cos(i);
+glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+
+
+
+/// ----------- Tree Section of train End By Mohammad...
+// Box for hide tree extra design
+    glBegin(GL_QUADS);
+    glColor3ub(18, 15, 15);
+      glVertex2f(-1.0f, -1.0f);
+      glVertex2f(1.0f, -1.0f);
+
+      glVertex2f(1.0f, -0.80f);  /// ei value change korte hobe
+      glVertex2f(-1.0f, -0.80f);  // age 85 chilo
+    glEnd();
+
+
+    // lower rail line
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(-1.0f, -0.96f);
+      glVertex2f(1.0f, -0.96f);
+
+      glVertex2f(1.0f, -0.93f);
+      glVertex2f(-1.0f, -0.93f);
+
+    glEnd();
+
+    // upper rail line
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(-1.0f, -0.87f);
+      glVertex2f(1.0f, -0.87f);
+
+      glVertex2f(1.0f, -0.85f); // upper line ......... er upor tree hobe
+      glVertex2f(-1.0f, -0.85f);
+
+    glEnd();
+
+
+
+
+    ///------------ rail line design left 1
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(-0.92f, -0.98f);
+      glVertex2f(-0.88f, -0.98f);
+
+      glVertex2f(-0.88f, -0.82f); // upper line ......... er upor tree hobe
+      glVertex2f(-0.92f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design left 2
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(-0.82f, -0.98f);
+      glVertex2f(-0.79f, -0.98f);
+
+      glVertex2f(-0.79f, -0.82f);
+      glVertex2f(-0.82f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design left 3
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(-0.72f, -0.98f);
+      glVertex2f(-0.69f, -0.98f);
+
+      glVertex2f(-0.69f, -0.82f);
+      glVertex2f(-0.72f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design left 4
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(-0.62f, -0.98f);
+      glVertex2f(-0.59f, -0.98f);
+
+      glVertex2f(-0.59f, -0.82f);
+      glVertex2f(-0.62f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design left 5
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(-0.52f, -0.98f);
+      glVertex2f(-0.49f, -0.98f);
+
+      glVertex2f(-0.49f, -0.82f);
+      glVertex2f(-0.52f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design left 5
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(-0.42f, -0.98f);
+      glVertex2f(-0.39f, -0.98f);
+
+      glVertex2f(-0.39f, -0.82f);
+      glVertex2f(-0.42f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design left 6
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(-0.32f, -0.98f);
+      glVertex2f(-0.29f, -0.98f);
+
+      glVertex2f(-0.29f, -0.82f);
+      glVertex2f(-0.32f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design left 6
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(-0.22f, -0.98f);
+      glVertex2f(-0.19f, -0.98f);
+
+      glVertex2f(-0.19f, -0.82f);
+      glVertex2f(-0.22f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design left 7
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(-0.12f, -0.98f);
+      glVertex2f(-0.09f, -0.98f);
+
+      glVertex2f(-0.09f, -0.82f);
+      glVertex2f(-0.12f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design middle 8
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(-0.02f, -0.98f);
+      glVertex2f(0.0f, -0.98f);
+
+      glVertex2f(0.0f, -0.82f);
+      glVertex2f(-0.02f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design right 9
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(0.12f, -0.98f);
+      glVertex2f(0.09f, -0.98f);
+
+      glVertex2f(0.09f, -0.82f);
+      glVertex2f(0.12f, -0.82f);
+    glEnd();
+
+
+    ///------------ rail line design right 10
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(0.22f, -0.98f);
+      glVertex2f(0.19f, -0.98f);
+
+      glVertex2f(0.19f, -0.82f);
+      glVertex2f(0.22f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design right 11
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(0.32f, -0.98f);
+      glVertex2f(0.29f, -0.98f);
+
+      glVertex2f(0.29f, -0.82f);
+      glVertex2f(0.32f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design right 12
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(0.42f, -0.98f);
+      glVertex2f(0.39f, -0.98f);
+
+      glVertex2f(0.39f, -0.82f);
+      glVertex2f(0.42f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design right 13
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(0.52f, -0.98f);
+      glVertex2f(0.49f, -0.98f);
+
+      glVertex2f(0.49f, -0.82f);
+      glVertex2f(0.52f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design right 14
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(0.62f, -0.98f);
+      glVertex2f(0.59f, -0.98f);
+
+      glVertex2f(0.59f, -0.82f);
+      glVertex2f(0.62f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design right 15
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(0.72f, -0.98f);
+      glVertex2f(0.69f, -0.98f);
+
+      glVertex2f(0.69f, -0.82f);
+      glVertex2f(0.72f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design right 16
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(0.82f, -0.98f);
+      glVertex2f(0.79f, -0.98f);
+
+      glVertex2f(0.79f, -0.82f);
+      glVertex2f(0.82f, -0.82f);
+    glEnd();
+
+    ///------------ rail line design right 17
+    glBegin(GL_QUADS);
+    glColor3ub(78, 75, 75);
+      glVertex2f(0.92f, -0.98f);
+      glVertex2f(0.89f, -0.98f);
+
+      glVertex2f(0.89f, -0.82f);
+      glVertex2f(0.92f, -0.82f);
+    glEnd();
+
+
+/// ------------------------------------- Train Section End -------------
 
 
    glFlush();
