@@ -237,9 +237,11 @@ case 'w':
     break;
 case 'n':
     nightStart2 = true;
+    dayStart1 = false;
     break;
 case 'd':
     dayStart1 = true;
+    nightStart2 = false;
     break;
 
 case 'r':
