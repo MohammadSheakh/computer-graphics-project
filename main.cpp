@@ -8,9 +8,10 @@
 
 #include<stdio.h>
 #include<stdlib.h>
+#include<iostream>
 #include<math.h>
 #define PI          3.141516
-
+using namespace std;
 
 float airPlanePosition = 0.0f;
 GLfloat airPlaneSpeed = 0.012f;
@@ -3421,6 +3422,21 @@ void init() { // initialization hoy
 
 
 int main(int argc, char** argv) { // program ekhan thekei start hoy
+
+
+    cout << endl << "/// /////////////// ///////////////////////-----Fall 22-23-----////////////////////////////////////////////////////////";
+    cout << endl << "/// ----------------=======================COMPUTER GRAPHICS PROJECT==================------------------------/////////";
+    cout << endl << " /// ----------------=====================SUPERVISED BY : MD. KISHOR MOROL SIR==================-------------////////"<<endl ;
+
+    cout << "Press D : To Forward the Train" << endl << endl;
+    cout << "Press A : To Backward the Train" << endl << endl;
+    cout << "Press S : To Stop the Train" << endl << endl;
+
+    cout << "Press R : For Rain " << endl << endl;
+    cout << "Press E : For Stop Rain" << endl << endl;
+
+    cout << "Press N : For Night " << endl << endl;
+    cout << "Press B : For Day" << endl << endl;
    glutInit(&argc, argv);
    //glutInitWindowSize(320, 320);
    glutInitWindowSize(1240, 840);
