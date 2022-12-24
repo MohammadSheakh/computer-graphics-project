@@ -2825,6 +2825,7 @@ glPopMatrix();
 ///----------///////////--TRAIN BODY PART START HERE--------------------/////////////////
 
 glPushMatrix(); // Full train Start
+/// ////////////////////////////////////////////////
 glTranslatef(trainPosition,0.0f, 0.0f);
     // Engine Three Tire Code here ....
     // Left Most Tire ...
@@ -3050,7 +3051,7 @@ glEnd();
 
     //left Tire ...
        glPushMatrix();
-   glTranslatef(-0.5f,-0.92131f,0.0f);
+   glTranslatef(-0.502f,-0.92131f,0.0f);
 glBegin(GL_TRIANGLE_FAN);
 
 glColor3ub(0,0,0);
@@ -3065,7 +3066,7 @@ glPopMatrix();
 
 //Right Tire ...
        glPushMatrix();
-   glTranslatef(-0.4f,-0.919f,0.0f);
+   glTranslatef(-0.412f,-0.919f,0.0f);
 glBegin(GL_TRIANGLE_FAN);
 
 glColor3ub(0,0,0);
@@ -3200,7 +3201,7 @@ glBegin(GL_QUADS);
 
         //left Tire ...
        glPushMatrix();
-   glTranslatef(-0.0576f,-0.92131f,0.0f);
+   glTranslatef(-0.27f,-0.92131f,0.0f);
 glBegin(GL_TRIANGLE_FAN);
 
 glColor3ub(0,0,0);
@@ -3215,7 +3216,7 @@ glPopMatrix();
 
 //Right Tire ...
        glPushMatrix();
-   glTranslatef(0.08014f,-0.919f,0.0f);
+   glTranslatef(-0.17f,-0.919f,0.0f);
 glBegin(GL_TRIANGLE_FAN);
 
 glColor3ub(0,0,0);
