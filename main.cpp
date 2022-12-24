@@ -1,3 +1,6 @@
+   /// /////////////// ///////////////////////-----Fall 22-23-----////////////////////////////////////////////////////////////
+   /// ----------------=======================COMPUTER GRAPHICS PROJECT==================------------------------/////////////
+   /// ----------------=======================SUPERVISED BY : MD. KISHOR MOROL SIR==================-------------/////////////
 #include<cstdio>
 
 #include <GL/gl.h>
@@ -5,26 +8,39 @@
 
 #include<stdio.h>
 #include<stdlib.h>
+#include<iostream>
 #include<math.h>
 #define PI          3.141516
-
+using namespace std;
 
 float airPlanePosition = 0.0f;
 GLfloat airPlaneSpeed = 0.012f;
 
 float boatPosition = 0.0f;
-GLfloat boatSpeed = 0.012f;
+GLfloat boatSpeed = 0.05f;
+
+
+
+float leftWavePosition = 0.0f;
+GLfloat leftWaveSpeed = 0.062f;
+
+float rightWavePosition = 0.0f;
+GLfloat rightWaveSpeed = 0.072f;
 
 float trainPosition = 0.0f;
 GLfloat trainSpeed = 0.02f;
 
 float leftCarPosition = 0.0f;
-GLfloat leftCarSpeed = 0.012f;
+GLfloat leftCarSpeed = 0.05f; //0.012
 
 float rightCarPosition = 0.0f;
-GLfloat rightCarSpeed = 0.012f;
+GLfloat rightCarSpeed = 0.05f;
 
+float cloud1Position = 0.0f;
+GLfloat cloud1Speed = 0.05f;
 
+float cloud2Position = 0.0f;
+GLfloat cloud2Speed = 0.07f;
 
 GLint rain = 1;
 float xrain = 10.0f;
@@ -39,17 +55,19 @@ bool nightStart2 = false;
 bool start3 = false;
 
 
-GLfloat mountainColor[3] = {0.0f,0.0f,90.0f};//"1.0f, 0.3f, 0.6f";
+GLfloat mountainColor[3] = {0.0f,0.0f,90.0f};
 GLfloat skyColor1[3] = {0.0752f, 0.839f, 0.940f};
 GLfloat skyColor2[3] = {0.279f, 0.854f, 0.930f};
 GLfloat skyColor3[3] = {0.534f, 0.901f, 0.890f};
 GLfloat skyColor4[3] = {0.754f, 0.901f, 0.920f};
-//GLfloat skyColor5[3] = {0.136f, 0.236f, 0.019f};
-//GLfloat skyColor6[3] = {0.136f, 0.236f, 0.019f};
-//GLfloat skyColor7[3] = {0.136f, 0.236f, 0.019f};
+GLfloat cloudColor1[3] = {0.259f, 0.255f, 0.520f};
+GLfloat cloudBoxColor1[3] = {0.0752f, 0.839f, 0.940f};
+
 
 GLfloat riverColor[3] = {0.0f,0.0f,90.0f};
-///---------------------------------------------------------------------Rain-Section---------////
+///-------------//////////--Rain-Section---------///////////............/////////////////
+///------------//////////-- MD. JAHID HASSAN-----//////////-------------/////////////////
+///----------////////////--ID:-  20-44311-3 ----///////////-------------/////////////////
 ///Rain Body Design///-5100
 
 
@@ -63,7 +81,7 @@ void rainFunction(){
     glVertex2f(-.85,1.9);glVertex2f(-.8,1.8);
     glVertex2f(-.55,1.9);glVertex2f(-.5,1.8);
     glVertex2f(-.25,1.9);glVertex2f(-.2,1.8);
-            glVertex2f(.05,1.9);glVertex2f(.1,1.8);
+    glVertex2f(.05,1.9);glVertex2f(.1,1.8);
             glVertex2f(.35,1.9);glVertex2f(.4,1.8);
             glVertex2f(.65,1.9);glVertex2f(.7,1.8);
             glVertex2f(.95,1.9);glVertex2f(1.0,1.8);
@@ -164,8 +182,15 @@ void rainFunction(){
         glEnd();
         glPopMatrix();
 }
+///----------////////////---Rain Section create End here----------------/////////////////
 
-///----------------------------------Create Sun/Create moon----------------////
+///----------///////////------------Create Sun/Create moon------------ -/////////////////
+///------------//////////-- MD. JAHID HASSAN-----//////////-------------/////////////////
+///----------////////////--ID:-  20-44311-3 ----///////////-------------/////////////////
+///----------///////////------------Create Sun/Create moon--------------/////////////////
+///------------//////////--  MOHAMMAD BIN AB. JALIL SHEAKH--------------/////////////////
+///----------////////////--ID:-  20-42132-1 ----///////////-------------/////////////////
+
 
 void Circle(GLfloat x, GLfloat y,GLfloat radius,int c1, int c2, int c3)
 {
@@ -208,8 +233,8 @@ void trainUpdate(int value) { // timer .. er kaj timer ba thread
 
     // timer use kore move korte parbo .. jekono object .. ba translation korte parbo ..
 
-    if(trainPosition < -1.8)//
-        trainPosition = 1.05f;
+    if(trainPosition < -1.0)//
+        trainPosition = 1.0f;
 
     trainPosition -= trainSpeed;
 
@@ -218,6 +243,119 @@ void trainUpdate(int value) { // timer .. er kaj timer ba thread
 
 	glutTimerFunc(100, trainUpdate, 0);
 }
+void rightCarUpdate(int value) { // timer .. er kaj timer ba thread
+    // ekta particular time por por function call hobe .. update nam er function call hobe ..
+
+    // timer use kore move korte parbo .. jekono object .. ba translation korte parbo ..
+
+    if(rightCarPosition > 1.7)//
+        rightCarPosition = -1.6f;
+
+    rightCarPosition += rightCarSpeed;
+
+	glutPostRedisplay();
+
+
+	glutTimerFunc(100, rightCarUpdate, 0);
+}
+
+
+void rightWaveUpdate(int value) { // timer .. er kaj timer ba thread
+    // ekta particular time por por function call hobe .. update nam er function call hobe ..
+
+    // timer use kore move korte parbo .. jekono object .. ba translation korte parbo ..
+
+    if(rightWavePosition > 1.0)//1.7
+        rightWavePosition = -1.0f; // -1.6
+
+    rightWavePosition += rightWaveSpeed;
+
+	glutPostRedisplay();
+
+
+	glutTimerFunc(100, rightWaveUpdate, 0);
+}
+
+void leftWaveUpdate(int value) { // timer .. er kaj timer ba thread
+    // ekta particular time por por function call hobe .. update nam er function call hobe ..
+
+    // timer use kore move korte parbo .. jekono object .. ba translation korte parbo ..
+
+    if(leftWavePosition < -1.8)//
+        leftWavePosition = 1.05f;
+
+    leftWavePosition -= leftWaveSpeed;
+
+	glutPostRedisplay();
+
+
+	glutTimerFunc(100, leftWaveUpdate, 0);
+}
+
+void leftCarUpdate(int value) { // timer .. er kaj timer ba thread
+    // ekta particular time por por function call hobe .. update nam er function call hobe ..
+
+    // timer use kore move korte parbo .. jekono object .. ba translation korte parbo ..
+
+    if(leftCarPosition < -1.7)//
+        leftCarPosition = 1.002f;
+
+    leftCarPosition -= leftCarSpeed;
+
+	glutPostRedisplay();
+
+
+	glutTimerFunc(100, leftCarUpdate, 0);
+}
+
+void boatUpdate(int value) { // timer .. er kaj timer ba thread
+    // ekta particular time por por function call hobe .. update nam er function call hobe ..
+
+    // timer use kore move korte parbo .. jekono object .. ba translation korte parbo ..
+
+    if(boatPosition > 1.7)//
+        boatPosition = -1.002f;
+
+    boatPosition += boatSpeed;
+
+	glutPostRedisplay();
+
+
+	glutTimerFunc(100, boatUpdate, 0);
+}
+
+void cloud1Update(int value) { // timer .. er kaj timer ba thread
+    // ekta particular time por por function call hobe .. update nam er function call hobe ..
+
+    // timer use kore move korte parbo .. jekono object .. ba translation korte parbo ..
+
+    if(cloud1Position > 0.4)//
+        cloud1Position = -0.7f;
+
+    cloud1Position += cloud1Speed;
+
+	glutPostRedisplay();
+
+
+	glutTimerFunc(100, cloud1Update, 0);
+}
+
+void cloud2Update(int value) { // timer .. er kaj timer ba thread
+    // ekta particular time por por function call hobe .. update nam er function call hobe ..
+
+    // timer use kore move korte parbo .. jekono object .. ba translation korte parbo ..
+
+    if(cloud2Position > 0.6)//
+        cloud2Position = -0.4f;
+
+    cloud2Position += cloud2Speed;
+
+	glutPostRedisplay();
+
+
+	glutTimerFunc(100, cloud2Update, 0);
+}
+
 
 
 
@@ -252,34 +390,39 @@ void handleMouse(int button, int state, int x, int y) {
 
 	glutPostRedisplay();
 }
-
+///------------------- Handle Keyboard press function------------///////
 void handleKeypress(unsigned char key, int x, int y) {
 
 	switch (key) {
 
 case 'a':
-    airPlaneSpeed -= 0.1f;
+    //Plane stop
+    airPlaneSpeed = 0.0f;
     break;
 case 'w':
+    //Plane speed increase
     airPlaneSpeed += 0.1f;
     break;
 case 'n':
+    //For night
     nightStart2 = true;
     dayStart1 = false;
     break;
 case 'd':
+    //For day
     dayStart1 = true;
     nightStart2 = false;
     break;
-
 case 'r':
+    //Rain start
      rain = 2;
     break;
 case 's':
+    //Rain stop
      rain = 1;
     break;
 case 't':
-    // train start
+    // train speed increase
      trainSpeed += 0.01f;
     break;
 case 'y':
@@ -300,10 +443,8 @@ glutPostRedisplay();
 void display() { // ja draw korbo .. ei function er moddhe korbo
    glClear(GL_COLOR_BUFFER_BIT);
    glLoadIdentity();
-
-
-   // Divider... //1
-   glBegin(GL_LINES);
+///-----------====== Divider for testing purpose=====----------------//////////////
+   /*glBegin(GL_LINES);
       glColor3f(1.0f, 0.0f, 0.0f);
       glVertex2f(-1.0f, 0.0f);
       glVertex2f( 1.0f, 0.0f);
@@ -311,10 +452,12 @@ void display() { // ja draw korbo .. ei function er moddhe korbo
       glVertex2f( 0.0f,  -1.0f);
       glVertex2f( 0.0f,  1.0f);
    glEnd();
- /// ////---------------------------sky-------------------------------Md. Jahid Hassan/////----//////
- /// /// //// ----------------------sky 7 layer block define here-----------------------//////////
+   */
 
 
+///------------//////////-- MD. JAHID HASSAN-----//////////-------------/////////////////
+///----------////////////--ID:-  20-44311-3 ----///////////-------------/////////////////
+///----------------------sky 4 layer block define here------------------/////////////////
  /// sky Layer 1///
  glBegin(GL_QUADS);
       glColor3fv(skyColor1);
@@ -352,16 +495,24 @@ void display() { // ja draw korbo .. ei function er moddhe korbo
  glEnd();
 
 
-   /// /////////////////////////////////////////////////////////////////////////
-   /// -------------------------------------------------------------------------
-      ///---------------------------------------------------Day/Night---Start------////
+/// ///////////////////////////////////////////////////////////////////// ////
+///-----------------------------SKY Layer END-----------------------------////
+/// ///////////////////////////////////////////////////////////////////// ////
+
+
+///------------//////////--  MOHAMMAD BIN AB. JALIL SHEAKH--------------/////////////////
+///----------////////////--ID:-  20-42132-1 ----///////////-------------/////////////////
+///------------//////////-- MD. JAHID HASSAN-----//////////-------------/////////////////
+///----------////////////--ID:-  20-44311-3 ----///////////-------------/////////////////
+/// /////////////////////////////////////////////////////////////////////////////////////
+///---------------------------------Day/Night---Start-------------------/////////////////
 glPushMatrix();
 glTranslatef(0.0, sun_move, 0.0);
 Circle(-0.35,0.75,0.08,247,247,73);
 glPopMatrix();
-///-----------------------------------------Sun/Moon-----Move condition----////
-///-----------------------------------------Light change function----------////
 
+///--------------------------------Sun/Moon-----Move condition----------/////////////////
+///--------------------------------Light change function----------------/////////////////
 if(start3==true)
 {
     //Moon();
@@ -373,13 +524,12 @@ glPushMatrix();
 
 if(nightStart2 == true)
 {
-    sun_move -= 0.05; /// -= 0.005
-    if(sun_move < -0.32) // -0.62
+    sun_move -= 0.05; ///
+    if(sun_move < -0.32) //
     {
-        //glDisable(GL_LIGHT0);
         nightStart2 = false;
         start3= true;
-     /// //// Set mountain color for night- test yellow color/// ///
+///---------------------Set mountain color for night---------------------///////////////////
      mountainColor[0] = 1.0f;
      mountainColor[1] = 1.0f;
      mountainColor[2] = 0.0f;
@@ -388,6 +538,16 @@ if(nightStart2 == true)
      skyColor1[0] = 0.166;
      skyColor1[1] = 0.203;
      skyColor1[2] = 0.920;
+     /// -------------------------cloud block night----------------------//////////////////////
+
+     cloudBoxColor1[0] = 0.166;
+     cloudBoxColor1[1] = 0.203;
+     cloudBoxColor1[2] = 0.920;
+     /// ///////////////////////////////////////////////////////////////////////////////////////
+     /// -------------------------cloud color block night-----------------//////////////////////
+     cloudColor1[0] = 0.497;
+     cloudColor1[1] = 0.515;
+     cloudColor1[2] = 0.710;
      /// sky block 2///////                     /////
      skyColor2[0] = 0.191;
      skyColor2[1] = 0.227;
@@ -401,6 +561,7 @@ if(nightStart2 == true)
      skyColor4[1] = 0.455;
      skyColor4[2] = 0.590;
 
+
     }
 
 }
@@ -408,23 +569,26 @@ if(nightStart2 == true)
 if(dayStart1 == true)
 {
     start3=false;
-    //glEnable(GL_LIGHT0);
     sun_move += 0.05;
     if(sun_move > -0.03) // 0.3
     {
-        //glEnable(GL_LIGHT0);
-        /// //// Set mountain color for Day- test yellow color/// ///
+/// ////--------------------- Set mountain color for Day----------------/// ///
      nightStart2 = true;
      start3 = false;
 
      mountainColor[0] = 0.0f;
      mountainColor[1] = 0.0f;
      mountainColor[2] = 90.0f;
-     /// //// Set Sky color for Day-test  color/////
-     ///  sky block 1///////                       ////
+/// //// Set Sky color for Day-test  color/////
+///  sky block 1///////                   /////
      skyColor1[0] = 0.0752;
      skyColor1[1] = 0.839;
      skyColor1[2] = 0.940;
+/// ////////////////////////////////////cloud block night//////////////////////
+
+     cloudBoxColor1[0] = 0.0752;
+     cloudBoxColor1[1] = 0.839;
+     cloudBoxColor1[2] = 0.940;
      /// sky block 2///////                     /////
      skyColor2[0] = 0.279;
      skyColor2[1] = 0.854;
@@ -445,10 +609,146 @@ if(dayStart1 == true)
 }
 
     ///
-   /// ///////////////////////////////////////
-   /// plane start /////////////////////////////////////////////////////////////// Md.Jahid Hassan-200/////////////////////////////////////////////
 
+///------------//////////-- MD. JAHID HASSAN-----//////////-------------/////////////////
+///----------////////////--ID:-  20-44311-3 ----///////////-------------/////////////////
+/// /////////////////////////////////////////////////////////////////////////////////////
+/// ---------------------------Cloud section----------------------------/////////////////
 
+/// ///////////////////////////// Cloud 1 /////////////////// ///////////////////////////
+glPushMatrix();
+glTranslatef(cloud1Position, 0.0f, 0.0f);
+///cloud 1- left-circle
+float x,y,i;
+glPushMatrix();
+
+    glTranslatef(-0.7f,0.9f,0.0f);
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3fv(cloudColor1);
+    for(i=0;i<=2*3.14;i+=0.0001)
+{
+     x=0.02912*sin(i);
+     y=0.02912*cos(i);
+     glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+   ///
+   ///
+///cloud 1- middle-circle
+   ///
+ glPushMatrix();
+    glTranslatef(-0.64f,0.9f,0.0f);
+    glBegin(GL_TRIANGLE_FAN);
+
+    glColor3fv(cloudColor1);
+    for(i=0;i<=2*3.14;i+=0.0001)
+{
+     x=0.04500*sin(i);
+     y=0.04500*cos(i);
+     glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+   ///
+   ///cloud 1- left-circle
+   ///
+glPushMatrix();
+    glTranslatef(-0.58f,0.9f,0.0f);
+    glBegin(GL_TRIANGLE_FAN);
+
+    glColor3fv(cloudColor1);
+    for(i=0;i<=2*3.14;i+=0.0001)
+{
+     x=0.03123*sin(i);
+     y=0.03123*cos(i);
+     glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+/// //////// //////////////////////////////////////
+/// cloud1 back quad////
+glBegin(GL_QUADS);
+      glColor3fv(cloudBoxColor1);
+      glVertex2f(-0.739f, 0.851f);
+      glVertex2f(-0.540f ,0.850f);
+      glVertex2f(-0.54f, 0.9f);
+      glVertex2f(-0.74f, 0.9f);
+   glEnd();
+
+   glPopMatrix();
+
+///------------//////////-- MD. JAHID HASSAN-----//////////-------------/////////////////
+///----------////////////--ID:-  20-44311-3 ----///////////-------------/////////////////
+/// /////////////////////////////////////////////////////////////////////////////////////
+/// ///////////////////////////// Cloud 2 /////////////////// ///////////////////////////
+glPushMatrix();
+glTranslatef(cloud2Position, 0.0f, 0.0f);
+///cloud 2- left-circle
+glPushMatrix();
+
+    glTranslatef(-0.41f,0.9f,0.0f);
+    glBegin(GL_TRIANGLE_FAN);
+
+    glColor3fv(cloudColor1);
+    for(i=0;i<=2*3.14;i+=0.0001)
+{
+     x=0.02745*sin(i);
+     y=0.02745*cos(i);
+     glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+///
+///cloud 2- middle-circle
+///
+ glPushMatrix();
+    glTranslatef(-0.358f,0.927f,0.0f);
+    glBegin(GL_TRIANGLE_FAN);
+
+    glColor3fv(cloudColor1);
+    for(i=0;i<=2*3.14;i+=0.0001)
+{
+     x=0.05039*sin(i);
+     y=0.05039*cos(i);
+     glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+   ///
+   ///cloud 2- left-circle
+   ///
+glPushMatrix();
+    glTranslatef(-0.270f,0.929f,0.0f);
+    glBegin(GL_TRIANGLE_FAN);
+
+    glColor3fv(cloudColor1);
+    for(i=0;i<=2*3.14;i+=0.0001)
+{
+     x=0.06058*sin(i);
+     y=0.06058*cos(i);
+     glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+/// //////// //////////////////////////////////////
+/// cloud2 back quad////
+glBegin(GL_QUADS);
+      glColor3fv(cloudBoxColor1);
+      glVertex2f(-0.470f, 0.849f);
+      glVertex2f(-0.2f ,0.85f);
+      glVertex2f(-0.2f, 0.9f);
+      glVertex2f(-0.47f, 0.9f);
+   glEnd();
+   glPopMatrix();
+/// ===============================Cloud ENDS============================================/////////////////
+/// //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/// /////////////////////////////////////////////////////////////////////////////////////
+///------------//////////-- MD. JAHID HASSAN-----//////////-------------/////////////////
+///----------////////////--ID:-  20-44311-3 ----///////////-------------/////////////////
+///-------------------------Plane SECTION start Here--------------------/////////////////
+/// /////////////////////////////////////////////////////////////////////////////////////
    ///Plane Main Body upper-201
    glPushMatrix();
    glTranslatef(airPlanePosition,0.0f, 0.0f);
@@ -470,6 +770,7 @@ if(dayStart1 == true)
       glVertex2f( 0.555, 0.865);
    glEnd();
     ///
+/// ///////////////----------------Plane Window--------/////////////// /////////////////
     ///**Plane Diver Window-203**///
     glBegin(GL_QUADS);
       glColor3f(0.890f, 0.503f, 0.489f);
@@ -479,11 +780,94 @@ if(dayStart1 == true)
       glVertex2f( 0.62, 0.90);
    glEnd();
    ///
-   ///**Plane body line-204
-   ///
 
+///**Plane Circle Window-204
    ///
-   ///**Plane Tail-205**///
+///Plane 1st window
+//float x,y,i;
+glPushMatrix();
+
+    glTranslatef(0.66f,0.885f,0.0f);
+    glBegin(GL_TRIANGLE_FAN);
+
+    glColor3ub(0.735f, 0.740f, 0.444f);
+    for(i=0;i<=2*3.14;i+=0.0001)
+{
+     x=0.00950*sin(i);
+     y=0.00950*cos(i);
+     glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+   ///
+   ///Palne 2nd window
+   ///
+ glPushMatrix();
+    glTranslatef(0.7f,0.885f,0.0f);
+    glBegin(GL_TRIANGLE_FAN);
+
+    glColor3ub(0.735f, 0.740f, 0.444f);
+    for(i=0;i<=2*3.14;i+=0.0001)
+{
+     x=0.00881*sin(i);
+     y=0.00881*cos(i);
+     glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+   ///
+   ///Plane 3rd window
+   ///
+glPushMatrix();
+    glTranslatef(0.74f,0.885f,0.0f);
+    glBegin(GL_TRIANGLE_FAN);
+
+    glColor3ub(0.735f, 0.740f, 0.444f);
+    for(i=0;i<=2*3.14;i+=0.0001)
+{
+     x=0.00858*sin(i);
+     y=0.00858*cos(i);
+     glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+   ///
+   ///Plane 4th window
+   ///
+glPushMatrix();
+    glTranslatef( 0.78f,0.885f,0.0f);
+    glBegin(GL_TRIANGLE_FAN);
+
+    glColor3ub(0.735f, 0.740f, 0.444f);
+    for(i=0;i<=2*3.14;i+=0.0001)
+{
+     x=0.00826*sin(i);
+     y=0.00826*cos(i);
+     glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+   ///
+   ///
+   ///Plane 5th window
+   ///
+glPushMatrix();
+    glTranslatef(0.82f,0.885f,0.0f);
+    glBegin(GL_TRIANGLE_FAN);
+
+    glColor3ub(0.735f, 0.740f, 0.444f);
+    for(i=0;i<=2*3.14;i+=0.0001)
+{
+     x=0.00883*sin(i);
+     y=0.00883*cos(i);
+     glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+   ///
+/// /////////////////////// /////////////////// ////////////////////// ///
+   ///
+   ///**Plane Tail-206**///
     glBegin(GL_QUADS);
       glColor3f(0.890f, 0.503f, 0.489f);
       glVertex2f(0.78, 0.91);
@@ -492,7 +876,7 @@ if(dayStart1 == true)
       glVertex2f(0.835, 0.95);
    glEnd();
    ///
-   ///**Plane 1st wing -206**///
+   ///**Plane 1st wing -207**///
    glBegin(GL_QUADS);
       glColor3f(0.79f,0.79f,0.79f);
       glVertex2f(0.68, 0.81);
@@ -502,7 +886,7 @@ if(dayStart1 == true)
    glEnd();
    ///
    ///
-   ///**Plane 2nd wing -207**///
+   ///**Plane 2nd wing -208**///
    glBegin(GL_QUADS);
       glColor3f(0.79f,0.79f,0.79f);
       glVertex2f(0.87, 0.825);
@@ -511,10 +895,16 @@ if(dayStart1 == true)
       glVertex2f(0.83, 0.865);
    glEnd();
    glPopMatrix();
+   glPopMatrix();
    ///
-    /// Plane End //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// //////// ///////// ///////// /////// ////////////////////////////////////
+///========================Plane ENDS here================================///
 
-   ///mountain start//////////////Mohammad Sheakh///////////////////////////
+
+/// ============================----------------=========================////////////////
+///------------//////////--  MOHAMMAD BIN AB. JALIL SHEAKH--------------/////////////////
+///----------////////////--ID:-  20-42132-1 ----///////////-------------/////////////////
+/// ============================----------------=========================////////////////
     // left mountain
     glBegin(GL_TRIANGLES);
     glColor3fv(mountainColor);
@@ -531,10 +921,12 @@ if(dayStart1 == true)
         glVertex2f(0.24, 0.8);
         glVertex2f(1.0, 0.24);
     glEnd();
-    ///mountain end////////////////MOhammad Sheakh////////////////////////
+/// ============================----------------=========================////////////////
+///------------//////////--  MOHAMMAD BIN AB. JALIL SHEAKH--------------/////////////////
+///----------////////////--ID:-  20-42132-1 ----///////////-------------/////////////////
+/// ========================---Mountain ENDs here---====================////////////////
 
-
-    /// Building section start by mohammad bin ab. jalil sheakh - 700
+/// EFAZ RAHMAN OPI WORK///
     // building - 1... //701
    glBegin(GL_QUADS);
       glColor3f(1.0f, 0.0f, 0.0f);
@@ -925,33 +1317,40 @@ glColor3f(0.2f, 0.3f, 0.6f);
       glVertex2f(0.4f, 0.54f);
 
    glEnd();
+   /// /////////////////////////////////////////
+   /// Building///code ENDS here////////////////
+   /// /////////////////////////////////////////
 
-   /// Building section end by mohammad bin ab. jalil sheakh - 700
-
-
-    /// Tree section start by mohammad bin ab. jalil sheakh - 700
+/// ============================----------------=========================////////////////
+///------------//////////--  MOHAMMAD BIN AB. JALIL SHEAKH--------------/////////////////
+///----------////////////--ID:-  20-42132-1 ----///////////-------------/////////////////
+/// ====================------TREE SECTION----------====================////////////////
    // Tree 9... //709
    glBegin(GL_TRIANGLES);
-       glColor3f(1.0f, 1.0f, 0.6f);
+       glColor3f(0.470f, 0.194f, 0.174f);
 
       glVertex2f(0.72f, 0.24f); //1
       glVertex2f(0.73f, 0.24f); //2
       glVertex2f(0.73f, 0.6f); //3
       ///////////////////////////
+       glColor3f(0.0909f, 0.850f, 0.0510f);
       glVertex2f(0.73f, 0.6f); //left leaf
       glVertex2f(0.8f, 0.56f);
       glVertex2f(0.8f, 0.64f);
       ///
+       glColor3f(0.0805f, 0.700f, 0.0700f);
       glVertex2f(0.73f, 0.6f); //left up leaf
       glVertex2f(0.78f, 0.66f);
       glVertex2f(0.74f, 0.68f);
 
       ///
+       glColor3f(0.124f, 0.710f, 0.114f);
       glVertex2f(0.73f, 0.6f); //left up leaf
       glVertex2f(0.73f, 0.69f);
       glVertex2f(0.68f, 0.68f);
 
       ///
+       glColor3f(0.116f, 0.630f, 0.107f);
       glVertex2f(0.73f, 0.6f); //left up leaf
       glVertex2f(0.68f, 0.66f);
       glVertex2f(0.64f, 0.56f);
@@ -969,22 +1368,498 @@ glColor3f(0.2f, 0.3f, 0.6f);
       glVertex2f(-1.0f, -0.2f);
    glEnd();
 
+///-------------------------- TREE SECTION ENDS HERE-------------------------///////
+///-//////////////////////////-----------------------///////////////////////////////
 
+/// ////////////////////////////////////////////////////////////////////////////////
+/// --------------------------ROAD PART START==============================/////////
+/// ///////////--------------SHAHIDUL ISLAM IFTE---------------------------/////////
+/// ///////////-------------ID: 20-42088-1 --------------------------------/////////
+glBegin(GL_QUADS);
+      glColor3f(0.188f, 0.188f, 0.188f);//1st point
+       glVertex2f(-1.0f, -0.25f);
+       glVertex2f(1.0f, -0.25f);
+      glVertex2f(1.0f, 0.24f);  //2nd point
+      glVertex2f(-1.0f, 0.24f);
+   glEnd();
+glBegin(GL_QUADS);
+      glColor3f(1.0f, 1.0f, 0.0f);//1st point
+       glVertex2f(-0.9f, 0.01);
+       glVertex2f(-1.0f, 0.01f);
+       glVertex2f(-1.0f, -0.01f);
+       glVertex2f(-0.9f, -0.01f);
+   glEnd();
 
-    ///------------------------------------------------------------------------------------ Tree section end by mohammad bin ab. jalil sheakh - 700
-///-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 1.0f, 0.0f);//1st point
+       glVertex2f(-0.8f, 0.01);
+       glVertex2f(-0.7f, 0.01f);
+       glVertex2f(-0.7f, -0.01f);
+       glVertex2f(-0.8, -0.01f);
+   glEnd();
 
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 1.0f, 0.0f);//1st point
+       glVertex2f(-0.6f, 0.01);
+       glVertex2f(-0.5f, 0.01f);
+       glVertex2f(-0.5f, -0.01f);
+       glVertex2f(-0.6f, -0.01f);
+   glEnd();
 
-// Dosina Dolon
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 1.0f, 0.0f);//1st point
+       glVertex2f(-0.4f, 0.01);
+       glVertex2f(-0.3f, 0.01f);
+       glVertex2f(-0.3f, -0.01f);
+       glVertex2f(-0.4f, -0.01f);
+   glEnd();
+
+    glBegin(GL_QUADS);
+      glColor3f(1.0f, 1.0f, 0.0f);//1st point
+       glVertex2f(-0.2f, 0.01);
+       glVertex2f(-0.1f, 0.01f);
+       glVertex2f(-0.1f, -0.01f);
+       glVertex2f(-0.2f, -0.01f);
+   glEnd();
+
+    glBegin(GL_QUADS);
+      glColor3f(1.0f, 1.0f, 0.0f);//1st point
+       glVertex2f(0.0f, 0.01);
+       glVertex2f(0.1f, 0.01f);
+       glVertex2f(0.1f, -0.01f);
+       glVertex2f(0.0f, -0.01f);
+   glEnd();
+ ///-/////////////////////////////////////////////Middle-Line--Left Ends & Right Begins //////////////////////////////////////////////////////////////////////////
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 1.0f, 0.0f);//1st point
+       glVertex2f(0.2f, 0.01);
+       glVertex2f(0.3f, 0.01f);
+       glVertex2f(0.3f, -0.01f);
+       glVertex2f(0.2f, -0.01f);
+   glEnd();
+
+glBegin(GL_QUADS);
+      glColor3f(1.0f, 1.0f, 0.0f);//1st point
+       glVertex2f(0.4f, 0.01);
+       glVertex2f(0.5f, 0.01f);
+       glVertex2f(0.5f, -0.01f);
+       glVertex2f(0.4f, -0.01f);
+   glEnd();
+
+glBegin(GL_QUADS);
+      glColor3f(1.0f, 1.0f, 0.0f);//1st point
+       glVertex2f(0.6f, 0.01);
+       glVertex2f(0.7f, 0.01f);
+       glVertex2f(0.7f, -0.01f);
+       glVertex2f(0.6f, -0.01f);
+   glEnd();
+
+glBegin(GL_QUADS);
+      glColor3f(1.0f, 1.0f, 0.0f);//1st point
+       glVertex2f(0.8f, 0.01);
+       glVertex2f(0.9f, 0.01f);
+       glVertex2f(0.9f, -0.01f);
+       glVertex2f(0.8f, -0.01f);
+   glEnd();
+
+    glBegin(GL_QUADS);
+      glColor3f(1.0f, 1.0f, 0.0f);//1st point
+       glVertex2f(0.95f, 0.01);
+       glVertex2f(1.0f, 0.01f);
+       glVertex2f(1.0f, -0.01f);
+       glVertex2f(0.95f, -0.01f);
+   glEnd();
+
+/// /////// ---------==========ROAD BLOCK END HERE=====-----------//////////////////
+/// ////////////////////////////////////////////////////////////////////////////////
+
 ///---------Boat Start---------///
 ///---------DOSINA DOLON DOLA---------///
+
+    ///------------- Car Section Start by DOSINA DOLON DOL - A1000 ------------- ///
+
+
+    /// Car - 1 Start --------------------------------------------------
+
+    /// Car Body - Polygon // 1001
+    glPushMatrix();
+    glTranslatef(rightCarPosition,0.0f, 0.0f);
+
+
+        glBegin(GL_POLYGON);
+        glColor3ub(255, 0, 0);
+
+      glVertex2f(-0.81f, 0.08f); //point-1
+      glVertex2f(-0.49f, 0.08f); //point-2
+      glVertex2f(-0.5f, 0.12f); //point-3
+      glVertex2f(-0.53f, 0.14f); //point-4
+      glVertex2f(-0.67f, 0.14f); //point-5
+
+      glVertex2f(-0.64f, 0.14f); //point-6
+      glVertex2f(-0.75f, 0.14); //point-7
+      glVertex2f(-0.76f, 0.17); //point-8
+      glVertex2f(-0.8f, 0.18f); //point-9
+      glVertex2f(-0.81f, 0.08f); //point-10
+      glEnd();
+
+
+      /// Back Window - Polygon // 1002
+
+        glBegin(GL_POLYGON);
+        glColor3ub(255, 200, 0);
+
+      glVertex2f(-0.75f, 0.14); //point-1
+      glVertex2f(-0.64f, 0.14f); //point-2
+      glVertex2f(-0.64f, 0.19f); //point-3
+      glVertex2f(-0.71f, 0.19f); //point-4
+      glVertex2f(-0.76f, 0.17f); //point-5
+      glVertex2f(-0.75f, 0.14f); //point-6
+      glEnd();
+
+
+      /// Front Window - Quad // 1003
+        glBegin(GL_QUADS);
+      glColor3ub(255, 255, 0);
+      glVertex2f(-0.67f, 0.14f); //point-1
+      glVertex2f(-0.58f, 0.14f); //point-2
+
+      glVertex2f(-0.62f, 0.19f); //point-3
+      glVertex2f(-0.67f, 0.19f); //point-4
+        glEnd();
+
+
+
+      /// Front Tire - Circle // 1004
+
+       //float x, y, i;
+
+       glPushMatrix();
+       glTranslatef(-0.58f, 0.08f,0.0f);
+       glBegin(GL_TRIANGLE_FAN);
+
+       glColor3ub(80, 40, 0);
+       for(i=0;i<=2*3.14;i+=0.0001)
+        {
+            x=0.0337*sin(i);
+            y=0.0337*cos(i);
+            glVertex2f(x,y);
+        }
+
+        glEnd();
+        glPopMatrix();
+
+
+        /// Back Tire - Circle // 1005
+
+             // float x, y, i;
+
+       glPushMatrix();
+       glTranslatef(-0.72f,0.08f,0.0f);    //circles er centre er x, y er value
+       glBegin(GL_TRIANGLE_FAN);
+
+       glColor3ub(80, 40, 0);
+       for(i=0;i<=2*3.14;i+=0.0001)
+        {
+            x=0.034*sin(i);     //circle er basardher value - point er ber kora value
+            y=0.034*cos(i);     //circle er basardher value - point er ber kora value
+            glVertex2f(x,y);
+        }
+
+        glEnd();
+        glPopMatrix();
+        glPopMatrix();
+
+
+
+        /// ---------------------- Car - 1 END ---------------------- ///
+
+
+
+        /// Car - 2 Start --------------------------------------------------
+
+        /// Car Body - Polygon // 1006
+        glPushMatrix();
+    glTranslatef(leftCarPosition,0.0f, 0.0f);
+
+
+        glBegin(GL_POLYGON);
+        glColor3ub(0, 72, 255);
+
+      glVertex2f(0.535f, -0.13f); //point-1
+      glVertex2f(0.84f, -0.13f); //point-2
+      glVertex2f(0.83f, -0.04f); //point-3
+      glVertex2f(0.80f, -0.05f); //point-4
+      glVertex2f(0.78f, -0.07f); //point-5
+
+      glVertex2f(0.71f, -0.07f); //point-6
+      glVertex2f(0.62f, -0.07f); //point-7
+      glVertex2f(0.57f, -0.07f); //point-8
+      glVertex2f(0.545f, -0.09f); //point-9
+      glVertex2f(0.535f, -0.13f); //point-10
+      glEnd();
+
+
+      /// Front Window - Quad // 1007
+   glBegin(GL_QUADS);
+      glColor3ub(255, 247, 0);
+      glVertex2f(0.62f, -0.07f); //point-1
+      glVertex2f(0.71f, -0.07f); //point-2
+
+      glVertex2f(0.71f, -0.02f); //point-3
+      glVertex2f(0.65f, -0.02f); //point-4
+   glEnd();
+
+
+      /// Back Window - Polygon // 1008
+
+        glBegin(GL_POLYGON);
+        glColor3ub(255, 200, 0);
+
+      glVertex2f(0.71f, -0.07f); //point-1
+      glVertex2f(0.78f, -0.07f); //point-2
+      glVertex2f(0.80f, -0.05f); //point-3
+      glVertex2f(0.77f, -0.02f); //point-4
+      glVertex2f(0.71f, -0.02f); //point-5
+      glVertex2f(0.71f, -0.07f); //point-6
+      glEnd();
+
+
+      /// Front Tire - Circle // 1009
+
+             // float x, y, i;
+
+       glPushMatrix();
+       glTranslatef(0.61f, -0.13f,0.0f);
+       glBegin(GL_TRIANGLE_FAN);
+
+       glColor3ub(51, 11, 6);
+       for(i=0;i<=2*3.14;i+=0.0001)
+        {
+            x=0.0337*sin(i);
+            y=0.0337*cos(i);
+            glVertex2f(x,y);
+        }
+
+        glEnd();
+        glPopMatrix();
+
+
+        /// Back Tire - Circle // 1010
+
+         // float x, y, i;
+
+       glPushMatrix();
+       glTranslatef(0.74f, -0.13f,0.0f);
+       glBegin(GL_TRIANGLE_FAN);
+
+       glColor3ub(80, 10, 0);
+       for(i=0;i<=2*3.14;i+=0.0001)
+        {
+            x=0.034*sin(i);
+            y=0.034*cos(i);
+            glVertex2f(x,y);
+        }
+
+        glEnd();
+        glPopMatrix();
+glPopMatrix();
+
+        /// ---------------------- Car - 2 END -------------------------------
+
+
+/// Car Section END by DOSINA DOLON DOLA (ID: 20-42034-1)///
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            /// River and Wave section start by DOSINA DOLON DOLA - 5000 ///
+
+///-----------------------------------------------------------------------------------------///
+
+
+    ///----------- River Section Start -----------/// -------- Dosina Dolon Dola --------
+
+
+    /// River Blue Water Block Start ----------
+glBegin(GL_QUADS);
+      glColor3ub(0, 220, 255);
+      glVertex2f(-1.0f, -0.66f);
+      glVertex2f(1.0f, -0.66f);
+
+      glVertex2f(1.0f, -0.25f);
+      glVertex2f(-1.0f, -0.25f);
+   glEnd();
+    // River Blue Water Block End ----------
+
+
+    ///---------------- Wave Section Start ----------------/// -------- Dosina Dolon Dola --------
+
+
+
+    ///Wave Bottom Line Codes Are Written After Boat Code  -------------------
+    /////////////////-------------/////////////--------------/////////////////
+
+
+///Wave Upper Line Start -------------------
+glPushMatrix();
+    glTranslatef(rightWavePosition,0.0f, 0.0f);
+
+    ///Left Wave //------------ //5001
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(190, 220, 220);
+
+        glVertex2f(-0.6, -0.3);
+        glVertex2f(-0.4, -0.3);
+        glVertex2f(-0.5, -0.275);
+    glEnd();
+
+
+
+    ///Right Wave //------------ //5003
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(190, 220, 220);
+
+        glVertex2f(0.6, -0.3);
+        glVertex2f(0.8, -0.3);
+        glVertex2f(0.7, -0.275);
+    glEnd();
+
+    //Wave Upper Line END -------------------
+
+
+    ///Wave Second Upper Line Start -------------------
+
+    ///Left Wave //------------ //5004
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(190, 220, 220);
+
+        glVertex2f(-0.9, -0.4);
+        glVertex2f(-0.7, -0.4);
+        glVertex2f(-0.8, -0.375);
+    glEnd();
+
+
+
+    ///Right Wave //------------ //5006
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(190, 220, 220);
+
+        glVertex2f(0.3, -0.4);
+        glVertex2f(0.5, -0.4);
+        glVertex2f(0.4, -0.375);
+    glEnd();
+
+    //Wave Second Upper Line END -------------------
+
+
+    ///Wave Upper Bottom Line Start -------------------
+
+    ///Left Wave //------------ //5007
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(190, 220, 220);
+
+        glVertex2f(-0.5, -0.5);
+        glVertex2f(-0.3, -0.5);
+        glVertex2f(-0.4, -0.475);
+    glEnd();
+
+
+
+    ///Right Wave //------------ //5009
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(190, 220, 220);
+
+        glVertex2f(0.7, -0.5);
+        glVertex2f(0.9, -0.5);
+        glVertex2f(0.8, -0.475);
+    glEnd();
+
+    //Wave Upper Bottom Line END -------------------
+
+///Wave Bottom Line Start -------------------
+
+    ///Left Wave //------------ //5010
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(190, 220, 220);
+
+        glVertex2f(-0.8, -0.6);
+        glVertex2f(-0.6, -0.6);
+        glVertex2f(-0.7, -0.575);
+    glEnd();
+
+    ///Middle Wave //------------ //5011
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(190, 220, 220);
+
+        glVertex2f(-0.3, -0.6);
+        glVertex2f(-0.1, -0.6);
+        glVertex2f(-0.2, -0.575);
+    glEnd();
+
+    ///Right Wave //------------ //5012
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(190, 220, 220);
+
+        glVertex2f(0.3, -0.6);
+        glVertex2f(0.5, -0.6);
+        glVertex2f(0.4, -0.575);
+    glEnd();
+
+    //Wave Bottom Line END -------------------
+
+glPopMatrix();
+
+
+glPushMatrix();
+glTranslatef(leftWavePosition,0.0f, 0.0f);
+///Middle Wave //------------ //5002
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(190, 220, 220);
+
+        glVertex2f(0.0, -0.3);
+        glVertex2f(0.2, -0.3);
+        glVertex2f(0.1, -0.275);
+    glEnd();
+
+    ///Middle Wave //------------ //5005
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(190, 220, 220);
+
+        glVertex2f(-0.3, -0.4);
+        glVertex2f(-0.1, -0.4);
+        glVertex2f(-0.2, -0.375);
+    glEnd();
+
+    ///Middle Wave //------------ //5008
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(190, 220, 220);
+
+        glVertex2f(0.1, -0.5);
+        glVertex2f(0.3, -0.5);
+        glVertex2f(0.2, -0.475);
+    glEnd();
+glPopMatrix();
+    ///---------------- Wave Triangle Section END ----------------/// -------- Dosina Dolon Dola -------- //---- 5000
+
+
 
 
             /// Boat section start by DOSINA DOLON DOLA - 500 ///
 
 ///----------------------------------------------------------------------------///
 
-
+glPushMatrix();
+    glTranslatef(boatPosition,0.0f, 0.0f);
     ///-------- Quad Blocks Section --------///
 
 
@@ -1364,8 +2239,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 /// RGB color Codes for Circles
 /// glColor3ub(255, 90, 50);		//...Orange Color
 
-
-
+glPopMatrix();
 
 
 
@@ -1381,8 +2255,10 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
 
 
-/// ----------- Tree Section of train Start By Mohammad...
-float x,y,i; /// ////////////////////////////////////////// For Tree circle variable
+/// ============================----------------=========================////////////////
+///------------//////////--  MOHAMMAD BIN AB. JALIL SHEAKH--------------/////////////////
+///----------////////////--ID:-  20-42132-1 ----///////////-------------/////////////////
+/// ====================--------GRASS SECTION--------===================////////////////
    /// left tree ----------1
    glPushMatrix();
    glTranslatef(-0.97f,-0.80f,0.0f);
@@ -1752,10 +2628,6 @@ glPopMatrix();
 
 /// left tree ----------25
 
-
-
-
-/// ----------- Tree Section of train End By Mohammad...
 // Box for hide tree extra design
     glBegin(GL_QUADS);
     glColor3ub(18, 15, 15);
@@ -1765,7 +2637,12 @@ glPopMatrix();
       glVertex2f(1.0f, -0.80f);  /// ei value change korte hobe
       glVertex2f(-1.0f, -0.80f);  // age 85 chilo
     glEnd();
+/// =====================Grass ENDS here=================================////////////////
 
+/// ============================----------------=========================////////////////
+///------------//////////--  MOHAMMAD BIN AB. JALIL SHEAKH--------------/////////////////
+///----------////////////--ID:-  20-42132-1 ----///////////-------------/////////////////
+/// ====================------RAIL LINE SECTION-------==================////////////////
 
 
 
@@ -1984,11 +2861,19 @@ glPopMatrix();
       glVertex2f(0.89f, -0.82f);
       glVertex2f(0.92f, -0.82f);
     glEnd();
-    /// Train Line Done ------------------------------****************
+/// ----------------------TRAIN LINE ENDS HERE------------------------////
 
 
-    /// Train Body Start Here --------------------------------------
+///----------///////////-----------TRAIN BODY PART----------------------/////////////////
+///------------//////////--  MOHAMMAD BIN AB. JALIL SHEAKH--------------/////////////////
+///----------////////////--ID:-  20-42132-1 ----///////////-------------/////////////////
+/// /////////////////////////////////////////////////////////////////////////////////////
+///------------//////////-- MD. JAHID HASSAN-----//////////-------------/////////////////
+///----------////////////--ID:-  20-44311-3 ----///////////-------------/////////////////
+///----------///////////--TRAIN BODY PART START HERE--------------------/////////////////
+
 glPushMatrix(); // Full train Start
+/// ////////////////////////////////////////////////
 glTranslatef(trainPosition,0.0f, 0.0f);
     // Engine Three Tire Code here ....
     // Left Most Tire ...
@@ -2023,7 +2908,7 @@ glPopMatrix();
 
 //Right Tire ...
        glPushMatrix();
-   glTranslatef(-0.530f,-0.919f,0.0f);
+   glTranslatef(-0.620f,-0.919f,0.0f);
 glBegin(GL_TRIANGLE_FAN);
 
 glColor3ub(0,0,0);
@@ -2035,58 +2920,186 @@ glVertex2f(x,y);
 }
 glEnd();
 glPopMatrix();
+/// ////////////////////////////////////////////////////////////////////////////////
+/// ---------------------------Engine Starts -------------------------//////////////
+/// ////////////////////////////////////////////////////////////////////////////////
+///Main body of engine round shape
+glBegin(GL_POLYGON);
+        glColor3ub(255, 25, 20);
+        // engine big
+      glVertex2f(-0.84f, -0.88f); //1
+      glVertex2f(-0.68f, -0.88f); //2
+      glVertex2f(-0.68f, -0.78f);//3
+      glVertex2f(-0.7f, -0.78f);
+      glVertex2f(-0.7036, -0.7718);
+      glVertex2f(-0.7105, -0.7651);
+      glVertex2f(-0.72f, -0.76f); // 4
+      glVertex2f(-0.832f, -0.76f);
+      glVertex2f(-0.845, -0.772); // 7
+      glVertex2f(-0.85, -0.8); //8
+      glVertex2f(-0.85, -0.85); //9
+    glEnd();
 
-    /// Engine Starts --------------------------------------------------
-        glBegin(GL_POLYGON);
+    /// /////////// engine quad body cover ///////////////
+glBegin(GL_POLYGON);
         glColor3ub(18, 255, 200);
-        // Chimni
-      glVertex2f(-0.78f, -0.82f); //1
-      glVertex2f(-0.72f, -0.82f); //2
-      glVertex2f(-0.72f, -0.76f); // 3
-      glVertex2f(-0.7f, -0.76f); //4
-      glVertex2f(-0.7f, -0.74f); // 5
-
-      glVertex2f(-0.8f, -0.74f); //6
-      glVertex2f(-0.8f, -0.76); // 7
-      glVertex2f(-0.78f, -0.76); //8
-      glVertex2f(-0.78f, -0.82f); //9
-      glEnd();
-
-    glBegin(GL_QUADS);
-    glColor3ub(255, 255, 0);
-      // Engine First Part
-
-        glVertex2f(-0.814f, -0.931f);
-        glVertex2f(-0.637f, -0.931f);
-
-        glVertex2f(-0.638f, -0.817f);
-        glVertex2f(-0.814f, -0.820f);
+        // engine big
+      glVertex2f(-0.8f, -0.86f); //1
+      glVertex2f(-0.7f, -0.86f); //2
+      glVertex2f(-0.7, -0.78);//3
+      glVertex2f(-0.7036, -0.7718);//4
+      glVertex2f(-0.7105, -0.7651);//5
+      glVertex2f(-0.72f, -0.76f); // 4
+      glVertex2f(-0.805f, -0.76f);//6
+      glVertex2f(-0.8100, -0.7639); //7
+      glVertex2f(-0.815, -0.77); //8
+      glVertex2f(-0.82, -0.78);//9
+      glVertex2f(-0.82, -0.84);//10
+      glVertex2f(-0.8158, -0.8481);//11
+      glVertex2f(-0.8099, -0.8554);//12
 
 
-      // Engine Second Part
-      glColor3ub(255, 0, 0);
-      glVertex2f(-0.637f, -0.931f);
-      glVertex2f(-0.462f, -0.930f);
-
-      glVertex2f(-0.460f, -0.709f);
-      glVertex2f(-0.639f, -0.711f);
-
-      // Engine Second Part Window
-      glColor3ub(255, 255, 200);
-      glVertex2f(-0.607f, -0.817f);
-      glVertex2f(-0.490f, -0.819f);
-
-        glVertex2f(-0.490f, -0.731f);
-        glVertex2f(-0.607f, -0.731f);
 
     glEnd();
-    /// Engine Ends ------------------------
+/// /////////// //////////////////
+/// ////////// ////////////////// chinmni ///////////////
+glPushMatrix();
+/// lower 1st quad
+glBegin(GL_QUADS);
+      glColor3ub(255, 255, 200);
+      glVertex2f(-0.81, -0.76); //
+      glVertex2f(-0.79, -0.76); //
+      glVertex2f(-0.79, -0.74); //
+      glVertex2f(-0.81, -0.74); //
+      glEnd();
+/// ///////// //////////////////// //////////////
+
+/// Middle quad
+glBegin(GL_QUADS);
+      glColor3ub(255, 255, 200);
+
+      glVertex2f(-0.83, -0.74); //
+      glVertex2f(-0.77, -0.74); //
+      glVertex2f(-0.77, -0.72); //
+      glVertex2f(-0.83, -0.72); //
+      glEnd();
+/// ///////// //////////////////// //////////////
+
+/// Upper 1st quad
+glBegin(GL_QUADS);
+      glColor3ub(255, 255, 200);
+
+      glVertex2f(-0.83, -0.72); //
+      glVertex2f(-0.77, -0.72); //
+      glVertex2f(-0.79, -0.71); //
+      glVertex2f(-0.81, -0.71); //
+      glEnd();
+
+    glPopMatrix();
+/// ///////// //////////////////// //////////////
+
+///// extension for tire hide/////////////////////////////
+    glBegin(GL_QUADS);
+    glColor3ub(0, 255, 255);
+        //engine body lower part
+      glVertex2f(-0.84, -0.9); //
+      glVertex2f(-0.59, -0.9); //2
+      glVertex2f(-0.59, -0.88); ///
+      glVertex2f(-0.84, -0.88); ///8
+
+      glEnd();
+      /// //////////////// ///////////////
+      glBegin(GL_QUADS);
+    glColor3ub(0, 255, 255);
+        //engine body lower part 2
+      glVertex2f(-0.87, -0.9); //
+      glVertex2f(-0.84, -0.9); //2
+      glVertex2f(-0.84, -0.88); ///
+      glVertex2f(-0.86, -0.88); ///8
+
+      glEnd();
+      /// //////////////////////////////////////////
+      glBegin(GL_QUADS);
+    glColor3ub(0, 255, 255);
+        //engine body lower part
+      glVertex2f(-0.87, -0.93); //
+      glVertex2f(-0.85, -0.93); //2
+      glVertex2f(-0.85, -0.9); ///
+      glVertex2f(-0.87, -0.9); ///8
+
+      glEnd();
+      /// //////////////// ///////////////
+      /// connector engine with body 1///
+      ///left quad
+      glBegin(GL_QUADS);
+    glColor3ub(0, 255, 255);
+
+      glVertex2f(-0.59, -0.9); //
+      glVertex2f(-0.58, -0.88); //2
+      glVertex2f(-0.57, -0.86); ///
+      glVertex2f(-0.59, -0.86); ///8
+
+      glEnd();
+      ///right quad
+
+      glBegin(GL_QUADS);
+    glColor3ub(0, 255, 255);
+
+      glVertex2f(-0.585, -0.89); //
+      glVertex2f(-0.55, -0.89); //
+      glVertex2f(-0.55, -0.87); ///
+      glVertex2f(-0.575, -0.87); ///8
+
+      glEnd();
+
+      /// ////////////// //////////////////////////////// //////////
+ // engine along room
+glBegin(GL_POLYGON);
+        glColor3ub(255, 25, 20);
+
+      glVertex2f(-0.68, -0.88); //1
+      glVertex2f(-0.59, -0.88); //2
+      glVertex2f(-0.59, -0.7); //3
+      glVertex2f(-0.68, -0.7); //
+
+      glEnd();
+
+glBegin(GL_QUADS);
+        glColor3ub(18, 255, 200);
+        // engine along room chimni quad
+      glVertex2f(-0.68f, -0.7f); //1
+      glVertex2f(-0.59f, -0.7f); //2
+      glVertex2f(-0.59f, -0.69f); //3
+      glVertex2f(-0.69f, -0.69f); // 4
+
+      glEnd();
+      ///
+glBegin(GL_QUADS);
+        glColor3ub(18, 255, 200);
+        // engine along room chimni quad
+      glVertex2f(-0.69f, -0.69f); //1
+      glVertex2f(-0.59f, -0.69f); //2
+      glVertex2f(-0.59f, -0.68f); //3
+      glVertex2f(-0.68f, -0.68f); // 4
+
+      glEnd();
+///  ///// ///////////// //////
+
+
+glBegin(GL_QUADS);
+        glColor3ub(100, 25, 255);
+        // engine along room window
+      glVertex2f(-0.67f, -0.78f); //1
+      glVertex2f(-0.6f, -0.78f); //2
+      glVertex2f(-0.6f, -0.72f); //3
+      glVertex2f(-0.67f, -0.72f); // 4
+glEnd();
 
     /// 1st Train Body Starts -------------------------------------------
 
     //left Tire ...
        glPushMatrix();
-   glTranslatef(-0.3499f,-0.92131f,0.0f);
+   glTranslatef(-0.502f,-0.92131f,0.0f);
 glBegin(GL_TRIANGLE_FAN);
 
 glColor3ub(0,0,0);
@@ -2101,7 +3114,7 @@ glPopMatrix();
 
 //Right Tire ...
        glPushMatrix();
-   glTranslatef(-0.2139f,-0.919f,0.0f);
+   glTranslatef(-0.412f,-0.919f,0.0f);
 glBegin(GL_TRIANGLE_FAN);
 
 glColor3ub(0,0,0);
@@ -2114,25 +3127,121 @@ glVertex2f(x,y);
 glEnd();
 glPopMatrix();
 
-    glBegin(GL_QUADS);
+glBegin(GL_QUADS);
     glColor3ub(255, 255, 0);
       // 1st body Part
       glColor3ub(255, 0, 0);
-      glVertex2f(-0.399f, -0.931f);
-      glVertex2f(-0.170f, -0.930f);
+      glVertex2f(-0.55f, -0.89f);
+      glVertex2f(-0.36f, -0.89f);
 
-      glVertex2f(-0.170f, -0.709f);
-      glVertex2f(-0.399f, -0.711f);
+      glVertex2f(-0.36f, -0.72f);
+      glVertex2f(-0.55f, -0.72f);
+     glEnd();
+     glBegin(GL_QUADS);
 
-      // 1st body Part Window
+
+      // 1st body Part Window 1
       glColor3ub(255, 255, 200);
-      glVertex2f(-0.370f, -0.817f);
-      glVertex2f(-0.199f, -0.819f);
+      glVertex2f(-0.54f, -0.79f);
+      glVertex2f(-0.49f, -0.79f);
 
-        glVertex2f(-0.199f, -0.731f);
-        glVertex2f(-0.370f, -0.731f);
+        glVertex2f(-0.49f, -0.74f);
+        glVertex2f(-0.54f, -0.74f);
 
     glEnd();
+      // 1st body Part Window 2
+      glBegin(GL_QUADS);
+      glColor3ub(255, 255, 200);
+      glVertex2f(-0.48f, -0.79f);
+      glVertex2f(-0.43f, -0.79f);
+
+        glVertex2f(-0.43f, -0.74f);
+        glVertex2f(-0.48f, -0.74f);
+
+    glEnd();
+      // 1st body Part Window 3
+      glBegin(GL_QUADS);
+      glColor3ub(255, 255, 200);
+      glVertex2f(-0.42f, -0.79f);
+      glVertex2f(-0.37f, -0.79f);
+
+        glVertex2f(-0.37f, -0.74f);
+        glVertex2f(-0.42f, -0.74f);
+
+    glEnd();
+// 1st body Part lower quad
+      glBegin(GL_QUADS);
+      glColor3ub(255, 255, 200);
+      glVertex2f(-0.56f, -0.9f);
+      glVertex2f(-0.35f, -0.9f);
+
+        glVertex2f(-0.36f, -0.89f);
+        glVertex2f(-0.55f, -0.89f);
+
+    glEnd();
+
+    // 1st body wheel left lower quad
+      glBegin(GL_QUADS);
+      glColor3ub(255, 255, 200);
+      glVertex2f(-0.54f, -0.92f);
+      glVertex2f(-0.47f, -0.92f);
+
+        glVertex2f(-0.46f, -0.9f);
+        glVertex2f(-0.55f, -0.9f);
+
+    glEnd();
+    // 1st body wheel right lower quad
+      glBegin(GL_QUADS);
+      glColor3ub(255, 255, 200);
+      glVertex2f(-0.44f, -0.92f);
+      glVertex2f(-0.38f, -0.92f);
+
+        glVertex2f(-0.37, -0.9);
+        glVertex2f(-0.45f, -0.9f);
+
+    glEnd();
+
+
+
+    /// 1st train Body Ends ------------------------
+
+    /// train connector with 2nd body quads///////////////
+    ///quad left
+    glBegin(GL_QUADS);
+      glColor3ub(255, 255, 200);
+      glVertex2f(-0.36f, -0.89f);
+      glVertex2f(-0.34f, -0.89f);
+
+        glVertex2f(-0.34f, -0.87f);
+        glVertex2f(-0.36f, -0.87f);
+
+    glEnd();
+    ///
+    ///quad right
+    glBegin(GL_QUADS);
+      glColor3ub(255, 255, 200);
+      glVertex2f(-0.34f, -0.89f);
+      glVertex2f(-0.32f, -0.89f);
+
+        glVertex2f(-0.32f, -0.87f);
+        glVertex2f(-0.34f, -0.87f);
+
+    glEnd();
+    ///
+    ///quad upper
+    glBegin(GL_QUADS);
+      glColor3ub(255, 255, 200);
+      glVertex2f(-0.35f, -0.87f);
+      glVertex2f(-0.33f, -0.87f);
+
+        glVertex2f(-0.33f, -0.86f);
+        glVertex2f(-0.35f, -0.86f);
+
+    glEnd();
+    /// //////////////////////// ///// /////
+    ////////////////////////////////////////
+    /// ////////////////////////////// /////
+
 
     /// 1st train Body Ends ------------------------
 
@@ -2140,7 +3249,7 @@ glPopMatrix();
 
         //left Tire ...
        glPushMatrix();
-   glTranslatef(-0.0576f,-0.92131f,0.0f);
+   glTranslatef(-0.27f,-0.92131f,0.0f);
 glBegin(GL_TRIANGLE_FAN);
 
 glColor3ub(0,0,0);
@@ -2155,7 +3264,7 @@ glPopMatrix();
 
 //Right Tire ...
        glPushMatrix();
-   glTranslatef(0.08014f,-0.919f,0.0f);
+   glTranslatef(-0.17f,-0.919f,0.0f);
 glBegin(GL_TRIANGLE_FAN);
 
 glColor3ub(0,0,0);
@@ -2169,27 +3278,85 @@ glEnd();
 glPopMatrix();
 
 
+
+    /// 2nd  Train Body Start Here --------------------------------------
+    /// ////// 2nd /// /// /// ///
+    glPushMatrix();
     glBegin(GL_QUADS);
     glColor3ub(255, 255, 0);
-      // 1st body Part
+      // 2nd body Part
       glColor3ub(255, 0, 0);
-      glVertex2f(-0.108f, -0.931f);
-      glVertex2f(0.120f, -0.930f);
+      glVertex2f(-0.32f, -0.89f);
+      glVertex2f(-0.13f, -0.89f);
 
-      glVertex2f(0.120f, -0.709f);
-      glVertex2f(-0.108f, -0.711f);
-
-      // 1st body Part Window
+      glVertex2f(-0.13f, -0.72f);
+      glVertex2f(-0.32f, -0.72f);
+     glEnd();
+     glBegin(GL_QUADS);
+      // 2nd body Part Window 1
       glColor3ub(255, 255, 200);
-      glVertex2f(-0.080f, -0.817f);
-      glVertex2f(0.090f, -0.819f);
+      glVertex2f(-0.31f, -0.79f);
+      glVertex2f(-0.26f, -0.79f);
 
-        glVertex2f(0.090f, -0.731f);
-        glVertex2f(-0.080f, -0.731f);
+        glVertex2f(-0.26f, -0.74f);
+        glVertex2f(-0.31f, -0.74f);
+
+    glEnd();
+      // 2nd body Part Window 2
+      glBegin(GL_QUADS);
+      glColor3ub(255, 255, 200);
+      glVertex2f(-0.25f, -0.79f);
+      glVertex2f(-0.2f, -0.79f);
+
+        glVertex2f(-0.2f, -0.74f);
+        glVertex2f(-0.25f,-0.74f);
+
+    glEnd();
+      // 2nd body Part Window 3
+      glBegin(GL_QUADS);
+      glColor3ub(255, 255, 200);
+      glVertex2f(-0.19f, -0.79f);
+      glVertex2f(-0.14f, -0.79f);
+
+        glVertex2f(-0.14f, -0.74f);
+        glVertex2f(-0.19f, -0.74f);
+
+    glEnd();
+
+    // 2nd body Part lower quad
+      glBegin(GL_QUADS);
+      glColor3ub(255, 255, 200);
+      glVertex2f(-0.33f, -0.9f);
+      glVertex2f(-0.12f, -0.9f);
+
+        glVertex2f(-0.13f, -0.89f);
+        glVertex2f(-0.32f, -0.89f);
+
+    glEnd();
+    // 2nd body wheel left lower quad
+      glBegin(GL_QUADS);
+      glColor3ub(255, 255, 200);
+      glVertex2f(-0.3f, -0.92f);
+      glVertex2f(-0.24, -0.92);
+
+        glVertex2f(-0.23f, -0.9f);
+        glVertex2f(-0.31f, -0.9f);
+
+    glEnd();
+    // 2nd body wheel right lower quad
+      glBegin(GL_QUADS);
+      glColor3ub(255, 255, 200);
+      glVertex2f(-0.2f, -0.92f);
+      glVertex2f(-0.14f, -0.92f);
+
+        glVertex2f(-0.13f, -0.9f);
+        glVertex2f(-0.21f, -0.9f);
 
     glEnd();
     /// 2nd Train Body Ends ------------------------
 glPopMatrix(); // Full train done
+
+    /// Train Body Start Here --------------------------------------
 
 
 /// ------------------------------------- Train Section End -------------
@@ -2205,7 +3372,8 @@ glMatrixMode(GL_MODELVIEW);
 
    glFlush();
 }
-///----------------------------------Rain update function-------------//////
+///----------------------------------------Rain update function-----------------------------//////
+
 void updateRain(int value)
 {
 
@@ -2227,7 +3395,11 @@ void updateRain(int value)
     glutPostRedisplay();
 
     glutTimerFunc(25, updateRain,0);
+
+
 }
+///----------------------------------------Rain update function ENDS-----------------------------//////
+
 
 void MyInit()
 {
@@ -2250,6 +3422,21 @@ void init() { // initialization hoy
 
 
 int main(int argc, char** argv) { // program ekhan thekei start hoy
+
+
+    cout << endl << "/// /////////////// ///////////////////////-----Fall 22-23-----////////////////////////////////////////////////////////";
+    cout << endl << "/// ----------------=======================COMPUTER GRAPHICS PROJECT==================------------------------/////////";
+    cout << endl << " /// ----------------=====================SUPERVISED BY : MD. KISHOR MOROL SIR==================-------------////////"<<endl ;
+
+    cout << "Press D : To Forward the Train" << endl << endl;
+    cout << "Press A : To Backward the Train" << endl << endl;
+    cout << "Press S : To Stop the Train" << endl << endl;
+
+    cout << "Press R : For Rain " << endl << endl;
+    cout << "Press E : For Stop Rain" << endl << endl;
+
+    cout << "Press N : For Night " << endl << endl;
+    cout << "Press B : For Day" << endl << endl;
    glutInit(&argc, argv);
    //glutInitWindowSize(320, 320);
    glutInitWindowSize(1240, 840);
@@ -2263,6 +3450,18 @@ int main(int argc, char** argv) { // program ekhan thekei start hoy
    glutTimerFunc(1000, airPlaneUpdate, 0); // update nam er function 1000 ml sec por por call hobe ..
    glutTimerFunc(1000, trainUpdate, 0);
    glutTimerFunc(25, updateRain, 0);
+   glutTimerFunc(25, boatUpdate, 0);
+   glutTimerFunc(25, rightWaveUpdate, 0);
+   glutTimerFunc(25, leftWaveUpdate, 0);
+   glutTimerFunc(25, rightCarUpdate, 0);
+   glutTimerFunc(25, leftCarUpdate, 0);
+   glutTimerFunc(25, cloud1Update, 0);
+   glutTimerFunc(25, cloud2Update, 0);
    glutMainLoop();
    return 0;
+
 }
+
+   /// /////////////// ///////////////////////-----THE END-----///////////////////////////////////////////////////////////////
+
+
