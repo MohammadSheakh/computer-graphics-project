@@ -1304,6 +1304,101 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
     ///------------------------------------------------------------------------------------ Tree section end by mohammad bin ab. jalil sheakh - 700
 ///-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	///-/////////////////////////////////////////////Road?//////////////////////////////////////////////////////////////////////////
+ ///-/////////////////////////////////////////////Middle-Line--left Begin//////////////////////////////////////////////////////////////////////////
+
+
+ glBegin(GL_QUADS);
+      glColor3f(1.0f, 1.0f, 0.0f);//1st point
+       glVertex2f(-0.9f, 0.01);
+       glVertex2f(-1.0f, 0.01f);
+       glVertex2f(-1.0f, -0.01f);
+       glVertex2f(-0.9f, -0.01f);
+   glEnd();
+
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 1.0f, 0.0f);//1st point
+       glVertex2f(-0.8f, 0.01);
+       glVertex2f(-0.7f, 0.01f);
+       glVertex2f(-0.7f, -0.01f);
+       glVertex2f(-0.8, -0.01f);
+   glEnd();
+
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 1.0f, 0.0f);//1st point
+       glVertex2f(-0.6f, 0.01);
+       glVertex2f(-0.5f, 0.01f);
+       glVertex2f(-0.5f, -0.01f);
+       glVertex2f(-0.6f, -0.01f);
+   glEnd();
+
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 1.0f, 0.0f);//1st point
+       glVertex2f(-0.4f, 0.01);
+       glVertex2f(-0.3f, 0.01f);
+       glVertex2f(-0.3f, -0.01f);
+       glVertex2f(-0.4f, -0.01f);
+   glEnd();
+
+    glBegin(GL_QUADS);
+      glColor3f(1.0f, 1.0f, 0.0f);//1st point
+       glVertex2f(-0.2f, 0.01);
+       glVertex2f(-0.1f, 0.01f);
+       glVertex2f(-0.1f, -0.01f);
+       glVertex2f(-0.2f, -0.01f);
+   glEnd();
+
+    glBegin(GL_QUADS);
+      glColor3f(1.0f, 1.0f, 0.0f);//1st point
+       glVertex2f(0.0f, 0.01);
+       glVertex2f(0.1f, 0.01f);
+       glVertex2f(0.1f, -0.01f);
+       glVertex2f(0.0f, -0.01f);
+   glEnd();
+ ///-/////////////////////////////////////////////Middle-Line--Left Ends & Right Begins //////////////////////////////////////////////////////////////////////////
+   glBegin(GL_QUADS);
+      glColor3f(1.0f, 1.0f, 0.0f);//1st point
+       glVertex2f(0.2f, 0.01);
+       glVertex2f(0.3f, 0.01f);
+       glVertex2f(0.3f, -0.01f);
+       glVertex2f(0.2f, -0.01f);
+   glEnd();
+
+glBegin(GL_QUADS);
+      glColor3f(1.0f, 1.0f, 0.0f);//1st point
+       glVertex2f(0.4f, 0.01);
+       glVertex2f(0.5f, 0.01f);
+       glVertex2f(0.5f, -0.01f);
+       glVertex2f(0.4f, -0.01f);
+   glEnd();
+
+glBegin(GL_QUADS);
+      glColor3f(1.0f, 1.0f, 0.0f);//1st point
+       glVertex2f(0.6f, 0.01);
+       glVertex2f(0.7f, 0.01f);
+       glVertex2f(0.7f, -0.01f);
+       glVertex2f(0.6f, -0.01f);
+   glEnd();
+
+glBegin(GL_QUADS);
+      glColor3f(1.0f, 1.0f, 0.0f);//1st point
+       glVertex2f(0.8f, 0.01);
+       glVertex2f(0.9f, 0.01f);
+       glVertex2f(0.9f, -0.01f);
+       glVertex2f(0.8f, -0.01f);
+   glEnd();
+
+    glBegin(GL_QUADS);
+      glColor3f(1.0f, 1.0f, 0.0f);//1st point
+       glVertex2f(0.95f, 0.01);
+       glVertex2f(1.0f, 0.01f);
+       glVertex2f(1.0f, -0.01f);
+       glVertex2f(0.95f, -0.01f);
+   glEnd();
+
+   ///-/////////////////////////////////////////////Middle-Line---Right side Ends//////////////////////////////////////////////////////////////////////////
+
+ ///-/////////////////////////////////////////////Middle-Line//////////////////////////////////////////////////////////////////////////
 
 
 // Dosina Dolon
