@@ -1,4 +1,3 @@
-
 #include<cstdio>
 
 #include <GL/gl.h>
@@ -43,7 +42,11 @@ GLfloat skyColor1[3] = {0.0752f, 0.839f, 0.940f};
 GLfloat skyColor2[3] = {0.279f, 0.854f, 0.930f};
 GLfloat skyColor3[3] = {0.534f, 0.901f, 0.890f};
 GLfloat skyColor4[3] = {0.754f, 0.901f, 0.920f};
-//GLfloat skyColor5[3] = {0.136f, 0.236f, 0.019f};
+GLfloat cloudColor1[3] = {0.259f, 0.255f, 0.520f};
+GLfloat cloudBoxColor1[3] = {0.0752f, 0.839f, 0.940f};
+
+
+
 //GLfloat skyColor6[3] = {0.136f, 0.236f, 0.019f};
 //GLfloat skyColor7[3] = {0.136f, 0.236f, 0.019f};
 
@@ -387,6 +390,16 @@ if(nightStart2 == true)
      skyColor1[0] = 0.166;
      skyColor1[1] = 0.203;
      skyColor1[2] = 0.920;
+     /// ////////////////////////////////////cloud block night//////////////////////
+
+     cloudBoxColor1[0] = 0.166;
+     cloudBoxColor1[1] = 0.203;
+     cloudBoxColor1[2] = 0.920;
+     /// /////////////////////
+     /// ////////////////////////////////////cloud color block night//////////////////////
+     cloudColor1[0] = 0.497;
+     cloudColor1[1] = 0.515;
+     cloudColor1[2] = 0.710;
      /// sky block 2///////                     /////
      skyColor2[0] = 0.191;
      skyColor2[1] = 0.227;
@@ -399,6 +412,7 @@ if(nightStart2 == true)
      skyColor4[0] = 0.448;
      skyColor4[1] = 0.455;
      skyColor4[2] = 0.590;
+
 
     }
 
@@ -424,6 +438,11 @@ if(dayStart1 == true)
      skyColor1[0] = 0.0752;
      skyColor1[1] = 0.839;
      skyColor1[2] = 0.940;
+     /// ////////////////////////////////////cloud block night//////////////////////
+
+     cloudBoxColor1[0] = 0.0752;
+     cloudBoxColor1[1] = 0.839;
+     cloudBoxColor1[2] = 0.940;
      /// sky block 2///////                     /////
      skyColor2[0] = 0.279;
      skyColor2[1] = 0.854;
@@ -444,6 +463,138 @@ if(dayStart1 == true)
 }
 
     ///
+
+    ///
+    /// /////////////Cloud1 Section -Md. Jahid Hassan///////////
+ /// ////////////////////////////////////
+ ///cloud 1- left-circle
+float x,y,i;
+/// /////////////
+
+
+glPushMatrix();
+
+    glTranslatef(-0.7f,0.9f,0.0f);
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3fv(cloudColor1);
+    for(i=0;i<=2*3.14;i+=0.0001)
+{
+     x=0.02912*sin(i);
+     y=0.02912*cos(i);
+     glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+   ///
+   ///
+
+///cloud 1- middle-circle
+   ///
+ glPushMatrix();
+    glTranslatef(-0.64f,0.9f,0.0f);
+    glBegin(GL_TRIANGLE_FAN);
+
+    glColor3fv(cloudColor1);
+    for(i=0;i<=2*3.14;i+=0.0001)
+{
+     x=0.04500*sin(i);
+     y=0.04500*cos(i);
+     glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+   ///
+   ///cloud 1- left-circle
+   ///
+glPushMatrix();
+    glTranslatef(-0.58f,0.9f,0.0f);
+    glBegin(GL_TRIANGLE_FAN);
+
+    glColor3fv(cloudColor1);
+    for(i=0;i<=2*3.14;i+=0.0001)
+{
+     x=0.03123*sin(i);
+     y=0.03123*cos(i);
+     glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+/// //////// //////////////////////////////////////
+/// cloud1 back quad////
+glBegin(GL_QUADS);
+      glColor3fv(cloudBoxColor1);
+      glVertex2f(-0.739f, 0.851f);
+      glVertex2f(-0.540f ,0.850f);
+      glVertex2f(-0.54f, 0.9f);
+      glVertex2f(-0.74f, 0.9f);
+   glEnd();
+/// /////////////////////////
+/// //////////Cloud 2///////////////
+/// /////////////Cloud Section -Md. Jahid Hassan///////////
+ /// ////////////////////////////////////
+ ///cloud 2- left-circle
+//float x,y,i;
+/// /////////////
+
+
+glPushMatrix();
+
+    glTranslatef(-0.41f,0.9f,0.0f);
+    glBegin(GL_TRIANGLE_FAN);
+
+    glColor3fv(cloudColor1);
+    for(i=0;i<=2*3.14;i+=0.0001)
+{
+     x=0.02745*sin(i);
+     y=0.02745*cos(i);
+     glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+   ///
+   ///
+
+///cloud 2- middle-circle
+   ///
+ glPushMatrix();
+    glTranslatef(-0.358f,0.927f,0.0f);
+    glBegin(GL_TRIANGLE_FAN);
+
+    glColor3fv(cloudColor1);
+    for(i=0;i<=2*3.14;i+=0.0001)
+{
+     x=0.05039*sin(i);
+     y=0.05039*cos(i);
+     glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+   ///
+   ///cloud 2- left-circle
+   ///
+glPushMatrix();
+    glTranslatef(-0.270f,0.929f,0.0f);
+    glBegin(GL_TRIANGLE_FAN);
+
+    glColor3fv(cloudColor1);
+    for(i=0;i<=2*3.14;i+=0.0001)
+{
+     x=0.06058*sin(i);
+     y=0.06058*cos(i);
+     glVertex2f(x,y);
+}
+glEnd();
+glPopMatrix();
+/// //////// //////////////////////////////////////
+/// cloud2 back quad////
+glBegin(GL_QUADS);
+      glColor3fv(cloudBoxColor1);
+      glVertex2f(-0.470f, 0.849f);
+      glVertex2f(-0.2f ,0.85f);
+      glVertex2f(-0.2f, 0.9f);
+      glVertex2f(-0.47f, 0.9f);
+   glEnd();
+/// /////////////////////////
    /// ///////////////////////////////////////
    /// plane start /////////////////////////////////////////////////////////////// Md.Jahid Hassan-200/////////////////////////////////////////////
 
@@ -481,13 +632,13 @@ if(dayStart1 == true)
    ///**Plane Circle Window-204
    ///
 ///1st window
-float x,y,i;
+//float x,y,i;
 glPushMatrix();
 
-    glTranslatef(0.88f,0.66f,0.0f);
+    glTranslatef(0.66f,0.885f,0.0f);
     glBegin(GL_TRIANGLE_FAN);
 
-    glColor3ub(0,0,0);
+    glColor3ub(0.735f, 0.740f, 0.444f);
     for(i=0;i<=2*3.14;i+=0.0001)
 {
      x=0.00950*sin(i);
@@ -500,10 +651,10 @@ glPopMatrix();
    ///2nd window
    ///
  glPushMatrix();
-    glTranslatef(0.88f,0.7f,0.0f);
+    glTranslatef(0.7f,0.885f,0.0f);
     glBegin(GL_TRIANGLE_FAN);
 
-    glColor3ub(0,0,0);
+    glColor3ub(0.735f, 0.740f, 0.444f);
     for(i=0;i<=2*3.14;i+=0.0001)
 {
      x=0.00881*sin(i);
@@ -516,10 +667,10 @@ glPopMatrix();
    ///3rd window
    ///
 glPushMatrix();
-    glTranslatef(0.88f,0.74f,0.0f);
+    glTranslatef(0.74f,0.885f,0.0f);
     glBegin(GL_TRIANGLE_FAN);
 
-    glColor3ub(0,0,0);
+    glColor3ub(0.735f, 0.740f, 0.444f);
     for(i=0;i<=2*3.14;i+=0.0001)
 {
      x=0.00858*sin(i);
@@ -531,12 +682,11 @@ glPopMatrix();
    ///
    ///4th window
    ///
-//float x,y, i;
 glPushMatrix();
-    glTranslatef(0.88f,0.78f,0.0f);
+    glTranslatef( 0.78f,0.885f,0.0f);
     glBegin(GL_TRIANGLE_FAN);
 
-    glColor3ub(0,0,0);
+    glColor3ub(0.735f, 0.740f, 0.444f);
     for(i=0;i<=2*3.14;i+=0.0001)
 {
      x=0.00826*sin(i);
@@ -550,10 +700,10 @@ glPopMatrix();
    ///5th window
    ///
 glPushMatrix();
-    glTranslatef(0.88f,0.82f,0.0f);
+    glTranslatef(0.82f,0.885f,0.0f);
     glBegin(GL_TRIANGLE_FAN);
 
-    glColor3ub(0,0,0);
+    glColor3ub(0.735f, 0.740f, 0.444f);
     for(i=0;i<=2*3.14;i+=0.0001)
 {
      x=0.00883*sin(i);
@@ -599,6 +749,9 @@ glPopMatrix();
    glPopMatrix();
    ///
     /// Plane End //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ /// //////////// //////////////// ///////////////////////
+
+
 
    ///mountain start//////////////Mohammad Sheakh///////////////////////////
     // left mountain
@@ -1018,26 +1171,30 @@ glColor3f(0.2f, 0.3f, 0.6f);
     /// Tree section start by mohammad bin ab. jalil sheakh - 700
    // Tree 9... //709
    glBegin(GL_TRIANGLES);
-       glColor3f(1.0f, 1.0f, 0.6f);
+       glColor3f(0.470f, 0.194f, 0.174f);
 
       glVertex2f(0.72f, 0.24f); //1
       glVertex2f(0.73f, 0.24f); //2
       glVertex2f(0.73f, 0.6f); //3
       ///////////////////////////
+       glColor3f(0.0909f, 0.850f, 0.0510f);
       glVertex2f(0.73f, 0.6f); //left leaf
       glVertex2f(0.8f, 0.56f);
       glVertex2f(0.8f, 0.64f);
       ///
+       glColor3f(0.0805f, 0.700f, 0.0700f);
       glVertex2f(0.73f, 0.6f); //left up leaf
       glVertex2f(0.78f, 0.66f);
       glVertex2f(0.74f, 0.68f);
 
       ///
+       glColor3f(0.124f, 0.710f, 0.114f);
       glVertex2f(0.73f, 0.6f); //left up leaf
       glVertex2f(0.73f, 0.69f);
       glVertex2f(0.68f, 0.68f);
 
       ///
+       glColor3f(0.116f, 0.630f, 0.107f);
       glVertex2f(0.73f, 0.6f); //left up leaf
       glVertex2f(0.68f, 0.66f);
       glVertex2f(0.64f, 0.56f);
@@ -1468,7 +1625,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
 
 /// ----------- Tree Section of train Start By Mohammad...
- /// ////////////////////////////////////////// For Tree circle variable
+// ////////////////////////////////////////// For Tree circle variable
    /// left tree ----------1
    glPushMatrix();
    glTranslatef(-0.97f,-0.80f,0.0f);
@@ -2071,6 +2228,7 @@ glPopMatrix();
       glVertex2f(0.92f, -0.82f);
     glEnd();
     /// Train Line Done ------------------------------****************
+
 /// Train Body Start Here --------------------------------------
 glPushMatrix(); // Full train Start
 glTranslatef(trainPosition,0.0f, 0.0f);
@@ -2424,6 +2582,8 @@ glPopMatrix();
     /// 2nd Train Body Ends ------------------------
 glPopMatrix(); // Full train done
 
+    /// Train Body Start Here --------------------------------------
+
 
 /// ------------------------------------- Train Section End -------------
 
@@ -2499,4 +2659,3 @@ int main(int argc, char** argv) { // program ekhan thekei start hoy
    glutMainLoop();
    return 0;
 }
-
