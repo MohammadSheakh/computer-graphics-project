@@ -13,16 +13,24 @@ float airPlanePosition = 0.0f;
 GLfloat airPlaneSpeed = 0.012f;
 
 float boatPosition = 0.0f;
-GLfloat boatSpeed = 0.012f;
+GLfloat boatSpeed = 0.05f;
+
+
+
+float leftWavePosition = 0.0f;
+GLfloat leftWaveSpeed = 0.062f;
+
+float rightWavePosition = 0.0f;
+GLfloat rightWaveSpeed = 0.072f;
 
 float trainPosition = 0.0f;
 GLfloat trainSpeed = 0.02f;
 
 float leftCarPosition = 0.0f;
-GLfloat leftCarSpeed = 0.012f;
+GLfloat leftCarSpeed = 0.05f; //0.012
 
 float rightCarPosition = 0.0f;
-GLfloat rightCarSpeed = 0.012f;
+GLfloat rightCarSpeed = 0.05f;
 
 GLint rain = 1;
 float xrain = 10.0f;
@@ -210,8 +218,8 @@ void trainUpdate(int value) { // timer .. er kaj timer ba thread
 
     // timer use kore move korte parbo .. jekono object .. ba translation korte parbo ..
 
-    if(trainPosition < -1.8)//
-        trainPosition = 1.05f;
+    if(trainPosition < -1.0)//
+        trainPosition = 1.0f;
 
     trainPosition -= trainSpeed;
 
@@ -220,7 +228,86 @@ void trainUpdate(int value) { // timer .. er kaj timer ba thread
 
 	glutTimerFunc(100, trainUpdate, 0);
 }
+void rightCarUpdate(int value) { // timer .. er kaj timer ba thread
+    // ekta particular time por por function call hobe .. update nam er function call hobe ..
 
+    // timer use kore move korte parbo .. jekono object .. ba translation korte parbo ..
+
+    if(rightCarPosition > 1.7)//
+        rightCarPosition = -1.6f;
+
+    rightCarPosition += rightCarSpeed;
+
+	glutPostRedisplay();
+
+
+	glutTimerFunc(100, rightCarUpdate, 0);
+}
+
+
+void rightWaveUpdate(int value) { // timer .. er kaj timer ba thread
+    // ekta particular time por por function call hobe .. update nam er function call hobe ..
+
+    // timer use kore move korte parbo .. jekono object .. ba translation korte parbo ..
+
+    if(rightWavePosition > 1.0)//1.7
+        rightWavePosition = -1.0f; // -1.6
+
+    rightWavePosition += rightWaveSpeed;
+
+	glutPostRedisplay();
+
+
+	glutTimerFunc(100, rightWaveUpdate, 0);
+}
+
+void leftWaveUpdate(int value) { // timer .. er kaj timer ba thread
+    // ekta particular time por por function call hobe .. update nam er function call hobe ..
+
+    // timer use kore move korte parbo .. jekono object .. ba translation korte parbo ..
+
+    if(leftWavePosition < -1.8)//
+        leftWavePosition = 1.05f;
+
+    leftWavePosition -= leftWaveSpeed;
+
+	glutPostRedisplay();
+
+
+	glutTimerFunc(100, leftWaveUpdate, 0);
+}
+
+void leftCarUpdate(int value) { // timer .. er kaj timer ba thread
+    // ekta particular time por por function call hobe .. update nam er function call hobe ..
+
+    // timer use kore move korte parbo .. jekono object .. ba translation korte parbo ..
+
+    if(leftCarPosition < -1.7)//
+        leftCarPosition = 1.002f;
+
+    leftCarPosition -= leftCarSpeed;
+
+	glutPostRedisplay();
+
+
+	glutTimerFunc(100, leftCarUpdate, 0);
+}
+
+void boatUpdate(int value) { // timer .. er kaj timer ba thread
+    // ekta particular time por por function call hobe .. update nam er function call hobe ..
+
+    // timer use kore move korte parbo .. jekono object .. ba translation korte parbo ..
+
+    if(boatPosition > 1.7)//
+        boatPosition = -1.002f;
+
+    boatPosition += boatSpeed;
+
+	glutPostRedisplay();
+
+
+	glutTimerFunc(100, boatUpdate, 0);
+}
 
 
 
@@ -747,6 +834,7 @@ glPopMatrix();
       glVertex2f(0.83, 0.865);
    glEnd();
    glPopMatrix();
+   glPopMatrix();
    ///
     /// Plane End //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  /// //////////// //////////////// ///////////////////////
@@ -1222,12 +1310,390 @@ glColor3f(0.2f, 0.3f, 0.6f);
 ///---------Boat Start---------///
 ///---------DOSINA DOLON DOLA---------///
 
+    ///------------- Car Section Start by DOSINA DOLON DOL - A1000 ------------- ///
+
+
+    /// Car - 1 Start --------------------------------------------------
+
+    /// Car Body - Polygon // 1001
+    glPushMatrix();
+    glTranslatef(rightCarPosition,0.0f, 0.0f);
+
+
+        glBegin(GL_POLYGON);
+        glColor3ub(255, 0, 0);
+
+      glVertex2f(-0.81f, 0.08f); //point-1
+      glVertex2f(-0.49f, 0.08f); //point-2
+      glVertex2f(-0.5f, 0.12f); //point-3
+      glVertex2f(-0.53f, 0.14f); //point-4
+      glVertex2f(-0.67f, 0.14f); //point-5
+
+      glVertex2f(-0.64f, 0.14f); //point-6
+      glVertex2f(-0.75f, 0.14); //point-7
+      glVertex2f(-0.76f, 0.17); //point-8
+      glVertex2f(-0.8f, 0.18f); //point-9
+      glVertex2f(-0.81f, 0.08f); //point-10
+      glEnd();
+
+
+      /// Back Window - Polygon // 1002
+
+        glBegin(GL_POLYGON);
+        glColor3ub(255, 200, 0);
+
+      glVertex2f(-0.75f, 0.14); //point-1
+      glVertex2f(-0.64f, 0.14f); //point-2
+      glVertex2f(-0.64f, 0.19f); //point-3
+      glVertex2f(-0.71f, 0.19f); //point-4
+      glVertex2f(-0.76f, 0.17f); //point-5
+      glVertex2f(-0.75f, 0.14f); //point-6
+      glEnd();
+
+
+      /// Front Window - Quad // 1003
+        glBegin(GL_QUADS);
+      glColor3ub(255, 255, 0);
+      glVertex2f(-0.67f, 0.14f); //point-1
+      glVertex2f(-0.58f, 0.14f); //point-2
+
+      glVertex2f(-0.62f, 0.19f); //point-3
+      glVertex2f(-0.67f, 0.19f); //point-4
+        glEnd();
+
+
+
+      /// Front Tire - Circle // 1004
+
+       //float x, y, i;
+
+       glPushMatrix();
+       glTranslatef(-0.58f, 0.08f,0.0f);
+       glBegin(GL_TRIANGLE_FAN);
+
+       glColor3ub(80, 40, 0);
+       for(i=0;i<=2*3.14;i+=0.0001)
+        {
+            x=0.0337*sin(i);
+            y=0.0337*cos(i);
+            glVertex2f(x,y);
+        }
+
+        glEnd();
+        glPopMatrix();
+
+
+        /// Back Tire - Circle // 1005
+
+             // float x, y, i;
+
+       glPushMatrix();
+       glTranslatef(-0.72f,0.08f,0.0f);    //circles er centre er x, y er value
+       glBegin(GL_TRIANGLE_FAN);
+
+       glColor3ub(80, 40, 0);
+       for(i=0;i<=2*3.14;i+=0.0001)
+        {
+            x=0.034*sin(i);     //circle er basardher value - point er ber kora value
+            y=0.034*cos(i);     //circle er basardher value - point er ber kora value
+            glVertex2f(x,y);
+        }
+
+        glEnd();
+        glPopMatrix();
+        glPopMatrix();
+
+
+
+        /// ---------------------- Car - 1 END ---------------------- ///
+
+
+
+        /// Car - 2 Start --------------------------------------------------
+
+        /// Car Body - Polygon // 1006
+        glPushMatrix();
+    glTranslatef(leftCarPosition,0.0f, 0.0f);
+
+
+        glBegin(GL_POLYGON);
+        glColor3ub(0, 72, 255);
+
+      glVertex2f(0.535f, -0.13f); //point-1
+      glVertex2f(0.84f, -0.13f); //point-2
+      glVertex2f(0.83f, -0.04f); //point-3
+      glVertex2f(0.80f, -0.05f); //point-4
+      glVertex2f(0.78f, -0.07f); //point-5
+
+      glVertex2f(0.71f, -0.07f); //point-6
+      glVertex2f(0.62f, -0.07f); //point-7
+      glVertex2f(0.57f, -0.07f); //point-8
+      glVertex2f(0.545f, -0.09f); //point-9
+      glVertex2f(0.535f, -0.13f); //point-10
+      glEnd();
+
+
+      /// Front Window - Quad // 1007
+   glBegin(GL_QUADS);
+      glColor3ub(255, 247, 0);
+      glVertex2f(0.62f, -0.07f); //point-1
+      glVertex2f(0.71f, -0.07f); //point-2
+
+      glVertex2f(0.71f, -0.02f); //point-3
+      glVertex2f(0.65f, -0.02f); //point-4
+   glEnd();
+
+
+      /// Back Window - Polygon // 1008
+
+        glBegin(GL_POLYGON);
+        glColor3ub(255, 200, 0);
+
+      glVertex2f(0.71f, -0.07f); //point-1
+      glVertex2f(0.78f, -0.07f); //point-2
+      glVertex2f(0.80f, -0.05f); //point-3
+      glVertex2f(0.77f, -0.02f); //point-4
+      glVertex2f(0.71f, -0.02f); //point-5
+      glVertex2f(0.71f, -0.07f); //point-6
+      glEnd();
+
+
+      /// Front Tire - Circle // 1009
+
+             // float x, y, i;
+
+       glPushMatrix();
+       glTranslatef(0.61f, -0.13f,0.0f);
+       glBegin(GL_TRIANGLE_FAN);
+
+       glColor3ub(51, 11, 6);
+       for(i=0;i<=2*3.14;i+=0.0001)
+        {
+            x=0.0337*sin(i);
+            y=0.0337*cos(i);
+            glVertex2f(x,y);
+        }
+
+        glEnd();
+        glPopMatrix();
+
+
+        /// Back Tire - Circle // 1010
+
+         // float x, y, i;
+
+       glPushMatrix();
+       glTranslatef(0.74f, -0.13f,0.0f);
+       glBegin(GL_TRIANGLE_FAN);
+
+       glColor3ub(80, 10, 0);
+       for(i=0;i<=2*3.14;i+=0.0001)
+        {
+            x=0.034*sin(i);
+            y=0.034*cos(i);
+            glVertex2f(x,y);
+        }
+
+        glEnd();
+        glPopMatrix();
+glPopMatrix();
+
+        /// ---------------------- Car - 2 END -------------------------------
+
+
+/// Car Section END by DOSINA DOLON DOLA (ID: 20-42034-1)///
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            /// River and Wave section start by DOSINA DOLON DOLA - 5000 ///
+
+///-----------------------------------------------------------------------------------------///
+
+
+    ///----------- River Section Start -----------/// -------- Dosina Dolon Dola --------
+
+
+    /// River Blue Water Block Start ----------
+glBegin(GL_QUADS);
+      glColor3ub(0, 220, 255);
+      glVertex2f(-1.0f, -0.66f);
+      glVertex2f(1.0f, -0.66f);
+
+      glVertex2f(1.0f, -0.25f);
+      glVertex2f(-1.0f, -0.25f);
+   glEnd();
+    // River Blue Water Block End ----------
+
+
+    ///---------------- Wave Section Start ----------------/// -------- Dosina Dolon Dola --------
+
+
+
+    ///Wave Bottom Line Codes Are Written After Boat Code  -------------------
+    /////////////////-------------/////////////--------------/////////////////
+
+
+///Wave Upper Line Start -------------------
+glPushMatrix();
+    glTranslatef(rightWavePosition,0.0f, 0.0f);
+
+    ///Left Wave //------------ //5001
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(190, 220, 220);
+
+        glVertex2f(-0.6, -0.3);
+        glVertex2f(-0.4, -0.3);
+        glVertex2f(-0.5, -0.275);
+    glEnd();
+
+
+
+    ///Right Wave //------------ //5003
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(190, 220, 220);
+
+        glVertex2f(0.6, -0.3);
+        glVertex2f(0.8, -0.3);
+        glVertex2f(0.7, -0.275);
+    glEnd();
+
+    //Wave Upper Line END -------------------
+
+
+    ///Wave Second Upper Line Start -------------------
+
+    ///Left Wave //------------ //5004
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(190, 220, 220);
+
+        glVertex2f(-0.9, -0.4);
+        glVertex2f(-0.7, -0.4);
+        glVertex2f(-0.8, -0.375);
+    glEnd();
+
+
+
+    ///Right Wave //------------ //5006
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(190, 220, 220);
+
+        glVertex2f(0.3, -0.4);
+        glVertex2f(0.5, -0.4);
+        glVertex2f(0.4, -0.375);
+    glEnd();
+
+    //Wave Second Upper Line END -------------------
+
+
+    ///Wave Upper Bottom Line Start -------------------
+
+    ///Left Wave //------------ //5007
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(190, 220, 220);
+
+        glVertex2f(-0.5, -0.5);
+        glVertex2f(-0.3, -0.5);
+        glVertex2f(-0.4, -0.475);
+    glEnd();
+
+
+
+    ///Right Wave //------------ //5009
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(190, 220, 220);
+
+        glVertex2f(0.7, -0.5);
+        glVertex2f(0.9, -0.5);
+        glVertex2f(0.8, -0.475);
+    glEnd();
+
+    //Wave Upper Bottom Line END -------------------
+
+///Wave Bottom Line Start -------------------
+
+    ///Left Wave //------------ //5010
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(190, 220, 220);
+
+        glVertex2f(-0.8, -0.6);
+        glVertex2f(-0.6, -0.6);
+        glVertex2f(-0.7, -0.575);
+    glEnd();
+
+    ///Middle Wave //------------ //5011
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(190, 220, 220);
+
+        glVertex2f(-0.3, -0.6);
+        glVertex2f(-0.1, -0.6);
+        glVertex2f(-0.2, -0.575);
+    glEnd();
+
+    ///Right Wave //------------ //5012
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(190, 220, 220);
+
+        glVertex2f(0.3, -0.6);
+        glVertex2f(0.5, -0.6);
+        glVertex2f(0.4, -0.575);
+    glEnd();
+
+    //Wave Bottom Line END -------------------
+
+glPopMatrix();
+
+
+glPushMatrix();
+glTranslatef(leftWavePosition,0.0f, 0.0f);
+///Middle Wave //------------ //5002
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(190, 220, 220);
+
+        glVertex2f(0.0, -0.3);
+        glVertex2f(0.2, -0.3);
+        glVertex2f(0.1, -0.275);
+    glEnd();
+
+    ///Middle Wave //------------ //5005
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(190, 220, 220);
+
+        glVertex2f(-0.3, -0.4);
+        glVertex2f(-0.1, -0.4);
+        glVertex2f(-0.2, -0.375);
+    glEnd();
+
+    ///Middle Wave //------------ //5008
+
+    glBegin(GL_TRIANGLES);
+    glColor3ub(190, 220, 220);
+
+        glVertex2f(0.1, -0.5);
+        glVertex2f(0.3, -0.5);
+        glVertex2f(0.2, -0.475);
+    glEnd();
+glPopMatrix();
+    ///---------------- Wave Triangle Section END ----------------/// -------- Dosina Dolon Dola -------- //---- 5000
+
+
+
 
             /// Boat section start by DOSINA DOLON DOLA - 500 ///
 
 ///----------------------------------------------------------------------------///
 
-
+glPushMatrix();
+    glTranslatef(boatPosition,0.0f, 0.0f);
     ///-------- Quad Blocks Section --------///
 
 
@@ -1607,8 +2073,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 /// RGB color Codes for Circles
 /// glColor3ub(255, 90, 50);		//...Orange Color
 
-
-
+glPopMatrix();
 
 
 
@@ -2285,7 +2750,7 @@ glBegin(GL_POLYGON);
         //////////////////////////////////////// chimni
       glVertex2f(-0.81, -0.76); //1
       glVertex2f(-0.78, -0.76); //6 ///// ei khan e jhamela ase
-			glVertex2f(-0.78, -0.74); //6 ///// ei khan e jhamela ase
+      glVertex2f(-0.78, -0.74); //6 ///// ei khan e jhamela ase
       glVertex2f(-0.76, -0.74); // 4
 
 
@@ -2389,34 +2854,24 @@ glBegin(GL_POLYGON);
 
       glEnd();
 
-glBegin(GL_POLYGON);
+glBegin(GL_QUADS);
         glColor3ub(18, 255, 200);
         // engine along room chimni
-      glVertex2f(-0.6798567299472, -0.6988028940744); //1
-      glVertex2f(-0.5908808580394, -0.7000134501548); //2
-			glVertex2f(-0.5733277948739, -0.6927501136725); //3
+      glVertex2f(-0.68, -0.7); //1
+      glVertex2f(-0.59, -0.7); //2
+			glVertex2f(-0.58, -0.69); //3
       glVertex2f(-0.5860386337179, -0.6830656650295); // 4
-
-
-      glVertex2f(-0.6169078137675, -0.6794339967883); //5
-
-
-glVertex2f(-0.6677511691434, -0.6776181626678); //5
-glVertex2f(-0.6980150711529, -0.6885131673912); //5
-glVertex2f(-0.6798567299472, -0.6988028940744); //5
-
-
 
       glEnd();
 
 
-glBegin(GL_POLYGON);
+glBegin(GL_QUADS);
         glColor3ub(100, 25, 255);
         // engine along room window
-      glVertex2f(-0.669567003264, -0.7780943173392); //1
-      glVertex2f(-0.6011705847226, -0.7768837612588); //2
-			glVertex2f(-0.6017758627628, -0.7163559572399); //3
-      glVertex2f(-0.6701722813042, -0.7163559572399); // 4
+      glVertex2f(-0.67f, -0.78f); //1
+      glVertex2f(-0.6f, -0.78f); //2
+      glVertex2f(-0.6f, -0.72f); //3
+      glVertex2f(-0.67f, -0.72f); // 4
 
 
 
@@ -2472,67 +2927,122 @@ glVertex2f(x,y);
 glEnd();
 glPopMatrix();
 
-
-    glBegin(GL_QUADS);
+glBegin(GL_QUADS);
     glColor3ub(255, 255, 0);
       // 1st body Part
       glColor3ub(255, 0, 0);
-      glVertex2f(-0.555f, -0.888f);
-      glVertex2f(-0.363f, -0.888f);
+      glVertex2f(-0.55f, -0.89f);
+      glVertex2f(-0.36f, -0.89f);
 
-      glVertex2f(-0.363f, -0.723f);
-      glVertex2f(-0.555f, -0.723f);
+      glVertex2f(-0.36f, -0.72f);
+      glVertex2f(-0.55f, -0.72f);
+     glEnd();
+     glBegin(GL_QUADS);
+
 
       // 1st body Part Window 1
       glColor3ub(255, 255, 200);
-      glVertex2f(-0.539f, -0.792f);
-      glVertex2f(-0.491f, -0.792f);
+      glVertex2f(-0.54f, -0.79f);
+      glVertex2f(-0.49f, -0.79f);
 
-        glVertex2f(-0.491f, -0.743f);
-        glVertex2f(-0.539f, -0.743f);
+        glVertex2f(-0.49f, -0.74f);
+        glVertex2f(-0.54f, -0.74f);
 
     glEnd();
-    glBegin(GL_QUADS);
-      // // 1st body Part Window 2
+      // 1st body Part Window 2
+      glBegin(GL_QUADS);
       glColor3ub(255, 255, 200);
-      glVertex2f(-0.481f, -0.792f);
-      glVertex2f(-0.434f, -0.792f);
+      glVertex2f(-0.48f, -0.79f);
+      glVertex2f(-0.43f, -0.79f);
 
-        glVertex2f(-0.434f, -0.731f);
-        glVertex2f(-0.481f, -0.731f);
+        glVertex2f(-0.43f, -0.74f);
+        glVertex2f(-0.48f, -0.74f);
 
     glEnd();
-    glBegin(GL_QUADS);
-
       // 1st body Part Window 3
+      glBegin(GL_QUADS);
       glColor3ub(255, 255, 200);
-      glVertex2f(-0.423f, -0.792f);
-      glVertex2f(-0.374f, -0.792f);
+      glVertex2f(-0.42f, -0.79f);
+      glVertex2f(-0.37f, -0.79f);
 
-        glVertex2f(-0.374f, -0.742f);
-        glVertex2f(-0.423f, -0.742f);
+        glVertex2f(-0.37f, -0.74f);
+        glVertex2f(-0.42f, -0.74f);
+
+    glEnd();
+// 1st body Part lower quad
+      glBegin(GL_QUADS);
+      glColor3ub(255, 255, 200);
+      glVertex2f(-0.56f, -0.9f);
+      glVertex2f(-0.35f, -0.9f);
+
+        glVertex2f(-0.36f, -0.89f);
+        glVertex2f(-0.55f, -0.89f);
 
     glEnd();
 
-    /// 1st body lower part
-glBegin(GL_POLYGON);
-glColor3ub(255, 255, 200);
-  glVertex2f(-0.5574091844166, -0.9135256712329);
-  glVertex2f(-0.5477370322492, -0.9029249939477); /// value gular moddhe may be problem ase
+    // 1st body wheel left lower quad
+      glBegin(GL_QUADS);
+      glColor3ub(255, 255, 200);
+      glVertex2f(-0.54f, -0.92f);
+      glVertex2f(-0.47f, -0.92f);
 
-    glVertex2f(-0.3651838453365, -0.9018073213747); /// value gular moddhe may be problem ase
-    glVertex2f(-0.3532620045586, -0.9111212594825);
+        glVertex2f(-0.46f, -0.9f);
+        glVertex2f(-0.55f, -0.9f);
+
+    glEnd();
+    // 1st body wheel right lower quad
+      glBegin(GL_QUADS);
+      glColor3ub(255, 255, 200);
+      glVertex2f(-0.44f, -0.92f);
+      glVertex2f(-0.38f, -0.92f);
+
+        glVertex2f(-0.37, -0.9);
+        glVertex2f(-0.45f, -0.9f);
+
+    glEnd();
 
 
 
- glVertex2f(-0.3435755089265, -0.8988268611803); //5
+    /// 1st train Body Ends ------------------------
 
- glVertex2f(-0.3639335513117, -0.8875968926985); //6
- glVertex2f(-0.5544553199683, -0.8884353566199);
- glVertex2f(-0.5683184138435, -0.9047982876914);
- glVertex2f(-0.5574091844166, -0.9135256712329);
+    /// train connector with 2nd body quads///////////////
+    ///quad left
+    glBegin(GL_QUADS);
+      glColor3ub(255, 255, 200);
+      glVertex2f(-0.36f, -0.89f);
+      glVertex2f(-0.34f, -0.89f);
 
-glEnd();
+        glVertex2f(-0.34f, -0.87f);
+        glVertex2f(-0.36f, -0.87f);
+
+    glEnd();
+    ///
+    ///quad right
+    glBegin(GL_QUADS);
+      glColor3ub(255, 255, 200);
+      glVertex2f(-0.34f, -0.89f);
+      glVertex2f(-0.32f, -0.89f);
+
+        glVertex2f(-0.32f, -0.87f);
+        glVertex2f(-0.34f, -0.87f);
+
+    glEnd();
+    ///
+    ///quad upper
+    glBegin(GL_QUADS);
+      glColor3ub(255, 255, 200);
+      glVertex2f(-0.35f, -0.87f);
+      glVertex2f(-0.33f, -0.87f);
+
+        glVertex2f(-0.33f, -0.86f);
+        glVertex2f(-0.35f, -0.86f);
+
+    glEnd();
+    /// //////////////////////// ///// /////
+    ////////////////////////////////////////
+    /// ////////////////////////////// /////
+
+
     /// 1st train Body Ends ------------------------
 
     /// 2nd Train Body Starts -------------------------------------------
@@ -2568,23 +3078,79 @@ glEnd();
 glPopMatrix();
 
 
+
+    /// 2nd  Train Body Start Here --------------------------------------
+    /// ////// 2nd /// /// /// ///
+    glPushMatrix();
     glBegin(GL_QUADS);
     glColor3ub(255, 255, 0);
-      // 1st body Part
+      // 2nd body Part
       glColor3ub(255, 0, 0);
-      glVertex2f(-0.108f, -0.931f);
-      glVertex2f(0.120f, -0.930f);
+      glVertex2f(-0.32f, -0.89f);
+      glVertex2f(-0.13f, -0.89f);
 
-      glVertex2f(0.120f, -0.709f);
-      glVertex2f(-0.108f, -0.711f);
-
-      // 1st body Part Window
+      glVertex2f(-0.13f, -0.72f);
+      glVertex2f(-0.32f, -0.72f);
+     glEnd();
+     glBegin(GL_QUADS);
+      // 2nd body Part Window 1
       glColor3ub(255, 255, 200);
-      glVertex2f(-0.080f, -0.817f);
-      glVertex2f(0.090f, -0.819f);
+      glVertex2f(-0.31f, -0.79f);
+      glVertex2f(-0.26f, -0.79f);
 
-        glVertex2f(0.090f, -0.731f);
-        glVertex2f(-0.080f, -0.731f);
+        glVertex2f(-0.26f, -0.74f);
+        glVertex2f(-0.31f, -0.74f);
+
+    glEnd();
+      // 2nd body Part Window 2
+      glBegin(GL_QUADS);
+      glColor3ub(255, 255, 200);
+      glVertex2f(-0.25f, -0.79f);
+      glVertex2f(-0.2f, -0.79f);
+
+        glVertex2f(-0.2f, -0.74f);
+        glVertex2f(-0.25f,-0.74f);
+
+    glEnd();
+      // 2nd body Part Window 3
+      glBegin(GL_QUADS);
+      glColor3ub(255, 255, 200);
+      glVertex2f(-0.19f, -0.79f);
+      glVertex2f(-0.14f, -0.79f);
+
+        glVertex2f(-0.14f, -0.74f);
+        glVertex2f(-0.19f, -0.74f);
+
+    glEnd();
+
+    // 2nd body Part lower quad
+      glBegin(GL_QUADS);
+      glColor3ub(255, 255, 200);
+      glVertex2f(-0.33f, -0.9f);
+      glVertex2f(-0.12f, -0.9f);
+
+        glVertex2f(-0.13f, -0.89f);
+        glVertex2f(-0.32f, -0.89f);
+
+    glEnd();
+    // 2nd body wheel left lower quad
+      glBegin(GL_QUADS);
+      glColor3ub(255, 255, 200);
+      glVertex2f(-0.3f, -0.92f);
+      glVertex2f(-0.24, -0.92);
+
+        glVertex2f(-0.23f, -0.9f);
+        glVertex2f(-0.31f, -0.9f);
+
+    glEnd();
+    // 2nd body wheel right lower quad
+      glBegin(GL_QUADS);
+      glColor3ub(255, 255, 200);
+      glVertex2f(-0.2f, -0.92f);
+      glVertex2f(-0.14f, -0.92f);
+
+        glVertex2f(-0.13f, -0.9f);
+        glVertex2f(-0.21f, -0.9f);
 
     glEnd();
     /// 2nd Train Body Ends ------------------------
@@ -2664,6 +3230,14 @@ int main(int argc, char** argv) { // program ekhan thekei start hoy
    glutTimerFunc(1000, airPlaneUpdate, 0); // update nam er function 1000 ml sec por por call hobe ..
    glutTimerFunc(1000, trainUpdate, 0);
    glutTimerFunc(25, updateRain, 0);
+   glutTimerFunc(25, boatUpdate, 0);
+   glutTimerFunc(25, rightWaveUpdate, 0);
+   glutTimerFunc(25, leftWaveUpdate, 0);
+   glutTimerFunc(25, rightCarUpdate, 0);
+   glutTimerFunc(25, leftCarUpdate, 0);
    glutMainLoop();
    return 0;
 }
+
+
+
