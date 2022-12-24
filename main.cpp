@@ -35,6 +35,12 @@ GLfloat leftCarSpeed = 0.05f; //0.012
 float rightCarPosition = 0.0f;
 GLfloat rightCarSpeed = 0.05f;
 
+float cloud1Position = 0.0f;
+GLfloat cloud1Speed = 0.05f;
+
+float cloud2Position = 0.0f;
+GLfloat cloud2Speed = 0.07f;
+
 GLint rain = 1;
 float xrain = 10.0f;
 float yrain = 10.0f;
@@ -317,6 +323,40 @@ void boatUpdate(int value) { // timer .. er kaj timer ba thread
 	glutTimerFunc(100, boatUpdate, 0);
 }
 
+void cloud1Update(int value) { // timer .. er kaj timer ba thread
+    // ekta particular time por por function call hobe .. update nam er function call hobe ..
+
+    // timer use kore move korte parbo .. jekono object .. ba translation korte parbo ..
+
+    if(cloud1Position > 0.4)//
+        cloud1Position = -0.7f;
+
+    cloud1Position += cloud1Speed;
+
+	glutPostRedisplay();
+
+
+	glutTimerFunc(100, cloud1Update, 0);
+}
+
+void cloud2Update(int value) { // timer .. er kaj timer ba thread
+    // ekta particular time por por function call hobe .. update nam er function call hobe ..
+
+    // timer use kore move korte parbo .. jekono object .. ba translation korte parbo ..
+
+    if(cloud2Position > 0.6)//
+        cloud2Position = -0.4f;
+
+    cloud2Position += cloud2Speed;
+
+	glutPostRedisplay();
+
+
+	glutTimerFunc(100, cloud2Update, 0);
+}
+
+
+
 
 
 
@@ -575,6 +615,8 @@ if(dayStart1 == true)
 /// ---------------------------Cloud section----------------------------/////////////////
 
 /// ///////////////////////////// Cloud 1 /////////////////// ///////////////////////////
+glPushMatrix();
+glTranslatef(cloud1Position, 0.0f, 0.0f);
 ///cloud 1- left-circle
 float x,y,i;
 glPushMatrix();
@@ -633,10 +675,14 @@ glBegin(GL_QUADS);
       glVertex2f(-0.74f, 0.9f);
    glEnd();
 
+   glPopMatrix();
+
 ///------------//////////-- MD. JAHID HASSAN-----//////////-------------/////////////////
 ///----------////////////--ID:-  20-44311-3 ----///////////-------------/////////////////
 /// /////////////////////////////////////////////////////////////////////////////////////
 /// ///////////////////////////// Cloud 2 /////////////////// ///////////////////////////
+glPushMatrix();
+glTranslatef(cloud2Position, 0.0f, 0.0f);
 ///cloud 2- left-circle
 glPushMatrix();
 
@@ -693,6 +739,7 @@ glBegin(GL_QUADS);
       glVertex2f(-0.2f, 0.9f);
       glVertex2f(-0.47f, 0.9f);
    glEnd();
+   glPopMatrix();
 /// ===============================Cloud ENDS============================================/////////////////
 /// //////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -3392,12 +3439,13 @@ int main(int argc, char** argv) { // program ekhan thekei start hoy
    glutTimerFunc(25, leftWaveUpdate, 0);
    glutTimerFunc(25, rightCarUpdate, 0);
    glutTimerFunc(25, leftCarUpdate, 0);
+   glutTimerFunc(25, cloud1Update, 0);
+   glutTimerFunc(25, cloud2Update, 0);
    glutMainLoop();
    return 0;
 
 }
 
    /// /////////////// ///////////////////////-----THE END-----///////////////////////////////////////////////////////////////
-
 
 
