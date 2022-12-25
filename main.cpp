@@ -63,6 +63,29 @@ GLfloat skyColor4[3] = {0.754f, 0.901f, 0.920f};
 GLfloat cloudColor1[3] = {0.259f, 0.255f, 0.520f};
 GLfloat cloudBoxColor1[3] = {0.0752f, 0.839f, 0.940f};
 
+/// ////////////////////////////////////// Building///////////////////////////////////
+GLfloat building1[3] = {0.890, 0.573, 0.0979};
+GLfloat building2[3] = {0.820, 0.0410, 0.262};
+GLfloat building3[3] = {1.00, 0.00, 0.0333};
+GLfloat building4[3] = {0.336, 0.840, 0.655};
+GLfloat building5[3] = {0.930, 0.828, 0.0558};
+GLfloat building6[3] = {0.990, 0.424, 0.0198};
+/// ////////////////////////////////////// Building window///////////////////////////////////
+GLfloat building1window1[3] = {0.810, 0.699, 0.203};
+//GLfloat building1window2[3] = {0.810, 0.699, 0.203};
+
+GLfloat building2window1[3] = {0.389, 0.770, 0.339};
+
+GLfloat building3window1[3] = {0.248, 0.920, 0.719};
+
+GLfloat building4window2[3] = {0.950, 0.822, 0.361};
+
+GLfloat building5window1[3] = {0.101, 0.183,  0.920};
+
+GLfloat building6window1[3] = {0.683, 0.0486, 0.810};
+
+GLfloat building7window[3] = {0.930, 0.149, 0.227};
+
 
 GLfloat riverColor[3] = {0.0f,0.0f,90.0f};
 ///-------------//////////--Rain-Section---------///////////............/////////////////
@@ -448,7 +471,6 @@ void display() { // ja draw korbo .. ei function er moddhe korbo
       glColor3f(1.0f, 0.0f, 0.0f);
       glVertex2f(-1.0f, 0.0f);
       glVertex2f( 1.0f, 0.0f);
-
       glVertex2f( 0.0f,  -1.0f);
       glVertex2f( 0.0f,  1.0f);
    glEnd();
@@ -560,8 +582,69 @@ if(nightStart2 == true)
      skyColor4[0] = 0.448;
      skyColor4[1] = 0.455;
      skyColor4[2] = 0.590;
+/// ////////////////////////////////////// Building(1-6)///////////////////////////////////
+
+     building1[0] = 0.663;
+     building1[1] = 0.573;
+     building1[2] = 0.533;
 
 
+     building2[0] = 0.999;
+     building2[1] = 0.000;
+     building2[2] = 0.788;
+
+
+     building3[0] = 0.0000;
+     building3[1] = 0.111;
+     building3[2] = 0.222;
+
+
+     building4[0] = 0.001;
+     building4[1] = 0.555;
+     building4[2] = 0.6543;
+
+
+     building5[0] = 0.110;
+     building5[1] = 0.339;
+     building5[2] = 0.0898;
+
+
+
+     building6[0] = 0.99;
+     building6[1] = 0.4444;
+     building6[2] = 0.0555;
+/// ////////////////////////////////////// Building window///////////////////////////////////
+/// /////////////////////////////////// building1window1///////////////////////////////
+
+     building1window1[0] = 0.610;
+     building1window1[1] = 0.110;
+     building1window1[2] = 0.800;
+     /// /////////////////////////////////// building2window1///////////////////////////////
+     building2window1[0] = 0.900;
+     building2window1[1] = 0.660;
+     building2window1[2] = 0.333;
+     /// /////////////////////////////////// building3window1///////////////////////////////
+      building3window1[0] = 0.444;
+     building3window1[1] = 0.778;
+     building3window1[2] = 0.719;
+     /// /////////////////////////////////// building4window2///////////////////////////////
+     building4window2[0] = 0.920;
+     building4window2[1] = 0.929;
+     building4window2[2] = 0.928;
+      /// /////////////////////////////////// building5window///////////////////////////////
+     building5window1[0] = 0.950;
+     building5window1[1] = 0.0736;
+     building5window1[2] = 0.215;
+      /// /////////////////////////////////// building6window////building8window///////////////////////////
+     building6window1[0] = 0.870;
+     building6window1[1] = 0.818;
+     building6window1[2] = 0.880;
+     /// /////////////////////////////////// building7window///////////////////////////////
+
+     building7window[0] = 0.290;
+     building7window[1] = 0.283;
+     building7window[2] = 0.226;
+ /// /////////////////////////////////// building window ends///////////////////////////////
     }
 
 }
@@ -601,6 +684,71 @@ if(dayStart1 == true)
      skyColor4[0] = 0.754;
      skyColor4[1] = 0.901;
      skyColor4[2] = 0.920;
+
+     /// ////////////////////////////////////// Building(1-6)///////////////////////////////////
+
+     building1[0] = 0.890;
+     building1[1] = 0.573;
+     building1[2] = 0.0979;
+
+
+     building2[0] = 0.820;
+     building2[1] = 0.0410;
+     building2[2] = 0.262;
+
+
+     building3[0] = 1.00;
+     building3[1] = 0.00;
+     building3[2] = 0.0333;
+
+
+     building4[0] = 0.336;
+     building4[1] = 0.840;
+     building4[2] = 0.655;
+
+
+     building5[0] = 0.930;
+     building5[1] = 0.828;
+     building5[2] = 0.0558;
+
+
+
+     building6[0] = 0.990;
+     building6[1] = 0.424;
+     building6[2] = 0.0198;
+/// ////////////////////////////////////// Building window///////////////////////////////////
+
+     /// /////////////////////////////////// building1window///////////////////////////////
+     building1window1[0] = 0.810;
+     building1window1[1] = 0.699;
+     building1window1[2] = 0.203;
+
+     building2window1[0] = 0.389;
+     building2window1[1] = 0.770;
+     building2window1[2] = 0.339;
+
+     building3window1[0] = 0.248;
+     building3window1[1] = 0.920;
+     building3window1[2] = 0.719;
+
+     /// /////////////////////////////////// building4window2///////////////////////////////
+     building4window2[0] = 0.950;
+     building4window2[1] = 0.822;
+     building4window2[2] = 0.361;
+      //, ,
+      /// /////////////////////////////////// building5window1///////////////////////////////
+     building5window1[0] = 0.101;
+     building5window1[1] = 0.183;
+     building5window1[2] = 0.920;
+
+     building6window1[0] = 0.683;
+     building6window1[1] = 0.0486;
+     building6window1[2] = 0.810;
+
+     building7window[0] = 0.930;
+     building7window[1] = 0.149;
+     building7window[2] = 0.227;
+/// /////////////////////////////////// building window ends///////////////////////////////
     }
     if(sun_move > 0)
     {
@@ -929,6 +1077,7 @@ glPopMatrix();
 /// EFAZ RAHMAN OPI WORK///
     // building - 1... //701
    glBegin(GL_QUADS);
+      glColor3fv(building1);
       glColor3f(1.0f, 0.0f, 0.0f);
       glVertex2f(-1.0f, 0.24f);
       glVertex2f(-0.8f, 0.24f);
@@ -937,7 +1086,8 @@ glPopMatrix();
       glVertex2f(-1.0f, 0.4f);
 
    // window left bottom
-      glColor3f(0.0f, 0.8f, 0.4f);
+   /// /////////////////////////////////// building1window1///////////////////////////////
+      glColor3fv(building1window1);
 
       glVertex2f(-0.96f, 0.30f);
       glVertex2f(-0.92f, 0.30f);
@@ -947,7 +1097,8 @@ glPopMatrix();
 
 
       // window right bottom
-      glColor3f(0.0f, 0.8f, 0.4f);
+     /// /////////////////////////////////// building1window1///////////////////////////////
+      glColor3fv(building1window1);
 
       glVertex2f(-0.86f, 0.30f);
       glVertex2f(-0.82f, 0.30f);
@@ -958,13 +1109,14 @@ glEnd();
     // building - 2... //702
    glBegin(GL_QUADS);
    // upper portion
-      glColor3f(0.2f, 0.2f, 0.4f);
+    //glColor3fv(building2window1);
       glVertex2f(-0.760f, 0.54f);
       glVertex2f(-0.63f, 0.54f);
 
       glVertex2f(-0.63f, 0.620f);
       glVertex2f(-0.760f, 0.620f);
       //// main building block
+       glColor3fv(building2);
       glColor3f(1.0f, 0.8f, 0.4f);
 
       glVertex2f(-0.8f, 0.24f);
@@ -974,7 +1126,8 @@ glEnd();
       glVertex2f(-0.8f, 0.55f);
       //-----------------------
       // window left up
-      glColor3f(0.0f, 0.8f, 0.4f);
+      /// /////////////////////////////////// building2window1///////////////////////////////
+       glColor3fv(building2window1);
 
       glVertex2f(-0.76f, 0.46f);
       glVertex2f(-0.72f, 0.46f);
@@ -983,7 +1136,8 @@ glEnd();
       glVertex2f(-0.76f, 0.5f);
 
       // window right up
-      glColor3f(0.0f, 0.8f, 0.4f);
+      /// /////////////////////////////////// building2window1///////////////////////////////
+      glColor3fv(building2window1);
 
       glVertex2f(-0.68f, 0.46f);
       glVertex2f(-0.64f, 0.46f);
@@ -992,7 +1146,8 @@ glEnd();
       glVertex2f(-0.68f, 0.5f);
 //-----------------------
       // window right down
-      glColor3f(0.0f, 0.8f, 0.4f);
+     /// /////////////////////////////////// building2window1///////////////////////////////
+      glColor3fv(building2window1);
 
       glVertex2f(-0.68f, 0.38f);
       glVertex2f(-0.64f, 0.38f);
@@ -1001,8 +1156,8 @@ glEnd();
       glVertex2f(-0.68f, 0.42f);
 
       // window left down
-      glColor3f(0.0f, 0.8f, 0.4f);
-
+      /// /////////////////////////////////// building2window1///////////////////////////////
+      glColor3fv(building1window1);
       glVertex2f(-0.76f, 0.38f);
       glVertex2f(-0.72f, 0.38f);
 
@@ -1011,7 +1166,8 @@ glEnd();
       //-----------------------
 
 // window left bottom
-      glColor3f(0.0f, 0.8f, 0.4f);
+      /// /////////////////////////////////// building2window1///////////////////////////////
+      glColor3fv(building2window1);
 
       glVertex2f(-0.76f, 0.30f);
       glVertex2f(-0.72f, 0.30f);
@@ -1021,6 +1177,8 @@ glEnd();
 
 
       // window right bottom
+      /// /////////////////////////////////// building2window1///////////////////////////////
+      glColor3fv(building2window1);
       glColor3f(0.0f, 0.8f, 0.4f);
 
       glVertex2f(-0.68f, 0.30f);
@@ -1036,7 +1194,9 @@ glEnd();
 
    // building - 3... //703 //--------------
    glBegin(GL_QUADS);
-      glColor3f(0.3f, 0.3f, 0.3f);
+
+    glColor3fv(building3);
+      //glColor3f(0.3f, 0.3f, 0.3f);
 
       glVertex2f(-0.6f, 0.24f);
       glVertex2f(-0.4f, 0.24f);
@@ -1045,8 +1205,8 @@ glEnd();
       glVertex2f(-0.6f, 0.480f);
 
           // window right down
-      glColor3f(0.0f, 0.8f, 0.4f);
-
+        /// /////////////////////////////////// building3window1///////////////////////////////
+     glColor3fv(building3window1);
       glVertex2f(-0.48f, 0.38f);
       glVertex2f(-0.44f, 0.38f);
 
@@ -1084,7 +1244,8 @@ glEnd();
 
    // building - 4... //704--------------------
    glBegin(GL_QUADS);
-      glColor3f(0.3f, 0.8f, 0.8f);
+       glColor3fv(building4);
+      //glColor3f(0.3f, 0.8f, 0.8f);
 
       glVertex2f(-0.4f, 0.24f);
       glVertex2f(-0.2f, 0.24f);
@@ -1093,7 +1254,8 @@ glEnd();
       glVertex2f(-0.4f, 0.6f);
 
       // window left up
-      glColor3f(0.6f, 1.0f, 0.6f);
+      /// /////////////////////////////////// building4window2///////////////////////////////
+      glColor3fv(building4window2);
 
       glVertex2f(-0.36f, 0.46f);
       glVertex2f(-0.32f, 0.46f);
@@ -1102,8 +1264,6 @@ glEnd();
       glVertex2f(-0.36f, 0.5f);
 
       // window right up
-      glColor3f(0.6f, 1.0f, 0.6f);
-
       glVertex2f(-0.28f, 0.46f);
       glVertex2f(-0.24f, 0.46f);
 
@@ -1111,7 +1271,8 @@ glEnd();
       glVertex2f(-0.28f, 0.5f);
 
           // window right down
-      glColor3f(0.7f, 0.2f, 1.0f);
+          glColor3fv(building4window2);
+
 
       glVertex2f(-0.28f, 0.38f);
       glVertex2f(-0.24f, 0.38f);
@@ -1120,8 +1281,8 @@ glEnd();
       glVertex2f(-0.28f, 0.42f);
 
       // window left down
-      glColor3f(0.7f, 0.2f, 1.0f);
 
+      glColor3f(0.7f, 0.2f, 1.0f);
       glVertex2f(-0.36f, 0.38f);
       glVertex2f(-0.32f, 0.38f);
 
@@ -1151,7 +1312,9 @@ glEnd();
 
    // building - 5... //705 ---------------
    glBegin(GL_QUADS);
-      glColor3f(1.0f, 0.7f, 0.2f);
+
+    glColor3fv(building5);
+      //glColor3f(1.0f, 0.7f, 0.2f);
 
       glVertex2f(-0.2f, 0.24f);
       glVertex2f(0.0f, 0.24f);
@@ -1177,8 +1340,10 @@ glEnd();
       glVertex2f(-0.04f, 0.5f);
       glVertex2f(-0.08f, 0.5f);
 
-                // window right down
-      glColor3f(0.7f, 0.2f, 1.0f);
+     // window right down
+     /// /////////////////////////////////// building5window2///////////////////////////////
+     glColor3fv(building5window1);
+
 
       glVertex2f(-0.08f, 0.38f);
       glVertex2f(-0.04f, 0.38f);
@@ -1187,7 +1352,9 @@ glEnd();
       glVertex2f(-0.08f, 0.42f);
 
       // window left down
-      glColor3f(0.7f, 0.2f, 1.0f);
+      /// /////////////////////////////////// building5window2///////////////////////////////
+      glColor3fv(building5window1);
+
 
       glVertex2f(-0.16f, 0.38f);
       glVertex2f(-0.12f, 0.38f);
@@ -1218,7 +1385,8 @@ glEnd();
 
    // building - 6... //706
    glBegin(GL_QUADS);
-      glColor3f(0.4f, 0.8f, 0.1f);
+    glColor3fv(building6);
+      //glColor3f(0.4f, 0.8f, 0.1f);
 
       glVertex2f(0.0f, 0.24f);
       glVertex2f(0.12f, 0.24f);
@@ -1228,7 +1396,8 @@ glEnd();
 
 
       // window 1
-      glColor3f(0.7f, 0.2f, 1.0f);
+
+      glColor3fv(building6window1);
 
       glVertex2f(0.04f, 0.64f);
       glVertex2f(0.08f, 0.64f);
@@ -1237,7 +1406,7 @@ glEnd();
       glVertex2f(0.04f, 0.68f);
 
       // window 2
-      glColor3f(0.7f, 0.2f, 1.0f);
+      glColor3fv(building6window1);
 
       glVertex2f(0.04f, 0.54f);
       glVertex2f(0.08f, 0.54f);
@@ -1246,7 +1415,7 @@ glEnd();
       glVertex2f(0.04f, 0.58f);
 
       // window 3
-      glColor3f(0.7f, 0.2f, 1.0f);
+     glColor3fv(building6window1);
 
       glVertex2f(0.04f, 0.44f);
       glVertex2f(0.08f, 0.44f);
@@ -1255,7 +1424,7 @@ glEnd();
       glVertex2f(0.04f, 0.48f);
 
       // window 4
-      glColor3f(0.7f, 0.2f, 1.0f);
+      glColor3fv(building6window1);
 
       glVertex2f(0.04f, 0.34f);
       glVertex2f(0.08f, 0.34f);
@@ -1267,10 +1436,7 @@ glEnd();
 
    // building - 7... //707
    glBegin(GL_TRIANGLES);
-
-
-
-glColor3f(0.2f, 0.3f, 0.6f);
+   glColor3f(0.2f, 0.3f, 0.6f);
       glVertex2f(0.12f, 0.24f); //1
       glVertex2f(0.34f, 0.24f); //2
       glVertex2f(0.12f, 0.68f); //4
@@ -1284,8 +1450,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
       glBegin(GL_QUADS);
       // window 1
-      glColor3f(0.7f, 0.2f, 1.0f);
-
+      glColor3fv(building7window);
       glVertex2f(0.16f, 0.56f);
       glVertex2f(0.288f, 0.56f);
 
@@ -1294,7 +1459,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
 
       // window 2
-      glColor3f(0.7f, 0.2f, 1.0f);
+      glColor3fv(building7window);
 
       glVertex2f(0.16f, 0.46f);
       glVertex2f(0.288f, 0.46f);
@@ -1304,7 +1469,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
 
       // window 3
-      glColor3f(0.7f, 0.2f, 1.0f);
+      glColor3fv(building7window);
 
       glVertex2f(0.16f, 0.36f);
       glVertex2f(0.288f, 0.36f);
@@ -1317,6 +1482,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
 // building - 8... //708
    glBegin(GL_QUADS);
+
       glColor3f(0.2f, 0.2f, 0.2f);
 
       glVertex2f(0.34f, 0.24f);
@@ -1328,16 +1494,14 @@ glColor3f(0.2f, 0.3f, 0.6f);
       /**
       // varanda -1
       glColor3f(0.5f, 0.5f, 0.2f);
-
       glVertex2f(0.44f, 0.5f);
       glVertex2f(0.56f, 0.5f);
-
       glVertex2f(0.52f, 0.54f);
       glVertex2f(0.4f, 0.54f);
       */
 
        // window left up
-      glColor3f(0.0f, 0.8f, 0.4f);
+     glColor3fv(building6window1);
 
       glVertex2f(0.38f, 0.5f);
       glVertex2f(0.42f, 0.5f);
@@ -1346,7 +1510,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
       glVertex2f(0.38f, 0.54f);
 
       // window right up
-      glColor3f(0.0f, 0.8f, 0.4f);
+     glColor3fv(building6window1);
 
       glVertex2f(0.45f, 0.5f);
       glVertex2f(0.49f, 0.5f);
@@ -1355,7 +1519,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
       glVertex2f(0.45f, 0.54f);
 
        // window left down
-      glColor3f(0.0f, 0.8f, 0.4f);
+     glColor3fv(building6window1);
 
       glVertex2f(0.38f, 0.4f);
       glVertex2f(0.42f, 0.4f);
@@ -1364,7 +1528,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
       glVertex2f(0.38f, 0.44f);
 
       // window right down
-      glColor3f(0.0f, 0.8f, 0.4f);
+    glColor3fv(building6window1);
 
       glVertex2f(0.45f, 0.4f);
       glVertex2f(0.49f, 0.4f);
@@ -1373,7 +1537,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
       glVertex2f(0.45f, 0.44f);
       //-----------------------
        // window left bottom
-      glColor3f(0.0f, 0.8f, 0.4f);
+      glColor3fv(building6window1);
 
       glVertex2f(0.38f, 0.3f);
       glVertex2f(0.42f, 0.3f);
@@ -1382,7 +1546,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
       glVertex2f(0.38f, 0.34f);
 
       // window right bottom
-      glColor3f(0.0f, 0.8f, 0.4f);
+      glColor3fv(building6window1);
 
       glVertex2f(0.45f, 0.3f);
       glVertex2f(0.49f, 0.3f);
@@ -3549,5 +3713,3 @@ int main(int argc, char** argv) { // program ekhan thekei start hoy
 }
 
    /// /////////////// ///////////////////////-----THE END-----///////////////////////////////////////////////////////////////
-
-
