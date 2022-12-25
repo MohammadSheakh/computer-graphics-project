@@ -55,7 +55,7 @@ bool nightStart2 = false;
 bool start3 = false;
 
 
-GLfloat mountainColor[3] = {0.0f,0.0f,90.0f};
+GLfloat mountainColor[3] = {0.5f,0.5f,0.5f}; // 0.0, 0.0, 90.0
 GLfloat skyColor1[3] = {0.0752f, 0.839f, 0.940f};
 GLfloat skyColor2[3] = {0.279f, 0.854f, 0.930f};
 GLfloat skyColor3[3] = {0.534f, 0.901f, 0.890f};
@@ -530,9 +530,9 @@ if(nightStart2 == true)
         nightStart2 = false;
         start3= true;
 ///---------------------Set mountain color for night---------------------///////////////////
-     mountainColor[0] = 1.0f;
-     mountainColor[1] = 1.0f;
-     mountainColor[2] = 0.0f;
+     mountainColor[0] = 0.3f; // 1.0
+     mountainColor[1] = 0.3f; // 1.0
+     mountainColor[2] = 0.3f; // 0.0
      /// //// Set Sky color for night-test  color/////
      ///  sky block 1///////                       ////
      skyColor1[0] = 0.166;
@@ -935,8 +935,26 @@ glPopMatrix();
 
       glVertex2f(-0.8f, 0.4f);
       glVertex2f(-1.0f, 0.4f);
-   glEnd();
 
+   // window left bottom
+      glColor3f(0.0f, 0.8f, 0.4f);
+
+      glVertex2f(-0.96f, 0.30f);
+      glVertex2f(-0.92f, 0.30f);
+
+      glVertex2f(-0.92f, 0.34f);
+      glVertex2f(-0.96f, 0.34f);
+
+
+      // window right bottom
+      glColor3f(0.0f, 0.8f, 0.4f);
+
+      glVertex2f(-0.86f, 0.30f);
+      glVertex2f(-0.82f, 0.30f);
+
+      glVertex2f(-0.82f, 0.34f);
+      glVertex2f(-0.86f, 0.34f);
+glEnd();
     // building - 2... //702
    glBegin(GL_QUADS);
    // upper portion
@@ -1018,7 +1036,7 @@ glPopMatrix();
 
    // building - 3... //703 //--------------
    glBegin(GL_QUADS);
-      glColor3f(0.2f, 0.2f, 0.2f);
+      glColor3f(0.3f, 0.3f, 0.3f);
 
       glVertex2f(-0.6f, 0.24f);
       glVertex2f(-0.4f, 0.24f);
@@ -1307,6 +1325,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
       glVertex2f(0.52f, 0.6f);
       glVertex2f(0.34f, 0.6f);
 
+      /**
       // varanda -1
       glColor3f(0.5f, 0.5f, 0.2f);
 
@@ -1315,6 +1334,62 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
       glVertex2f(0.52f, 0.54f);
       glVertex2f(0.4f, 0.54f);
+      */
+
+       // window left up
+      glColor3f(0.0f, 0.8f, 0.4f);
+
+      glVertex2f(0.38f, 0.5f);
+      glVertex2f(0.42f, 0.5f);
+
+      glVertex2f(0.42f, 0.54f);
+      glVertex2f(0.38f, 0.54f);
+
+      // window right up
+      glColor3f(0.0f, 0.8f, 0.4f);
+
+      glVertex2f(0.45f, 0.5f);
+      glVertex2f(0.49f, 0.5f);
+
+      glVertex2f(0.49f, 0.54f);
+      glVertex2f(0.45f, 0.54f);
+
+       // window left down
+      glColor3f(0.0f, 0.8f, 0.4f);
+
+      glVertex2f(0.38f, 0.4f);
+      glVertex2f(0.42f, 0.4f);
+
+      glVertex2f(0.42f, 0.44f);
+      glVertex2f(0.38f, 0.44f);
+
+      // window right down
+      glColor3f(0.0f, 0.8f, 0.4f);
+
+      glVertex2f(0.45f, 0.4f);
+      glVertex2f(0.49f, 0.4f);
+
+      glVertex2f(0.49f, 0.44f);
+      glVertex2f(0.45f, 0.44f);
+      //-----------------------
+       // window left bottom
+      glColor3f(0.0f, 0.8f, 0.4f);
+
+      glVertex2f(0.38f, 0.3f);
+      glVertex2f(0.42f, 0.3f);
+
+      glVertex2f(0.42f, 0.34f);
+      glVertex2f(0.38f, 0.34f);
+
+      // window right bottom
+      glColor3f(0.0f, 0.8f, 0.4f);
+
+      glVertex2f(0.45f, 0.3f);
+      glVertex2f(0.49f, 0.3f);
+
+      glVertex2f(0.49f, 0.34f);
+      glVertex2f(0.45f, 0.34f);
+
 
    glEnd();
    /// /////////////////////////////////////////
@@ -2259,6 +2334,15 @@ glPopMatrix();
 ///------------//////////--  MOHAMMAD BIN AB. JALIL SHEAKH--------------/////////////////
 ///----------////////////--ID:-  20-42132-1 ----///////////-------------/////////////////
 /// ====================--------GRASS SECTION--------===================////////////////
+// Design For grass background
+    glBegin(GL_QUADS);
+    glColor3ub(18, 25, 20);
+      glVertex2f(-1.0f, -0.8f);
+      glVertex2f(1.0f, -0.8f);
+
+      glVertex2f(1.0f, -0.66f);  /// ei value change korte hobe
+      glVertex2f(-1.0f, -0.66f);  // age 85 chilo
+    glEnd();
    /// left tree ----------1
    glPushMatrix();
    glTranslatef(-0.97f,-0.80f,0.0f);
@@ -2637,6 +2721,8 @@ glPopMatrix();
       glVertex2f(1.0f, -0.80f);  /// ei value change korte hobe
       glVertex2f(-1.0f, -0.80f);  // age 85 chilo
     glEnd();
+
+
 /// =====================Grass ENDS here=================================////////////////
 
 /// ============================----------------=========================////////////////
