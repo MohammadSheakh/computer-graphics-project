@@ -1325,6 +1325,7 @@ glColor3f(0.2f, 0.3f, 0.6f);
       glVertex2f(0.52f, 0.6f);
       glVertex2f(0.34f, 0.6f);
 
+      /**
       // varanda -1
       glColor3f(0.5f, 0.5f, 0.2f);
 
@@ -1333,6 +1334,62 @@ glColor3f(0.2f, 0.3f, 0.6f);
 
       glVertex2f(0.52f, 0.54f);
       glVertex2f(0.4f, 0.54f);
+      */
+
+       // window left up
+      glColor3f(0.0f, 0.8f, 0.4f);
+
+      glVertex2f(0.38f, 0.5f);
+      glVertex2f(0.42f, 0.5f);
+
+      glVertex2f(0.42f, 0.54f);
+      glVertex2f(0.38f, 0.54f);
+
+      // window right up
+      glColor3f(0.0f, 0.8f, 0.4f);
+
+      glVertex2f(0.45f, 0.5f);
+      glVertex2f(0.49f, 0.5f);
+
+      glVertex2f(0.49f, 0.54f);
+      glVertex2f(0.45f, 0.54f);
+
+       // window left down
+      glColor3f(0.0f, 0.8f, 0.4f);
+
+      glVertex2f(0.38f, 0.4f);
+      glVertex2f(0.42f, 0.4f);
+
+      glVertex2f(0.42f, 0.44f);
+      glVertex2f(0.38f, 0.44f);
+
+      // window right down
+      glColor3f(0.0f, 0.8f, 0.4f);
+
+      glVertex2f(0.45f, 0.4f);
+      glVertex2f(0.49f, 0.4f);
+
+      glVertex2f(0.49f, 0.44f);
+      glVertex2f(0.45f, 0.44f);
+      //-----------------------
+       // window left bottom
+      glColor3f(0.0f, 0.8f, 0.4f);
+
+      glVertex2f(0.38f, 0.3f);
+      glVertex2f(0.42f, 0.3f);
+
+      glVertex2f(0.42f, 0.34f);
+      glVertex2f(0.38f, 0.34f);
+
+      // window right bottom
+      glColor3f(0.0f, 0.8f, 0.4f);
+
+      glVertex2f(0.45f, 0.3f);
+      glVertex2f(0.49f, 0.3f);
+
+      glVertex2f(0.49f, 0.34f);
+      glVertex2f(0.45f, 0.34f);
+
 
    glEnd();
    /// /////////////////////////////////////////
