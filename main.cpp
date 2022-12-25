@@ -42,7 +42,7 @@ GLfloat cloud1Speed = 0.05f;
 float cloud2Position = 0.0f;
 GLfloat cloud2Speed = 0.07f;
 
-GLint rain = 1;
+bool rain = false;
 float xrain = 10.0f;
 float yrain = 10.0f;
 bool rain1 = false;
@@ -52,7 +52,8 @@ float sun_move = 0.0f;
 float moon_move = 0.0f;
 bool dayStart1 = false;
 bool nightStart2 = false;
-bool start3 = false;
+bool moonStart3 = false;
+bool autumnStart4 = false;
 
 
 GLfloat mountainColor[3] = {0.5f,0.5f,0.5f}; // 0.0, 0.0, 90.0
@@ -418,7 +419,7 @@ void handleKeypress(unsigned char key, int x, int y) {
 
 	switch (key) {
 
-case 'a':
+case 'q':
     //Plane stop
     airPlaneSpeed = 0.0f;
     break;
@@ -430,19 +431,27 @@ case 'n':
     //For night
     nightStart2 = true;
     dayStart1 = false;
+    autumnStart4 = false;
     break;
 case 'd':
     //For day
     dayStart1 = true;
     nightStart2 = false;
+    autumnStart4 = false;
+    break;
+case 'a':
+    //For autumn
+    autumnStart4 = true;
+    dayStart1 = false;
+    nightStart2 = false;
     break;
 case 'r':
     //Rain start
-     rain = 2;
+     rain = true;
     break;
 case 's':
     //Rain stop
-     rain = 1;
+     rain = false;
     break;
 case 't':
     // train speed increase
@@ -535,7 +544,7 @@ glPopMatrix();
 
 ///--------------------------------Sun/Moon-----Move condition----------/////////////////
 ///--------------------------------Light change function----------------/////////////////
-if(start3==true)
+if(moonStart3==true)
 {
     //Moon();
 glPushMatrix();
@@ -550,7 +559,7 @@ if(nightStart2 == true)
     if(sun_move < -0.32) //
     {
         nightStart2 = false;
-        start3= true;
+        moonStart3= true;
 ///---------------------Set mountain color for night---------------------///////////////////
      mountainColor[0] = 0.3f; // 1.0
      mountainColor[1] = 0.3f; // 1.0
@@ -651,13 +660,13 @@ if(nightStart2 == true)
 
 if(dayStart1 == true)
 {
-    start3=false;
+    moonStart3=false;
     sun_move += 0.05;
     if(sun_move > -0.03) // 0.3
     {
 /// ////--------------------- Set mountain color for Day----------------/// ///
      nightStart2 = true;
-     start3 = false;
+     moonStart3 = false;
 
      mountainColor[0] = 0.0f;
      mountainColor[1] = 0.0f;
@@ -755,6 +764,118 @@ if(dayStart1 == true)
         dayStart1 = false;
     }
 }
+/// ////////// ////////////// /////AUTUMN SEASON////// //////////// ///////////////////////////// //////
+
+if(autumnStart4 == true)
+{
+    moonStart3=false;
+
+/// ////--------------------- Set mountain color for Day----------------/// ///
+
+     mountainColor[0] = 1.0f;
+     mountainColor[1] = 0.7f;
+     mountainColor[2] = 0.0f;
+/// //// Set Sky color for Day-test  color/////
+///  sky block 1///////                   /////
+     skyColor1[0] = 0.95;
+     skyColor1[1] = 0.8;
+     skyColor1[2] = 0.7;
+/// cloudBOX r sky colour1 er value ta same hote hobe /// ///////////
+/// ////////////////////////////////////cloud block night//////////////////////
+
+     cloudBoxColor1[0] = 0.95;
+     cloudBoxColor1[1] = 0.8;
+     cloudBoxColor1[2] = 0.7;
+/// ///////////////////////////////////////////////////////////////////////////////////////
+     /// -------------------------cloud color block autumn-----------------//////////////////////
+     cloudColor1[0] = 1.0;
+     cloudColor1[1] = 0.7;
+     cloudColor1[2] = 0.3;
+/// 1, 0.8, 0.4
+     /// sky block 2///////                     /////
+     skyColor2[0] = 0.90;
+     skyColor2[1] = 0.8;
+     skyColor2[2] = 0.7;
+     /// sky block 3///////                     /////
+     skyColor3[0] = 0.85;
+     skyColor3[1] = 0.8;
+     skyColor3[2] = 0.7;
+     /// sky block 4///////                     /////
+     skyColor4[0] = 0.85;
+     skyColor4[1] = 0.8;
+     skyColor4[2] = 0.7;
+
+     /// ////////////////////////////////////// Building(1-6)///////////////////////////////////
+
+     building1[0] = 0.890;
+     building1[1] = 0.573;
+     building1[2] = 0.0979;
+
+
+     building2[0] = 0.820;
+     building2[1] = 0.0410;
+     building2[2] = 0.262;
+
+
+     building3[0] = 1.00;
+     building3[1] = 0.00;
+     building3[2] = 0.0333;
+
+
+     building4[0] = 0.336;
+     building4[1] = 0.840;
+     building4[2] = 0.655;
+
+
+     building5[0] = 0.930;
+     building5[1] = 0.828;
+     building5[2] = 0.0558;
+
+
+
+     building6[0] = 0.990;
+     building6[1] = 0.424;
+     building6[2] = 0.0198;
+/// ////////////////////////////////////// Building window///////////////////////////////////
+
+     /// /////////////////////////////////// building1window///////////////////////////////
+     building1window1[0] = 0.810;
+     building1window1[1] = 0.699;
+     building1window1[2] = 0.203;
+
+     building2window1[0] = 0.389;
+     building2window1[1] = 0.770;
+     building2window1[2] = 0.339;
+
+     building3window1[0] = 0.248;
+     building3window1[1] = 0.920;
+     building3window1[2] = 0.719;
+
+     /// /////////////////////////////////// building4window2///////////////////////////////
+     building4window2[0] = 0.950;
+     building4window2[1] = 0.822;
+     building4window2[2] = 0.361;
+      //, ,
+      /// /////////////////////////////////// building5window1///////////////////////////////
+     building5window1[0] = 0.101;
+     building5window1[1] = 0.183;
+     building5window1[2] = 0.920;
+
+     building6window1[0] = 0.683;
+     building6window1[1] = 0.0486;
+     building6window1[2] = 0.810;
+
+     building7window[0] = 0.930;
+     building7window[1] = 0.149;
+     building7window[2] = 0.227;
+/// /////////////////////////////////// building window ends///////////////////////////////
+
+}
+
+
+/// /////////// /////////////////// /////AUTUMN SEASON ENDS///////// ////////////// ////////
+///
+
 
     ///
 
@@ -3627,7 +3748,7 @@ glMatrixMode(GL_MODELVIEW);
 void updateRain(int value)
 {
 
-    if(rain == 2){
+    if(rain == true){
         if(xrain > 0.1f){
             xrain = -0.2f;
             yrain = -0.5f;
@@ -3674,19 +3795,23 @@ void init() { // initialization hoy
 int main(int argc, char** argv) { // program ekhan thekei start hoy
 
 
-    cout << endl << "/// /////////////// ///////////////////////-----Fall 22-23-----////////////////////////////////////////////////////////";
-    cout << endl << "/// ----------------=======================COMPUTER GRAPHICS PROJECT==================------------------------/////////";
-    cout << endl << " /// ----------------=====================SUPERVISED BY : MD. KISHOR MOROL SIR==================-------------////////"<<endl ;
+    cout << "/// /////////////// ///////////////////////-----Fall 22-23-----////////////////////////////////////////////////////////"<<endl;
+    cout << "/// ----------------=======================COMPUTER GRAPHICS PROJECT==================------------------------/////////"<<endl;
+    cout << " /// ----------------=====================SUPERVISED BY : MD. KISHOR MOROL SIR==================-------------////////"<<endl ;
 
-    cout << "Press D : To Forward the Train" << endl << endl;
-    cout << "Press A : To Backward the Train" << endl << endl;
-    cout << "Press S : To Stop the Train" << endl << endl;
+    cout << "Press D : For Day" << endl ;
+    cout << "Press N : For Night"<< endl;
+    cout << "Press A : For Autumn"<< endl;
+    cout << "Press R : For Rain "<< endl;
+    cout << "Press R : For stop Rain "<< endl;
+    cout << "Press W : For increase speed Plane"<< endl;
+    cout << "Press Q : For Stop the Plane"<< endl;
+    cout << "Press T : For increase speed Train"<< endl;
+    cout << "Press Y : For Stop Train"<< endl;
 
-    cout << "Press R : For Rain " << endl << endl;
-    cout << "Press E : For Stop Rain" << endl << endl;
 
-    cout << "Press N : For Night " << endl << endl;
-    cout << "Press B : For Day" << endl << endl;
+
+
    glutInit(&argc, argv);
    //glutInitWindowSize(320, 320);
    glutInitWindowSize(1240, 840);
