@@ -448,10 +448,12 @@ case 'a':
 case 'r':
     //Rain start
      rain = true;
+     //sndPlaySound("River.wav",SND_ASYNC|SND_LOOP);
     break;
 case 's':
     //Rain stop
      rain = false;
+     //sndPlaySound(NULL,SND_ASYNC);
     break;
 case 't':
     // train speed increase
