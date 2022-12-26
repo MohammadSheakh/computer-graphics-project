@@ -258,7 +258,7 @@ void trainUpdate(int value) { // timer .. er kaj timer ba thread
     // timer use kore move korte parbo .. jekono object .. ba translation korte parbo ..
 
     if(trainPosition < -1.0)//
-        trainPosition = 1.0f;
+        trainPosition = 2.0f;
 
     trainPosition -= trainSpeed;
 
@@ -338,7 +338,7 @@ void boatUpdate(int value) { // timer .. er kaj timer ba thread
     // timer use kore move korte parbo .. jekono object .. ba translation korte parbo ..
 
     if(boatPosition > 1.7)//
-        boatPosition = -1.002f;
+        boatPosition = -1.2f;
 
     boatPosition += boatSpeed;
 
@@ -455,11 +455,15 @@ case 's':
     break;
 case 't':
     // train speed increase
-     trainSpeed += 0.01f;
+     trainSpeed += 0.02f;
     break;
 case 'y':
     // train stop
      trainSpeed = 0.0f;
+    break;
+case 'u':
+    // train stop
+    trainSpeed -= 0.02f;
     break;
 
 glutPostRedisplay();
@@ -668,9 +672,9 @@ if(dayStart1 == true)
      nightStart2 = true;
      moonStart3 = false;
 
-     mountainColor[0] = 0.0f;
-     mountainColor[1] = 0.0f;
-     mountainColor[2] = 90.0f;
+     mountainColor[0] = 0.3f; //0.0
+     mountainColor[1] = 0.3f; //0.0
+     mountainColor[2] = 0.3f; //90.0
 /// //// Set Sky color for Day-test  color/////
 ///  sky block 1///////                   /////
      skyColor1[0] = 0.0752;
@@ -722,9 +726,9 @@ if(dayStart1 == true)
 
 
 
-     building6[0] = 0.990;
-     building6[1] = 0.424;
-     building6[2] = 0.0198;
+     building6[0] = 0.990; //0.2 //
+     building6[1] = 0.424; // 0.2 //
+     building6[2] = 0.0198; // 0.2 //
 /// ////////////////////////////////////// Building window///////////////////////////////////
 
      /// /////////////////////////////////// building1window///////////////////////////////
